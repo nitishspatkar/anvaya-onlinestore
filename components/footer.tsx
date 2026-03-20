@@ -14,7 +14,7 @@ export function Footer() {
               Anvaya
             </h4>
             <p className="font-body text-sm text-text-secondary leading-relaxed">
-              Direct trade botanical essences from Indian artisans and farmers.
+              Direct trade botanical essences from Indian farmers and artisans. Authentic. Transparent. Made by hand.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export function Footer() {
           {/* Newsletter Signup */}
           <div className="max-w-sm mb-6">
             <p className="font-body text-sm text-text-primary font-medium mb-3">
-              Get updates on new collections
+              Stay informed about new essences and collections
             </p>
             <form className="flex gap-2">
               <input
@@ -121,13 +121,13 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <Link href="#" className="font-body text-xs text-text-secondary hover:text-primary transition-colors">
-              Terms
+              Terms of Use
             </Link>
             <Link href="#" className="font-body text-xs text-text-secondary hover:text-primary transition-colors">
-              Privacy
+              Privacy Policy
             </Link>
             <Link href="#" className="font-body text-xs text-text-secondary hover:text-primary transition-colors">
-              Cookies
+              Cookie Policy
             </Link>
           </div>
         </div>

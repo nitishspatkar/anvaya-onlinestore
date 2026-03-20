@@ -12,6 +12,7 @@ export interface ProductVariant {
   description: string
   type: string
   maker: Maker
+  price: number
 }
 
 export interface Category {
@@ -36,6 +37,7 @@ export const categories: Category[] = [
         name: 'Roots',
         description: 'Vetiver roots are aromatic and naturally cooling. Use in sachets or cooling mats for natural fragrance.',
         type: 'Whole Roots',
+        price: 24.99,
         maker: {
           name: 'Radha & cooperative',
           role: 'Farmers',
@@ -49,6 +51,7 @@ export const categories: Category[] = [
         name: 'Powder',
         description: 'Popular in skincare and natural perfumery. Add to face masks for soothing, fragrant effect.',
         type: 'Fine Powder',
+        price: 18.99,
         maker: {
           name: 'Radha & cooperative',
           role: 'Farmers',
@@ -62,6 +65,7 @@ export const categories: Category[] = [
         name: 'Essential Oil',
         description: 'Vetiver essential oil with a calming aroma. Diffuse a few drops to create a relaxing atmosphere.',
         type: 'Essential Oil',
+        price: 34.99,
         maker: {
           name: 'Radha & cooperative',
           role: 'Farmers',
@@ -75,6 +79,7 @@ export const categories: Category[] = [
         name: 'Exfoliating Scrub',
         description: 'Exfoliating scrub with refreshing properties. Apply to damp skin and gently exfoliate.',
         type: 'Scrub',
+        price: 22.99,
         maker: {
           name: 'Radha & cooperative',
           role: 'Farmers',
@@ -88,6 +93,7 @@ export const categories: Category[] = [
         name: 'Natural Soap',
         description: 'Natural, moisturizing soap with a velvety scent. Use daily for body cleansing and aromatherapy benefits.',
         type: 'Soap',
+        price: 14.99,
         maker: {
           name: 'Radha & cooperative',
           role: 'Farmers',
@@ -101,6 +107,7 @@ export const categories: Category[] = [
         name: 'Incense Sticks',
         description: 'Vetiver-infused incense sticks for relaxation. Light to create a soothing, aromatic ambiance.',
         type: 'Incense',
+        price: 12.99,
         maker: {
           name: 'Radha & cooperative',
           role: 'Farmers',
