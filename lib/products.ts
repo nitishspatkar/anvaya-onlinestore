@@ -1,201 +1,556 @@
-export interface Product {
-  id: string
+export interface Maker {
   name: string
-  descriptor: string
-  region: string
-  introduction: string
-  origin: {
-    state: string
-    description: string
-    coordinates?: { lat: number; lng: number }
-  }
-  hands: {
-    name: string
-    role: string
-    story: string
-    portraitCaption?: string
-  }
-  process: Array<{
-    step: number
-    name: string
-    description: string
-  }>
-  giftAngle: string
-  isFavourite?: boolean
+  role: string
+  location: string
+  brief: string
+  portraitId: string
 }
 
-export const products: Product[] = [
+export interface ProductVariant {
+  id: string
+  name: string
+  description: string
+  type: string
+  maker: Maker
+}
+
+export interface Category {
+  id: string
+  name: string
+  description: string
+  region: string
+  variants: ProductVariant[]
+  imageId: string
+}
+
+export const categories: Category[] = [
   {
     id: 'vetiver',
     name: 'Vetiver',
-    descriptor: 'Cooling root essence from the earth',
+    description: 'Cooling root essence from the earth. Grown deep in Tamil Nadu soil, vetiver\'s roots reach where nothing else does. Ancient, cooling, grounding — it calms the body and purifies the air.',
     region: 'Tamil Nadu',
-    introduction: 'Grown deep in the earth, vetiver\'s roots reach where nothing else does. Ancient, cooling, grounding — it has been used for centuries to calm the body and purify the air.',
-    origin: {
-      state: 'Tamil Nadu',
-      description: 'The lush southern peninsula of India produces vetiver of unparalleled quality. The monsoon rains nourish these deep-rooted grasses, which thrive in Tamil Nadu\'s laterite-rich soil. This region has been a centre of knowledge-keeping for vetiver cultivation for over a century.',
-      coordinates: { lat: 11.1271, lng: 78.6569 }
-    },
-    hands: {
-      name: 'Radha & her cooperative',
-      role: 'Farmers & harvesters',
-      story: 'Radha and her cooperative of 12 women have been harvesting vetiver roots by hand since 1987. They know the earth intimately — when to harvest, how deep to dig, how to preserve the soil\'s integrity. Their knowledge is generational, their hands are skilled, and their commitment to sustainable harvesting ensures these roots will flourish for generations to come.',
-      portraitCaption: 'Radha & her cooperative, Tamil Nadu — harvesting vetiver roots by hand since 1987'
-    },
-    process: [
+    imageId: 'vetiver',
+    variants: [
       {
-        step: 1,
-        name: 'Hand-harvested',
-        description: 'Roots are carefully dug from monsoon-enriched Tamil Nadu soil, preserving the ecosystem.'
+        id: 'vetiver-roots',
+        name: 'Roots',
+        description: 'Vetiver roots are aromatic and naturally cooling. Use in sachets or cooling mats for natural fragrance.',
+        type: 'Whole Roots',
+        maker: {
+          name: 'Radha & cooperative',
+          role: 'Farmers',
+          location: 'Tamil Nadu',
+          brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
+          portraitId: 'radha'
+        }
       },
       {
-        step: 2,
-        name: 'Sun-dried',
-        description: 'Roots are dried slowly in the South Indian sun, concentrating their aromatic compounds.'
+        id: 'vetiver-powder',
+        name: 'Powder',
+        description: 'Popular in skincare and natural perfumery. Add to face masks for soothing, fragrant effect.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Radha & cooperative',
+          role: 'Farmers',
+          location: 'Tamil Nadu',
+          brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
+          portraitId: 'radha'
+        }
       },
       {
-        step: 3,
-        name: 'Steam-distilled',
-        description: 'Essential oil is extracted through traditional steam distillation, preserving purity.'
+        id: 'vetiver-oil',
+        name: 'Essential Oil',
+        description: 'Vetiver essential oil with a calming aroma. Diffuse a few drops to create a relaxing atmosphere.',
+        type: 'Essential Oil',
+        maker: {
+          name: 'Radha & cooperative',
+          role: 'Farmers',
+          location: 'Tamil Nadu',
+          brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
+          portraitId: 'radha'
+        }
       },
       {
-        step: 4,
-        name: 'Quality verified in Switzerland',
-        description: 'Every batch undergoes rigorous testing to meet our standards before blending.'
+        id: 'vetiver-scrub',
+        name: 'Exfoliating Scrub',
+        description: 'Exfoliating scrub with refreshing properties. Apply to damp skin and gently exfoliate.',
+        type: 'Scrub',
+        maker: {
+          name: 'Radha & cooperative',
+          role: 'Farmers',
+          location: 'Tamil Nadu',
+          brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
+          portraitId: 'radha'
+        }
+      },
+      {
+        id: 'vetiver-soap',
+        name: 'Natural Soap',
+        description: 'Natural, moisturizing soap with a velvety scent. Use daily for body cleansing and aromatherapy benefits.',
+        type: 'Soap',
+        maker: {
+          name: 'Radha & cooperative',
+          role: 'Farmers',
+          location: 'Tamil Nadu',
+          brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
+          portraitId: 'radha'
+        }
+      },
+      {
+        id: 'vetiver-incense',
+        name: 'Incense Sticks',
+        description: 'Vetiver-infused incense sticks for relaxation. Light to create a soothing, aromatic ambiance.',
+        type: 'Incense',
+        maker: {
+          name: 'Radha & cooperative',
+          role: 'Farmers',
+          location: 'Tamil Nadu',
+          brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
+          portraitId: 'radha'
+        }
       }
-    ],
-    giftAngle: 'For the person who has everything — this is something they\'ve never had. Vetiver makes a quiet, lasting impression. It is the gift of calm, of grounding, of something real.'
+    ]
   },
   {
     id: 'sandalwood',
     name: 'Sandalwood',
-    descriptor: 'Sacred wood of spiritual warmth',
+    description: 'Sacred wood of spiritual warmth. The finest sandalwood from Karnataka\'s Western Ghats, harvested sustainably to protect these precious forests.',
     region: 'Karnataka',
-    introduction: 'Sandalwood has been sacred across India for millennia. Its warm, creamy aroma anchors the spirit and elevates any moment. Rare, precious, and deeply revered — this is the wood that has opened temples and calmed souls for centuries.',
-    origin: {
-      state: 'Karnataka',
-      description: 'The Western Ghats of Karnataka hold the finest sandalwood forests in India. These ancient trees grow slowly, imbued with the misty mountain air and rich forest soil. Harvesting here is tightly regulated to protect these precious groves, making every piece of sandalwood from this region a testament to preservation and patience.',
-      coordinates: { lat: 14.5994, lng: 75.8394 }
-    },
-    hands: {
-      name: 'Mahesh & forest stewards',
-      role: 'Harvesters & guardians',
-      story: 'Mahesh and the forest stewards of Karnataka have protected and harvested sandalwood sustainably for 40 years. They work within strict conservation guidelines, harvesting only mature trees while replanting for the future. Their dedication ensures that sandalwood will remain sacred — not extinct.',
-      portraitCaption: 'Mahesh, Karnataka — guardian of sandalwood forests for four decades'
-    },
-    process: [
+    imageId: 'sandalwood',
+    variants: [
       {
-        step: 1,
-        name: 'Carefully selected',
-        description: 'Only mature trees from managed forests are harvested, following strict conservation protocols.'
+        id: 'sandalwood-powder',
+        name: 'Powder',
+        description: 'Sandalwood powder ideal for face packs and skincare. Mix with rose water for a calming mask.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Mahesh & forest stewards',
+          role: 'Harvesters',
+          location: 'Karnataka',
+          brief: 'Mahesh and the forest stewards have protected sandalwood sustainably for 40 years.',
+          portraitId: 'mahesh'
+        }
       },
       {
-        step: 2,
-        name: 'Aged in the wood',
-        description: 'Heartwood is aged to deepen its aroma and allow compounds to develop naturally.'
+        id: 'sandalwood-oil',
+        name: 'Essential Oil',
+        description: 'Sandalwood essential oil with warm, creamy aroma. Use in diffusers or as a personal fragrance.',
+        type: 'Essential Oil',
+        maker: {
+          name: 'Mahesh & forest stewards',
+          role: 'Harvesters',
+          location: 'Karnataka',
+          brief: 'Mahesh and the forest stewards have protected sandalwood sustainably for 40 years.',
+          portraitId: 'mahesh'
+        }
       },
       {
-        step: 3,
-        name: 'Cold-pressed',
-        description: 'Oil is extracted at low temperatures, preserving the wood\'s delicate, complex character.'
-      },
-      {
-        step: 4,
-        name: 'Certified & sealed in Switzerland',
-        description: 'Certificate of authenticity and conservation verified. Bottled to last generations.'
+        id: 'sandalwood-incense',
+        name: 'Incense Sticks',
+        description: 'Natural sandalwood incense sticks. Light for a calming, fragrant ambiance.',
+        type: 'Incense',
+        maker: {
+          name: 'Mahesh & forest stewards',
+          role: 'Harvesters',
+          location: 'Karnataka',
+          brief: 'Mahesh and the forest stewards have protected sandalwood sustainably for 40 years.',
+          portraitId: 'mahesh'
+        }
       }
-    ],
-    giftAngle: 'For those who appreciate depth and history. Sandalwood is a meditation in scent — a moment of pause, clarity, and connection to something timeless.'
+    ]
   },
   {
     id: 'jasmine',
     name: 'Jasmine',
-    descriptor: 'Moonlit flowers of the night',
+    description: 'Moonlit flowers of the night. Jasmine blooms at night, releasing its most intoxicating fragrance under the stars.',
     region: 'Rajasthan',
-    introduction: 'Jasmine blooms at night, releasing its most intoxicating fragrance under the stars. It is the flower of romance, of the unforeseen moment, of beauty that arrives when you least expect it. This is the jasmine that perfumers have treasured for centuries.',
-    origin: {
-      state: 'Rajasthan',
-      description: 'The ancient gardens of Rajasthan have cultivated jasmine for over 500 years. In the warm desert nights, jasmine flowers open with their most precious aroma. The farmers here have perfected the art of harvest — picking flowers at the moment of peak bloom, when the night air is thick with fragrance.',
-      coordinates: { lat: 27.0238, lng: 74.2179 }
-    },
-    hands: {
-      name: 'Priya & her family',
-      role: 'Night gardeners & flower crafters',
-      story: 'Priya and her family have tended jasmine gardens in Rajasthan for three generations. They know every plant, every bloom time, every whisper of the night wind that affects the flowers. They pick at moonrise, by hand, with the understanding that this moment — between dusk and deep night — is when jasmine offers its most precious gift.',
-      portraitCaption: 'Priya, Rajasthan — night gardener of jasmine for over thirty years'
-    },
-    process: [
+    imageId: 'jasmine',
+    variants: [
       {
-        step: 1,
-        name: 'Hand-picked at moonrise',
-        description: 'Flowers are harvested at the exact moment of peak bloom, under Rajasthan\'s clear night sky.'
+        id: 'jasmine-water',
+        name: 'Rose Water',
+        description: 'Natural toner and skin refresher. Apply with a cotton pad or add to recipes.',
+        type: 'Flower Water',
+        maker: {
+          name: 'Priya & family',
+          role: 'Night Gardeners',
+          location: 'Rajasthan',
+          brief: 'Priya and her family have tended jasmine gardens for three generations.',
+          portraitId: 'priya'
+        }
       },
       {
-        step: 2,
-        name: 'Fresh infusion',
-        description: 'Flowers are infused into cold oil immediately after harvest to capture the living aroma.'
+        id: 'jasmine-powder',
+        name: 'Powder',
+        description: 'Fragrant addition to culinary dishes and skincare. Mix into face masks or desserts.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Priya & family',
+          role: 'Night Gardeners',
+          location: 'Rajasthan',
+          brief: 'Priya and her family have tended jasmine gardens for three generations.',
+          portraitId: 'priya'
+        }
       },
       {
-        step: 3,
-        name: 'Gentle maceration',
-        description: 'Oil maceration happens slowly, over weeks, honoring the delicate nature of the bloom.'
-      },
-      {
-        step: 4,
-        name: 'Bottled with care in Switzerland',
-        description: 'Every batch is tested for purity and potency, then sealed in dark glass for preservation.'
+        id: 'jasmine-marmalade',
+        name: 'Marmalade',
+        description: 'Delicious, fragrant preserve made from jasmine petals. Spread on toast or add to desserts.',
+        type: 'Preserve',
+        maker: {
+          name: 'Priya & family',
+          role: 'Night Gardeners',
+          location: 'Rajasthan',
+          brief: 'Priya and her family have tended jasmine gardens for three generations.',
+          portraitId: 'priya'
+        }
       }
-    ],
-    giftAngle: 'For the romantic, the dreamer, the person who notices small moments of beauty. Jasmine is an invitation to slow down, to bloom, to radiate quiet grace.',
-    isFavourite: true
+    ]
   },
   {
     id: 'turmeric',
     name: 'Turmeric',
-    descriptor: 'Golden root of ancient healing',
+    description: 'Golden root of ancient healing. Turmeric has been trusted for over 4,000 years to heal, warm, and protect.',
     region: 'Kerala',
-    introduction: 'Turmeric is the golden thread that runs through Indian life — healing, warming, protective. Its earthy warmth and subtle spice have been trusted for over 4,000 years. This is the turmeric that heals, not just flavors.',
-    origin: {
-      state: 'Kerala',
-      description: 'Kerala\'s monsoon-fed soil produces turmeric of extraordinary quality. The humid tropical climate and rich, loamy earth give these rhizomes their deep golden color and potent active compounds. Farmers here have refined the art of turmeric cultivation across generations.',
-      coordinates: { lat: 10.8505, lng: 76.2711 }
-    },
-    hands: {
-      name: 'Suresh & cooperative farmers',
-      role: 'Cultivators & processors',
-      story: 'Suresh coordinates a cooperative of 23 small farmers across Kerala\'s backwater regions. They grow turmeric without synthetic pesticides, trusting the land\'s natural cycles. Suresh oversees every stage — from soil preparation to drying to quality assessment — ensuring that every turmeric root meets the standards of ancient healing practice.',
-      portraitCaption: 'Suresh, Kerala — cultivator of turmeric in partnership with 23 farming families'
-    },
-    process: [
+    imageId: 'turmeric',
+    variants: [
       {
-        step: 1,
-        name: 'Organic cultivation',
-        description: 'Turmeric rhizomes are grown without synthetic pesticides in Kerala\'s naturally rich soil.'
-      },
-      {
-        step: 2,
-        name: 'Hand-harvested',
-        description: 'Roots are carefully dug and separated, respecting the plant\'s integrity and the soil\'s health.'
-      },
-      {
-        step: 3,
-        name: 'Traditionally dried',
-        description: 'Rhizomes are dried slowly in the Kerala sun, concentrating their active compounds.'
-      },
-      {
-        step: 4,
-        name: 'Tested & certified in Switzerland',
-        description: 'Purity, potency, and bioavailability verified by independent laboratories before bottling.'
+        id: 'turmeric-powder',
+        name: 'Powder',
+        description: 'Turmeric powder for skincare and health. Mix with water or honey for a brightening face pack.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Suresh & cooperative',
+          role: 'Cultivators',
+          location: 'Kerala',
+          brief: 'Suresh coordinates 23 small farmers growing turmeric without synthetic pesticides.',
+          portraitId: 'suresh'
+        }
       }
-    ],
-    giftAngle: 'For the person invested in wellness, in ancient wisdom, in real health. Turmeric is a daily ritual that matters — a gesture that says: I care about your wellbeing.'
+    ]
+  },
+  {
+    id: 'neem',
+    name: 'Neem',
+    description: 'Valued in traditional medicine for its antibacterial properties. Used in skincare and health remedies.',
+    region: 'Multiple',
+    imageId: 'neem',
+    variants: [
+      {
+        id: 'neem-powder',
+        name: 'Powder',
+        description: 'Natural remedy for skin and hair health. Mix with water to make a paste or add to face masks.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Local farmers',
+          role: 'Cultivators',
+          location: 'North India',
+          brief: 'Neem farmers across North India cultivate these beneficial trees sustainably.',
+          portraitId: 'neem-farmer'
+        }
+      },
+      {
+        id: 'neem-soap',
+        name: 'Soap',
+        description: 'Gentle, antibacterial soap for skin care. Use for daily body cleansing.',
+        type: 'Soap',
+        maker: {
+          name: 'Local farmers',
+          role: 'Cultivators',
+          location: 'North India',
+          brief: 'Neem farmers across North India cultivate these beneficial trees sustainably.',
+          portraitId: 'neem-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'tulsi',
+    name: 'Tulsi (Holy Basil)',
+    description: 'Immune-boosting and stress-relieving properties. Revered in Ayurveda and traditional medicine.',
+    region: 'Multiple',
+    imageId: 'tulsi',
+    variants: [
+      {
+        id: 'tulsi-powder',
+        name: 'Powder',
+        description: 'Tulsi powder for skincare and health. Mix into milk or smoothies.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Tulsi growers',
+          role: 'Cultivators',
+          location: 'India',
+          brief: 'Tulsi is cultivated by traditional growers across sacred gardens.',
+          portraitId: 'tulsi-farmer'
+        }
+      },
+      {
+        id: 'tulsi-tea',
+        name: 'Tea',
+        description: 'Relaxing herbal tea made from Tulsi leaves. Brew in hot water for a refreshing, stress-relieving drink.',
+        type: 'Dried Tea',
+        maker: {
+          name: 'Tulsi growers',
+          role: 'Cultivators',
+          location: 'India',
+          brief: 'Tulsi is cultivated by traditional growers across sacred gardens.',
+          portraitId: 'tulsi-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'kokum',
+    name: 'Kokum',
+    description: 'Tropical fruit known for its cooling properties. Used in skincare and refreshing summer drinks.',
+    region: 'Maharashtra & Goa',
+    imageId: 'kokum',
+    variants: [
+      {
+        id: 'kokum-butter',
+        name: 'Butter',
+        description: 'Rich, natural moisturizer from kokum seeds. Apply to dry skin for deep hydration.',
+        type: 'Body Butter',
+        maker: {
+          name: 'Kokum farmers',
+          role: 'Cultivators',
+          location: 'Maharashtra',
+          brief: 'Kokum trees are tended by farmers in the Western Ghats.',
+          portraitId: 'kokum-farmer'
+        }
+      },
+      {
+        id: 'kokum-syrup',
+        name: 'Syrup',
+        description: 'Refreshing summer drink with cooling properties. Mix with water or soda for a tangy, refreshing beverage.',
+        type: 'Syrup',
+        maker: {
+          name: 'Kokum farmers',
+          role: 'Cultivators',
+          location: 'Maharashtra',
+          brief: 'Kokum trees are tended by farmers in the Western Ghats.',
+          portraitId: 'kokum-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'rose',
+    name: 'Rose',
+    description: 'Rose water and extracts cherished for their floral aroma and soothing effects in beauty and culinary uses.',
+    region: 'Himachal Pradesh',
+    imageId: 'rose',
+    variants: [
+      {
+        id: 'rose-water',
+        name: 'Rose Water',
+        description: 'Natural toner and skin refresher. Apply to skin with a cotton pad or add to recipes.',
+        type: 'Flower Water',
+        maker: {
+          name: 'Rose growers',
+          role: 'Cultivators',
+          location: 'Himachal Pradesh',
+          brief: 'Rose growers in the Himalayas cultivate delicate petals for traditional distillation.',
+          portraitId: 'rose-farmer'
+        }
+      },
+      {
+        id: 'rose-powder',
+        name: 'Powder',
+        description: 'Fragrant addition to culinary dishes and skincare. Mix into face masks or desserts.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Rose growers',
+          role: 'Cultivators',
+          location: 'Himachal Pradesh',
+          brief: 'Rose growers in the Himalayas cultivate delicate petals for traditional distillation.',
+          portraitId: 'rose-farmer'
+        }
+      },
+      {
+        id: 'rose-marmalade',
+        name: 'Marmalade',
+        description: 'Delicious, fragrant preserve made from rose petals. Spread on toast or add to desserts.',
+        type: 'Preserve',
+        maker: {
+          name: 'Rose growers',
+          role: 'Cultivators',
+          location: 'Himachal Pradesh',
+          brief: 'Rose growers in the Himalayas cultivate delicate petals for traditional distillation.',
+          portraitId: 'rose-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'shatavari',
+    name: 'Shatavari',
+    description: 'Adaptogenic herb known for supporting women\'s health and hormonal balance. Used in Ayurvedic medicine.',
+    region: 'Madhya Pradesh',
+    imageId: 'shatavari',
+    variants: [
+      {
+        id: 'shatavari-powder',
+        name: 'Powder',
+        description: 'Shatavari powder traditionally used for hormonal balance. Mix into milk or smoothies.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Shatavari cultivators',
+          role: 'Farmers',
+          location: 'Madhya Pradesh',
+          brief: 'Shatavari is cultivated by Ayurvedic farmers preserving traditional practices.',
+          portraitId: 'shatavari-farmer'
+        }
+      },
+      {
+        id: 'shatavari-extract',
+        name: 'Liquid Extract',
+        description: 'Shatavari extract for easy use. Add drops to water for a daily health boost.',
+        type: 'Liquid Extract',
+        maker: {
+          name: 'Shatavari cultivators',
+          role: 'Farmers',
+          location: 'Madhya Pradesh',
+          brief: 'Shatavari is cultivated by Ayurvedic farmers preserving traditional practices.',
+          portraitId: 'shatavari-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'kasturi-manjal',
+    name: 'Kasturi Manjal',
+    description: 'Also known as wild turmeric. Used in skincare for brightening and antibacterial properties.',
+    region: 'South India',
+    imageId: 'kasturi-manjal',
+    variants: [
+      {
+        id: 'kasturi-powder',
+        name: 'Powder',
+        description: 'Wild turmeric powder, gentle on skin. Mix with yogurt or milk for a brightening face pack.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Kasturi Manjal growers',
+          role: 'Farmers',
+          location: 'South India',
+          brief: 'Kasturi Manjal is harvested by farmers preserving wild turmeric traditions.',
+          portraitId: 'kasturi-farmer'
+        }
+      },
+      {
+        id: 'kasturi-soap',
+        name: 'Soap',
+        description: 'Kasturi Manjal soap for natural skin cleansing and brightening.',
+        type: 'Soap',
+        maker: {
+          name: 'Kasturi Manjal growers',
+          role: 'Farmers',
+          location: 'South India',
+          brief: 'Kasturi Manjal is harvested by farmers preserving wild turmeric traditions.',
+          portraitId: 'kasturi-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'amla',
+    name: 'Amla (Indian Gooseberry)',
+    description: 'Rich in vitamin C and used to promote skin health and boost immunity. A staple in Ayurvedic practice.',
+    region: 'Multiple',
+    imageId: 'amla',
+    variants: [
+      {
+        id: 'amla-raw',
+        name: 'Raw',
+        description: 'Fresh amla fruit, rich in vitamin C. Eat raw or juice for immune support.',
+        type: 'Fresh Fruit',
+        maker: {
+          name: 'Amla farmers',
+          role: 'Cultivators',
+          location: 'India',
+          brief: 'Amla is cultivated by traditional farmers across India.',
+          portraitId: 'amla-farmer'
+        }
+      },
+      {
+        id: 'amla-dry',
+        name: 'Dry',
+        description: 'Dried amla for a tangy, healthful snack. Add to teas or eat as-is.',
+        type: 'Dried Fruit',
+        maker: {
+          name: 'Amla farmers',
+          role: 'Cultivators',
+          location: 'India',
+          brief: 'Amla is cultivated by traditional farmers across India.',
+          portraitId: 'amla-farmer'
+        }
+      },
+      {
+        id: 'amla-powder',
+        name: 'Powder',
+        description: 'Amla powder for skin and hair care. Mix with water for a natural face or hair mask.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Amla farmers',
+          role: 'Cultivators',
+          location: 'India',
+          brief: 'Amla is cultivated by traditional farmers across India.',
+          portraitId: 'amla-farmer'
+        }
+      }
+    ]
+  },
+  {
+    id: 'soap-berries',
+    name: 'Soap Berries',
+    description: 'Natural soap berries are an eco-friendly alternative to chemical-based cleansers. Used for laundry and hair care.',
+    region: 'Northeast India',
+    imageId: 'soap-berries',
+    variants: [
+      {
+        id: 'soap-berries-whole',
+        name: 'Whole Berries',
+        description: 'Used for natural laundry detergent. Place in a cloth bag for laundry.',
+        type: 'Whole Berries',
+        maker: {
+          name: 'Soap berry harvesters',
+          role: 'Gatherers',
+          location: 'Northeast India',
+          brief: 'Soap berries are gathered from natural sources by communities in Northeast India.',
+          portraitId: 'soap-berry-farmer'
+        }
+      },
+      {
+        id: 'soap-berries-powder',
+        name: 'Powder',
+        description: 'Acts as a natural shampoo and cleanser. Mix with water for hair wash.',
+        type: 'Fine Powder',
+        maker: {
+          name: 'Soap berry harvesters',
+          role: 'Gatherers',
+          location: 'Northeast India',
+          brief: 'Soap berries are gathered from natural sources by communities in Northeast India.',
+          portraitId: 'soap-berry-farmer'
+        }
+      }
+    ]
   }
 ]
 
-export function getProductById(id: string): Product | undefined {
-  return products.find(p => p.id === id)
+export function getCategoryById(id: string): Category | undefined {
+  return categories.find(c => c.id === id)
 }
 
-export function getAllProducts(): Product[] {
-  return products
+export function getAllCategories(): Category[] {
+  return categories
+}
+
+export function getProductVariantById(categoryId: string, variantId: string): ProductVariant | undefined {
+  const category = getCategoryById(categoryId)
+  return category?.variants.find(v => v.id === variantId)
+}
+
+export function getProductsByCategory(categoryId: string): ProductVariant[] | undefined {
+  const category = getCategoryById(categoryId)
+  return category?.variants
 }

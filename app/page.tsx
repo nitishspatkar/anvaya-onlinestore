@@ -1,81 +1,91 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { getAllProducts } from '@/lib/products'
+import { getAllCategories } from '@/lib/products'
 
-export default function ProductsPage() {
-  const products = getAllProducts()
+export const metadata = {
+  title: 'Anvaya — Rare Botanicals from India',
+  description: 'Discover rare, artisan-crafted botanical essences. Sourced directly from Indian farmers and cooperatives, crafted with Swiss precision.',
+}
+
+export default function HomePage() {
+  const categories = getAllCategories()
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border pt-16 pb-24 px-6 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="font-serif text-5xl md:text-6xl text-primary mb-6 leading-tight">
+      {/* Header Section */}
+      <header className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+          <h1 className="font-serif text-5xl md:text-6xl mb-4 text-text-primary text-pretty">
             Anvaya
           </h1>
-          <p className="text-text-secondary text-lg md:text-xl max-w-2xl leading-relaxed">
-            Rare botanical essences sourced directly from Indian farmers and communities, crafted with Swiss precision. Each product carries a story of heritage, care, and connection.
+          <p className="font-body text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed">
+            Rare botanical essences sourced directly from Indian farmers and artisans. Each product tells a story of precision, sustainability, and human craft.
           </p>
         </div>
       </header>
 
-      {/* Products Grid */}
-      <section className="px-6 md:px-8 py-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {products.map((product) => (
-              <Link
-                key={product.id}
-                href={`/products/${product.id}`}
-                className="group"
-              >
-                <div className="bg-white border border-border rounded-sm p-8 md:p-12 transition-all duration-300 hover:shadow-lg hover:border-accent-gold">
-                  {/* Product Image Placeholder */}
-                  <div className="w-full aspect-square bg-accent-blush rounded-sm mb-8 flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={`/images/products/${product.id}.jpg`}
-                      alt={product.name}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                      priority
-                    />
-                  </div>
-
-                  {/* Product Info */}
-                  <div className="space-y-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <h2 className="font-serif text-3xl text-primary group-hover:text-accent-warm transition-colors">
-                        {product.name}
-                      </h2>
-                      {product.isFavourite && (
-                        <span className="text-xs font-medium text-accent-gold uppercase tracking-widest whitespace-nowrap">
-                          Gift Favourite
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-text-secondary text-lg">
-                      {product.descriptor}
-                    </p>
-                    <p className="text-sm text-accent-gold uppercase tracking-widest pt-2">
-                      {product.region}
-                    </p>
-                  </div>
+      {/* Categories Grid */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              href={`/categories/${category.id}`}
+              className="group cursor-pointer"
+            >
+              {/* Category Card */}
+              <div className="h-full flex flex-col">
+                {/* Image Container */}
+                <div className="relative w-full aspect-square bg-accent-blush rounded-sm overflow-hidden mb-6 border border-border transition-all duration-300 group-hover:border-primary">
+                  <Image
+                    src={`/images/categories/${category.imageId}.jpg`}
+                    alt={category.name}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    priority
+                  />
                 </div>
-              </Link>
-            ))}
-          </div>
+
+                {/* Category Info */}
+                <div className="flex-1 flex flex-col">
+                  <h2 className="font-serif text-2xl md:text-3xl text-text-primary mb-3 group-hover:text-primary transition-colors">
+                    {category.name}
+                  </h2>
+                  <p className="font-body text-text-secondary text-sm leading-relaxed mb-4 line-clamp-3">
+                    {category.description}
+                  </p>
+                  <p className="font-body text-xs text-text-secondary uppercase tracking-wide">
+                    {category.variants.length} variant{category.variants.length !== 1 ? 's' : ''}
+                  </p>
+                </div>
+
+                {/* Hover Indicator */}
+                <div className="mt-6 inline-flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="font-body text-sm">Explore</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    className="group-hover:translate-x-1 transition-transform"
+                  >
+                    <path d="M6 12l6-6m0 0L6 0" strokeWidth="1.5" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-16 px-6 md:px-8 mt-24">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-text-secondary text-sm leading-relaxed">
-            Engineered in Switzerland. Sourced in India. Crafted with care.
-          </p>
-        </div>
-      </footer>
+      {/* Footer Note */}
+      <section className="max-w-7xl mx-auto px-6 py-16 border-t border-border">
+        <p className="font-body text-text-secondary text-sm leading-relaxed max-w-2xl">
+          Every product is sourced directly from Indian farmers, artisans, and cooperatives who have perfected their craft across generations. We bring these essences to you with Swiss precision, transparency, and respect.
+        </p>
+      </section>
     </main>
   )
 }
