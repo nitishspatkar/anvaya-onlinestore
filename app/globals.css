@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Fresh & Hopeful Botanical Palette */
-  --background: #FAFAF8;
+  /* Plant Explore Inspired: Soft, Calm, Minimal */
+  --background: #F5F3F0;
   --foreground: #1A1A1A;
   --text-primary: #1A1A1A;
   --text-secondary: #7A7A7A;
@@ -19,7 +19,7 @@
   --card-foreground: #1A1A1A;
   
   /* UI Tokens */
-  --border: #E5E5E3;
+  --border: #E8E5E0;
   --input: #FAFAF8;
   --ring: #2D7A3F;
   --popover: #FAFAF8;
@@ -32,14 +32,14 @@
   --accent-foreground: #1A1A1A;
   --destructive: #D46A4A;
   --destructive-foreground: #FAFAF8;
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   --sidebar: #FAFAF8;
   --sidebar-foreground: #1A1A1A;
   --sidebar-primary: #2D7A3F;
   --sidebar-primary-foreground: #FAFAF8;
   --sidebar-accent: #D4835C;
   --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #E5E5E3;
+  --sidebar-border: #E8E5E0;
   --sidebar-ring: #2D7A3F;
 }
 

@@ -34,7 +34,7 @@ export function PreOrderModal({ variant, category }: PreOrderModalProps) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="w-full py-3 px-4 bg-primary text-primary-foreground rounded-xl font-body font-medium active:opacity-80 transition-opacity"
+        className="w-full py-4 px-6 bg-primary text-primary-foreground rounded-2xl font-body font-semibold text-lg active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
       >
         Pre-Order Now
       </button>

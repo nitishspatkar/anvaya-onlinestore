@@ -43,17 +43,17 @@ export default function HomePage() {
           Customer Favourites
         </h3>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-5">
           {featured.map((product) => (
             <Link
               key={product.id}
               href={`/categories/${product.categoryId}/products/${product.variantId}`}
               className="group active:scale-95 transition-transform duration-200"
             >
-              <div className="space-y-3 h-full flex flex-col">
+              <div className="space-y-3 h-full flex flex-col bg-white rounded-3xl p-4 border border-border/40 shadow-sm hover:shadow-md transition-shadow">
                 {/* Product Placeholder */}
-                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm flex-shrink-0">
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+                <div className="relative w-full aspect-square bg-muted/40 rounded-2xl overflow-hidden flex-shrink-0">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/20">
                     <div className="text-center">
                       <div className="text-3xl mb-2">✨</div>
                       <span className="text-text-secondary text-xs font-medium px-2">{product.type}</span>
@@ -62,15 +62,15 @@ export default function HomePage() {
                 </div>
 
                 {/* Product Info */}
-                <div className="flex-1">
+                <div className="flex-1 pt-1">
                   <h4 className="font-serif text-base font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
                     {product.name}
                   </h4>
                   <p className="font-body text-xs text-text-secondary leading-relaxed mb-3">
                     {product.description}
                   </p>
-                  <p className="font-body text-xs text-text-secondary font-medium">
-                    Pre-order now →
+                  <p className="font-body text-xs text-text-secondary font-medium text-primary">
+                    Pre-order →
                   </p>
                 </div>
               </div>
@@ -85,29 +85,29 @@ export default function HomePage() {
           Collections
         </h3>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-5">
           {categories.map((category) => (
             <Link
               key={category.id}
               href={`/categories/${category.id}`}
               className="group active:scale-95 transition-transform duration-200"
             >
-              <div className="space-y-3 h-full">
+              <div className="space-y-3 h-full flex flex-col bg-white rounded-3xl p-4 border border-border/40 shadow-sm hover:shadow-md transition-shadow">
                 {/* Image Placeholder */}
-                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm">
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-                    <span className="text-text-secondary text-sm font-medium">
+                <div className="relative w-full aspect-square bg-muted/40 rounded-2xl overflow-hidden flex-shrink-0">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/20">
+                    <span className="text-text-secondary text-xs font-medium">
                       {category.name}
                     </span>
                   </div>
                 </div>
 
                 {/* Name & Count */}
-                <div className="space-y-1">
-                  <h4 className="font-serif text-lg font-semibold text-text-primary group-hover:text-primary transition-colors">
+                <div className="flex-1 pt-1">
+                  <h4 className="font-serif text-base font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
                     {category.name}
                   </h4>
-                  <p className="font-body text-sm text-text-secondary">
+                  <p className="font-body text-xs text-text-secondary">
                     {category.variants.length} items
                   </p>
                 </div>

@@ -81,34 +81,34 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           Our Forms
         </h2>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-5">
           {category.variants.map((variant) => (
             <Link
               key={variant.id}
               href={`/categories/${category.id}/products/${variant.id}`}
               className="group active:scale-95 transition-transform duration-200"
             >
-              <div className="space-y-3 h-full flex flex-col">
+              <div className="space-y-3 h-full flex flex-col bg-white rounded-3xl p-4 border border-border/40 shadow-sm hover:shadow-md transition-shadow">
                 {/* Image/Video Placeholder */}
-                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm flex-shrink-0">
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+                <div className="relative w-full aspect-square bg-muted/40 rounded-2xl overflow-hidden flex-shrink-0">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/20">
                     <div className="text-center">
-                      <div className="text-2xl mb-2">📦</div>
+                      <div className="text-3xl mb-2">✨</div>
                       <span className="text-text-secondary text-xs font-medium px-2">{variant.type}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Product Info */}
-                <div className="flex-1">
-                  <h3 className="font-serif text-lg font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
+                <div className="flex-1 pt-1">
+                  <h3 className="font-serif text-base font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
                     {variant.name}
                   </h3>
-                  <p className="font-body text-sm text-text-secondary mb-3 leading-relaxed">
+                  <p className="font-body text-xs text-text-secondary mb-3 leading-relaxed">
                     {variant.description}
                   </p>
-                  <p className="font-body text-xs text-text-secondary font-medium">
-                    How to use →
+                  <p className="font-body text-xs text-text-secondary font-medium text-primary">
+                    Explore →
                   </p>
                 </div>
               </div>
