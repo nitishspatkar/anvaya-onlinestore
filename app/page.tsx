@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { getAllCategories, getFeaturedProducts, getCategoryById } from '@/lib/products'
 
 export const metadata = {
-  title: 'Anvaya — Rare Botanicals from India',
-  description: 'Pre-order rare botanical essences sourced directly from Indian farmers and artisans.',
+  title: 'Anvaya — Botanical Essences from India',
+  description: 'Pre-order authentic botanical essences directly sourced from Indian farmers and artisans. Direct trade, transparent, made by hand.',
 }
 
 export default function HomePage() {
@@ -29,10 +29,10 @@ export default function HomePage() {
       <section className="px-4 py-8">
         <div className="space-y-3">
           <h2 className="font-serif text-4xl font-bold text-text-primary leading-tight">
-            Botanical essences, crafted by hand
+            Authentic essences, directly from makers
           </h2>
           <p className="font-body text-base text-text-secondary leading-relaxed max-w-md">
-            Pre-order direct from artisans and farmers. Authentic, transparent, fresh.
+            Pre-order directly from Indian farmers and artisans. No middlemen. Complete transparency. Everything handcrafted.
           </p>
         </div>
       </section>
@@ -40,7 +40,7 @@ export default function HomePage() {
       {/* Best Selling & Most Loved Products */}
       <section className="px-4 py-8">
         <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
-          Best Selling & Most Loved
+          Customer Favourites
         </h3>
 
         <div className="grid grid-cols-2 gap-4">
@@ -123,28 +123,33 @@ export default function HomePage() {
           <h3 className="font-serif text-2xl font-bold text-text-primary">
             What Anvaya Stands For
           </h3>
-          <p className="font-body text-base text-text-secondary leading-relaxed">
-            We believe in empowering grassroot farmers and artisanal producers. Every product tells a story of tradition, craft, and care. We connect you directly with the makers who pour their knowledge into creating unique botanical essences the world should know about.
-          </p>
-          <p className="font-body text-sm text-text-secondary italic">
-            Fair trade. Direct. Transparent. Always.
-          </p>
+          <div className="space-y-4">
+            <p className="font-body text-base text-text-secondary leading-relaxed">
+              <span className="font-semibold text-text-primary">Anvaya</span> means "interconnectedness" in Sanskrit—a philosophy we live by. It's not just our name; it's our promise. Every essence we offer represents the interconnected relationship between farmers, artisans, nature, and you.
+            </p>
+            <p className="font-body text-base text-text-secondary leading-relaxed">
+              We empower grassroot producers and small-scale farmers by creating direct channels to global audiences. Their knowledge, craftsmanship, and dedication deserve recognition. Our role is simple: connect authentic makers with people who value quality and transparency.
+            </p>
+            <p className="font-body text-sm text-text-secondary italic">
+              Direct trade. Fair terms. Complete transparency. Always.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Custom Gift Packs Section */}
       <section className="px-4 py-10 mt-4">
         <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
-          Create Custom Gift Packs
+          Curated Collections & Gift Sets
         </h3>
         <p className="font-body text-base text-text-secondary leading-relaxed mb-6">
-          Mix and match essences from different collections to create your own curated gift. Available on pre-order.
+          Create your own collection by mixing essences across different categories. Perfect for gifting or building your personal ritual cabinet. Pre-order your curated set.
         </p>
         <Link
           href="#"
           className="block w-full py-5 px-6 bg-white border-2 border-primary text-primary rounded-2xl font-body font-semibold text-center active:scale-95 transition-transform duration-200"
         >
-          Build Your Pack
+          Discover Collections
         </Link>
       </section>
 
