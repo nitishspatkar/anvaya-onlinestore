@@ -67,15 +67,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       {/* Product Image */}
       <section className="px-4 py-4">
-        <div className="relative w-full aspect-square bg-accent-blush rounded-2xl overflow-hidden border border-border/50 mb-6">
-          <Image
-            src={`/images/products/${variant.id.split('-').slice(0, -1).join('-') || variant.id}.jpg`}
-            alt={variant.name}
-            width={500}
-            height={500}
-            className="w-full h-full object-cover"
-            priority
-          />
+        <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 mb-6">
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+            <span className="text-text-secondary text-sm font-medium">{variant.name}</span>
+          </div>
         </div>
       </section>
 
@@ -85,22 +80,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-1">
             {variant.type}
           </p>
-          <h1 className="font-serif text-3xl text-text-primary mb-2">
+          <h1 className="font-serif text-3xl text-text-primary mb-4">
             {variant.name}
           </h1>
-          <p className="font-body text-sm text-text-secondary leading-relaxed">
+          <p className="font-body text-base text-text-secondary leading-relaxed">
             {variant.description}
-          </p>
-        </div>
-
-        {/* Maker Quick Info */}
-        <div className="bg-accent-blush/30 rounded-xl p-4">
-          <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-2">Made by</p>
-          <p className="font-serif text-base text-text-primary">
-            {variant.maker.name}
-          </p>
-          <p className="font-body text-xs text-text-secondary mt-1">
-            {variant.maker.location}
           </p>
         </div>
       </section>
@@ -117,13 +101,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="px-4 py-8 border-t border-border">
         <div className="space-y-6">
           <div className="relative w-full aspect-square bg-accent-blush rounded-2xl overflow-hidden border border-border/50">
-            <Image
-              src={`/images/portraits/${variant.maker.portraitId}.jpg`}
-              alt={variant.maker.name}
-              width={400}
-              height={400}
-              className="w-full h-full object-cover"
-            />
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+              <span className="text-text-secondary text-sm font-medium">Maker Portrait</span>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -139,61 +119,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </p>
             </div>
 
-            <p className="font-body text-sm text-text-secondary leading-relaxed">
+            <p className="font-body text-base text-text-secondary leading-relaxed">
               {variant.maker.brief}
             </p>
           </div>
         </div>
       </section>
-
-      {/* Why This Product */}
-      <section className="px-4 py-8 border-t border-border">
-        <h3 className="font-serif text-xl text-text-primary mb-4">
-          Why This Product
-        </h3>
-        <p className="font-body text-sm text-text-secondary leading-relaxed">
-          This {variant.type.toLowerCase()} from {category.name} is created with meticulous care by {variant.maker.name}. Every batch is sourced sustainably, processed traditionally, and verified to meet our standards of quality and purity. This is more than a product — it's a direct connection to the people and land that created it.
-        </p>
-      </section>
-
-      {/* Other Variants */}
-      {otherVariants.length > 0 && (
-        <section className="px-4 py-8 border-t border-border">
-          <h3 className="font-serif text-xl text-text-primary mb-4">
-            More from {category.name}
-          </h3>
-          <div className="space-y-2">
-            {otherVariants.map((v) => (
-              <Link
-                key={v.id}
-                href={`/categories/${category.id}/products/${v.id}`}
-                className="block p-3 bg-white border border-border/50 rounded-xl active:opacity-70 transition-opacity"
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex-1 min-w-0">
-                    <p className="font-serif text-sm text-text-primary">
-                      {v.name}
-                    </p>
-                    <p className="font-body text-xs text-text-secondary">
-                      {v.type}
-                    </p>
-                  </div>
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    stroke="currentColor"
-                    className="text-text-secondary flex-shrink-0"
-                  >
-                    <path d="M6 12l6-6m0 0L6 0" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
     </main>
   )
 }

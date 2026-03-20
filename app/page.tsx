@@ -28,10 +28,10 @@ export default function HomePage() {
       <section className="px-4 py-8">
         <div className="space-y-3">
           <h2 className="font-serif text-4xl font-bold text-text-primary leading-tight">
-            Rare botanical essences from Indian makers
+            Botanical essences, crafted by hand
           </h2>
-          <p className="font-body text-base text-text-secondary leading-relaxed max-w-sm">
-            We're accepting pre-orders now. Direct from farmers to your home.
+          <p className="font-body text-base text-text-secondary leading-relaxed max-w-md">
+            Pre-order direct from artisans and farmers. Authentic, transparent, fresh.
           </p>
         </div>
       </section>
@@ -87,6 +87,22 @@ export default function HomePage() {
             Fair trade. Direct. Transparent. Always.
           </p>
         </div>
+      </section>
+
+      {/* Custom Gift Packs Section */}
+      <section className="px-4 py-10 mt-4">
+        <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
+          Create Custom Gift Packs
+        </h3>
+        <p className="font-body text-base text-text-secondary leading-relaxed mb-6">
+          Mix and match essences from different collections to create your own curated gift. Available on pre-order.
+        </p>
+        <Link
+          href="#"
+          className="block w-full py-5 px-6 bg-white border-2 border-primary text-primary rounded-2xl font-body font-semibold text-center active:scale-95 transition-transform duration-200"
+        >
+          Build Your Pack
+        </Link>
       </section>
 
       {/* CTA Section */}
