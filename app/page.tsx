@@ -39,7 +39,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
       {/* Header - Single Logo Bar */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-border">
-        <div className="px-4 py-5 flex items-center justify-between">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-2xl font-semibold text-primary">
             Anvaya
           </h1>
@@ -48,19 +48,31 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </header>
 
       {/* Hero Section */}
-      <section className="px-4 py-6">
-        <div className="space-y-3">
-          <h2 className="font-serif text-3xl font-semibold text-text-primary leading-tight">
-            Authentic essences, directly from makers
-          </h2>
-          <p className="font-body text-sm text-text-secondary leading-relaxed max-w-md">
-            Pre-order directly from Indian farmers and artisans. No middlemen. Complete transparency. Everything handcrafted.
-          </p>
+      <section className="content-container py-8">
+        <div className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
+          <div className="detail-shell p-5 sm:p-6">
+            <div className="max-w-3xl space-y-3">
+              <h2 className="font-serif text-3xl font-semibold leading-tight text-text-primary sm:text-4xl">
+                Authentic essences, directly from makers
+              </h2>
+              <p className="font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+                Pre-order directly from Indian farmers and artisans. No middlemen. Complete transparency. Everything handcrafted.
+              </p>
+            </div>
+          </div>
+          <aside className="detail-shell hidden p-5 lg:block">
+            <p className="mb-2 text-xs uppercase tracking-wider text-text-secondary">Why this store</p>
+            <ul className="space-y-2 text-sm text-text-primary">
+              <li>Direct-from-maker sourcing model</li>
+              <li>Small-batch inventory and freshness</li>
+              <li>Transparent pre-order pricing</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
       <section className="sticky top-20 z-30 border-y border-border bg-background/95 px-4 py-3 backdrop-blur-sm">
-        <div className="flex gap-2 overflow-x-auto">
+        <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto sm:px-2">
           {featuredFilters.map((item) => {
             const isActive = item.id === activeFilter
             return (
@@ -81,16 +93,16 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </section>
 
       {/* Best Selling & Most Loved Products */}
-      <section className="px-4 py-6">
+      <section className="content-container py-8">
         <h3 className="font-serif text-xl font-semibold text-text-primary mb-4">
           Customer Favourites
         </h3>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {filteredFeatured.map((product) => (
             <article
               key={product.id}
-              className="group h-full rounded-2xl border border-border/60 bg-white p-3 shadow-sm"
+              className="group flex h-full flex-col rounded-2xl border border-border/60 bg-white p-3 shadow-sm sm:p-4"
             >
               <ScrollRestoreLink
                 storageKey="home-scroll-y"
@@ -109,14 +121,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </ScrollRestoreLink>
 
               {/* Product Info */}
-              <div className="flex-1 pt-2">
+              <div className="flex flex-1 flex-col pt-2">
                 <h4 className="font-serif text-sm font-semibold text-text-primary group-hover:text-primary transition-colors mb-1 line-clamp-1">
                   {product.name}
                 </h4>
                 <p className="font-body text-[11px] text-text-secondary mb-3 line-clamp-1">
                   {product.type}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="mt-auto flex items-center justify-between">
                   <p className="font-body text-sm font-semibold text-primary">
                     Pre-order
                   </p>
@@ -129,18 +141,18 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </section>
 
       {/* Categories Grid - No Horizontal Scroll */}
-      <section className="px-4 py-6">
+      <section className="content-container py-8">
         <h3 className="font-serif text-xl font-semibold text-text-primary mb-4">
           Collections
         </h3>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((category) => (
             <ScrollRestoreLink
               key={category.id}
               storageKey="home-scroll-y"
               href={`/categories/${category.id}`}
-              className="group h-full rounded-2xl border border-border/60 bg-white p-3 shadow-sm transition-transform active:scale-[0.99]"
+              className="group flex h-full flex-col rounded-2xl border border-border/60 bg-white p-3 shadow-sm transition-transform active:scale-[0.99] sm:p-4"
             >
               {/* Image Placeholder */}
               <div className="relative w-full aspect-square bg-muted/40 rounded-xl overflow-hidden flex-shrink-0">
@@ -152,7 +164,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </div>
 
               {/* Name & Count */}
-              <div className="flex-1 pt-2">
+              <div className="mt-auto pt-2">
                 <h4 className="font-serif text-sm font-semibold text-text-primary group-hover:text-primary transition-colors mb-1">
                   {category.name}
                 </h4>
@@ -166,7 +178,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </section>
 
       {/* What Anvaya Stands For Section */}
-      <section className="px-4 py-8 mt-2">
+      <section className="content-container mt-2 py-8">
         <div className="bg-gradient-to-br from-primary/10 to-accent-warm/5 rounded-2xl p-5 space-y-4 border border-primary/10">
           <h3 className="font-serif text-xl font-semibold text-text-primary">
             What Anvaya Stands For
@@ -186,7 +198,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </section>
 
       {/* Custom Gift Packs Section */}
-      <section className="px-4 py-8 mt-2">
+      <section className="content-container mt-2 py-8">
         <h3 className="font-serif text-xl font-semibold text-text-primary mb-4">
           Curated Collections & Gift Sets
         </h3>
@@ -202,10 +214,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 pt-6 pb-4">
+      <section className="content-container pb-4 pt-6">
         <Link
           href={`/categories/${categories[0]?.id || '#'}`}
-          className="block w-full py-4 px-5 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground rounded-xl font-body font-semibold text-center active:scale-95 transition-transform duration-200 shadow-lg"
+          className="block w-full rounded-xl bg-gradient-to-r from-primary to-primary/90 px-5 py-4 text-center font-body font-semibold text-primary-foreground shadow-lg transition-transform duration-200 active:scale-95 sm:max-w-sm"
         >
           Explore Collections
         </Link>

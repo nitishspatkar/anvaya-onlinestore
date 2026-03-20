@@ -5,9 +5,9 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white/50 backdrop-blur-sm">
-      <div className="px-4 py-12 max-w-7xl mx-auto">
+      <div className="content-container py-12 lg:py-16">
         {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-12 mb-10">
           {/* About */}
           <div className="col-span-2 md:col-span-1">
             <h4 className="font-serif text-lg font-bold text-text-primary mb-3">
@@ -92,13 +92,13 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-border pt-8 mb-6">
+        <div className="mb-8 border-t border-border pt-8">
           {/* Newsletter Signup */}
-          <div className="max-w-sm mb-6">
+          <div className="mb-4 max-w-md">
             <p className="font-body text-sm text-text-primary font-medium mb-3">
               Stay informed about new essences and collections
             </p>
-            <form className="flex gap-2">
+            <form className="flex max-w-md gap-2">
               <input
                 type="email"
                 placeholder="Your email"
@@ -115,7 +115,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
           <p className="font-body text-xs text-text-secondary">
             © 2024 Anvaya. All rights reserved.
           </p>
