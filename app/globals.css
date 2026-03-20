@@ -4,43 +4,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Swiss Aesthetic Color Palette */
-  --background: #F7F4EF;
-  --foreground: #2C2420;
-  --text-primary: #2C2420;
-  --text-secondary: #6B6460;
-  --primary: #2D4A3E;
-  --primary-foreground: #F7F4EF;
-  --accent-warm: #C8A882;
-  --accent-gold: #B8985A;
-  --accent-blush: #E8D5C0;
-  --accent-terracotta: #C06040;
-  --card: #F7F4EF;
-  --card-foreground: #2C2420;
+  /* Fresh & Hopeful Botanical Palette */
+  --background: #FAFAF8;
+  --foreground: #1A1A1A;
+  --text-primary: #1A1A1A;
+  --text-secondary: #7A7A7A;
+  --primary: #2D7A3F;
+  --primary-foreground: #FAFAF8;
+  --accent-warm: #D4835C;
+  --accent-gold: #E8A852;
+  --accent-blush: #F5E5D3;
+  --accent-terracotta: #D46A4A;
+  --card: #FAFAF8;
+  --card-foreground: #1A1A1A;
   
   /* UI Tokens */
-  --border: #D4C4B8;
-  --input: #F7F4EF;
-  --ring: #2D4A3E;
-  --popover: #F7F4EF;
-  --popover-foreground: #2C2420;
-  --secondary: #C8A882;
-  --secondary-foreground: #2C2420;
-  --muted: #E8D5C0;
-  --muted-foreground: #8B7B6F;
-  --accent: #C06040;
-  --accent-foreground: #F7F4EF;
-  --destructive: #C06040;
-  --destructive-foreground: #F7F4EF;
-  --radius: 0.375rem;
-  --sidebar: #F7F4EF;
-  --sidebar-foreground: #2C2420;
-  --sidebar-primary: #2D4A3E;
-  --sidebar-primary-foreground: #F7F4EF;
-  --sidebar-accent: #C8A882;
-  --sidebar-accent-foreground: #2C2420;
-  --sidebar-border: #D4C4B8;
-  --sidebar-ring: #2D4A3E;
+  --border: #E5E5E3;
+  --input: #FAFAF8;
+  --ring: #2D7A3F;
+  --popover: #FAFAF8;
+  --popover-foreground: #1A1A1A;
+  --secondary: #D4835C;
+  --secondary-foreground: #1A1A1A;
+  --muted: #F0EBE7;
+  --muted-foreground: #9A9A9A;
+  --accent: #D4835C;
+  --accent-foreground: #1A1A1A;
+  --destructive: #D46A4A;
+  --destructive-foreground: #FAFAF8;
+  --radius: 0.5rem;
+  --sidebar: #FAFAF8;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #2D7A3F;
+  --sidebar-primary-foreground: #FAFAF8;
+  --sidebar-accent: #D4835C;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E5E5E3;
+  --sidebar-ring: #2D7A3F;
 }
 
 @theme inline {
@@ -99,14 +99,14 @@
     @apply bg-background text-text-primary;
     font-family: var(--font-body), system-ui, sans-serif;
     line-height: 1.6;
-    letter-spacing: 0.3px;
+    letter-spacing: 0px;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display), serif;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
   
   h1 {
