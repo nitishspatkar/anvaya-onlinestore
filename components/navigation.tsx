@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { CartCountBadge } from '@/components/cart-count-badge'
 
 export function Navigation() {
   const pathname = usePathname()
@@ -18,15 +19,18 @@ export function Navigation() {
         </Link>
 
         {/* Breadcrumb Navigation */}
-        {!isHome && (
-          <div className="flex items-center gap-2 text-sm text-text-secondary">
-            <Link href="/" className="hover:text-primary transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-text-primary">Explore</span>
-          </div>
-        )}
+        <div className="flex items-center gap-4">
+          {!isHome && (
+            <div className="hidden sm:flex items-center gap-2 text-sm text-text-secondary">
+              <Link href="/" className="hover:text-primary transition-colors">
+                Home
+              </Link>
+              <span>/</span>
+              <span className="text-text-primary">Explore</span>
+            </div>
+          )}
+          <CartCountBadge />
+        </div>
       </nav>
     </header>
   )

@@ -1,7 +1,6 @@
 import { getCategoryById, getAllCategories } from '@/lib/products'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { CartCountBadge } from '@/components/cart-count-badge'
 import { QuickAddButton } from '@/components/quick-add-button'
 import { ScrollRestore } from '@/components/scroll-restore'
 import { ScrollRestoreLink } from '@/components/scroll-restore-link'
@@ -73,7 +72,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
             </svg>
             <span className="font-body text-sm font-medium">Back</span>
           </Link>
-          <CartCountBadge />
+          <span className="text-xs uppercase tracking-wider text-text-secondary">{category.name}</span>
         </div>
       </header>
 

@@ -566,9 +566,9 @@ export interface FeaturedProduct {
   id: string
   name: string
   description: string
-  categoryId: string
-  variantId: string
+  href: string
   type: string
+  price: number
 }
 
 export const featuredProducts: FeaturedProduct[] = [
@@ -576,57 +576,57 @@ export const featuredProducts: FeaturedProduct[] = [
     id: 'ubtan-face-scrub',
     name: 'Ubtan Face Scrub',
     description: 'Traditional Indian face scrub with natural exfoliating properties.',
-    categoryId: 'turmeric',
-    variantId: 'turmeric-powder',
-    type: 'Face Scrub'
+    href: '/categories/turmeric/products/turmeric-powder',
+    type: 'Face Scrub',
+    price: 18.99
   },
   {
     id: 'gulkand-rose-marmalade',
     name: 'Gulkand Rose Marmalade',
     description: 'Delicious preserve with cooling and soothing properties.',
-    categoryId: 'rose',
-    variantId: 'rose-marmalade',
-    type: 'Preserve'
+    href: '/categories/rose/products/rose-marmalade',
+    type: 'Preserve',
+    price: 24.99
   },
   {
     id: 'vetiver-water-sachet',
     name: 'Vetiver Root Sachet',
     description: 'Refreshing natural cooling sachet for water and home fragrancing.',
-    categoryId: 'vetiver',
-    variantId: 'vetiver-roots',
-    type: 'Sachet'
+    href: '/categories/vetiver/products/vetiver-roots',
+    type: 'Sachet',
+    price: 24.99
   },
   {
     id: 'ayurvedic-ginger-shots',
     name: 'Ayurvedic Ginger Shots',
     description: 'Potent health booster made with traditional spices.',
-    categoryId: 'turmeric',
-    variantId: 'turmeric-powder',
-    type: 'Health Shot'
+    href: '/categories/turmeric/products/turmeric-powder',
+    type: 'Health Shot',
+    price: 18.99
   },
   {
     id: 'kasturi-face-care',
     name: 'Kasturi Manjal Face Care',
     description: 'Wild turmeric for brightening and anti-bacterial skin benefits.',
-    categoryId: 'kasturi-manjal',
-    variantId: 'kasturi-powder',
-    type: 'Face Care'
+    href: '/categories/kasturi-manjal/products/kasturi-powder',
+    type: 'Face Care',
+    price: 19.99
   },
   {
     id: 'kokum-butter',
     name: 'Kokum Butter',
     description: 'Natural, rich moisturizer for deep hydration and skin care.',
-    categoryId: 'kokum',
-    variantId: 'kokum-butter',
-    type: 'Body Butter'
+    href: '/categories/kokum/products/kokum-butter',
+    type: 'Body Butter',
+    price: 22.99
   },
   {
     id: 'soap-berries-diy',
     name: 'Soap Berries DIY Kit',
     description: 'Make your own natural soap with whole soap berries.',
-    categoryId: 'soap-berries',
-    variantId: 'soap-berries-whole',
-    type: 'DIY Kit'
+    href: '/categories/soap-berries/products/soap-berries-whole',
+    type: 'DIY Kit',
+    price: 16.99
   }
 ]
 

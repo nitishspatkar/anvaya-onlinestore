@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { getAllCategories, getFeaturedProducts } from '@/lib/products'
-import { CartCountBadge } from '@/components/cart-count-badge'
 import { QuickAddButton } from '@/components/quick-add-button'
 import { ScrollRestore } from '@/components/scroll-restore'
 import { ScrollRestoreLink } from '@/components/scroll-restore-link'
@@ -36,16 +35,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   return (
     <main className="min-h-screen bg-background pb-24">
       <ScrollRestore storageKey="home-scroll-y" />
-
-      {/* Header - Single Logo Bar */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-border">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <h1 className="font-serif text-2xl font-semibold text-primary">
-            Anvaya
-          </h1>
-          <CartCountBadge />
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="content-container py-8">
@@ -106,7 +95,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             >
               <ScrollRestoreLink
                 storageKey="home-scroll-y"
-                href={`/categories/${product.categoryId}/products/${product.variantId}`}
+                href={product.href}
                 className="block"
               >
                 {/* Product Placeholder */}
