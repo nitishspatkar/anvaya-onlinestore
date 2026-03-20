@@ -40,9 +40,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-background pb-20">
+    <main className="min-h-screen bg-background pb-24">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-gradient-to-r from-primary/5 to-transparent backdrop-blur-sm border-b border-border px-4 py-4">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-border px-4 py-4">
         <Link href="/" className="inline-flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M12 16l-8-8m0 0l8-8" strokeLinecap="round" strokeLinejoin="round" />
@@ -53,15 +53,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Hero Section */}
       <section className="px-4 py-8">
-        <div className="relative w-full aspect-[4/3] bg-accent-blush rounded-2xl overflow-hidden border border-border/30 shadow-md mb-8">
-          <Image
-            src={`/images/categories/${category.imageId}.jpg`}
-            alt={category.name}
-            width={500}
-            height={400}
-            className="w-full h-full object-cover"
-            priority
-          />
+        {/* Image Placeholder */}
+        <div className="relative w-full aspect-[4/3] bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-md mb-8">
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+            <span className="text-text-secondary text-sm font-medium">{category.name}</span>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -74,7 +70,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <div className="flex flex-wrap items-center gap-4 text-sm text-text-secondary pt-2 border-t border-border/30">
             <span className="font-body">{category.region}</span>
             <span className="text-border">•</span>
-            <span className="font-body">{category.variants.length} variants available</span>
+            <span className="font-body">{category.variants.length} variants</span>
           </div>
         </div>
       </section>
@@ -85,41 +81,36 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           Available Forms
         </h2>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
           {category.variants.map((variant) => (
             <Link
               key={variant.id}
               href={`/categories/${category.id}/products/${variant.id}`}
-              className="block p-5 bg-white border border-border/30 rounded-2xl active:scale-95 transition-all duration-200 hover:border-primary/50 hover:shadow-md"
+              className="group active:scale-95 transition-transform duration-200"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-serif text-lg font-semibold text-text-primary">
-                      {variant.name}
-                    </h3>
-                    <span className="font-body text-xs font-medium text-primary bg-primary/10 rounded-full px-3 py-1">
-                      {variant.type}
-                    </span>
+              <div className="space-y-3 h-full flex flex-col">
+                {/* Image/Video Placeholder */}
+                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm flex-shrink-0">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+                    <div className="text-center">
+                      <div className="text-2xl mb-2">📦</div>
+                      <span className="text-text-secondary text-xs font-medium px-2">{variant.type}</span>
+                    </div>
                   </div>
-                  <p className="font-body text-sm text-text-secondary mb-3 line-clamp-2">
+                </div>
+
+                {/* Product Info */}
+                <div className="flex-1">
+                  <h3 className="font-serif text-lg font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
+                    {variant.name}
+                  </h3>
+                  <p className="font-body text-xs text-text-secondary mb-3 line-clamp-2">
                     {variant.description}
                   </p>
-                  <p className="font-body text-xs text-text-secondary">
-                    <span className="font-medium text-primary">Maker:</span> {variant.maker.name}
+                  <p className="font-body text-xs text-text-secondary font-medium">
+                    How to use →
                   </p>
                 </div>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  className="text-primary flex-shrink-0 mt-1"
-                  strokeWidth="1.5"
-                >
-                  <path d="M6 12l6-6m0 0L6 0" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
               </div>
             </Link>
           ))}
@@ -133,7 +124,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             Pre-Order Only
           </p>
           <p className="font-body text-base text-text-primary leading-relaxed">
-            Each batch is made fresh to order. Select a variant to place your pre-order and discover the story behind your essences.
+            Select a form to explore how it's used and place your pre-order.
           </p>
         </div>
       </section>
