@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { getAllCategories } from '@/lib/products'
+import { getAllCategories, getFeaturedProducts, getCategoryById } from '@/lib/products'
 
 export const metadata = {
   title: 'Anvaya — Rare Botanicals from India',
@@ -9,6 +9,7 @@ export const metadata = {
 
 export default function HomePage() {
   const categories = getAllCategories()
+  const featured = getFeaturedProducts()
 
   return (
     <main className="min-h-screen bg-background pb-24">
@@ -66,6 +67,48 @@ export default function HomePage() {
                   </h4>
                   <p className="font-body text-sm text-text-secondary">
                     {category.variants.length} items
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Best Selling & Most Loved Products */}
+      <section className="px-4 py-10 mt-4">
+        <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
+          Best Selling & Most Loved
+        </h3>
+
+        <div className="grid grid-cols-2 gap-4">
+          {featured.map((product) => (
+            <Link
+              key={product.id}
+              href={`/categories/${product.categoryId}/products/${product.variantId}`}
+              className="group active:scale-95 transition-transform duration-200"
+            >
+              <div className="space-y-3 h-full flex flex-col">
+                {/* Product Placeholder */}
+                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm flex-shrink-0">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+                    <div className="text-center">
+                      <div className="text-3xl mb-2">✨</div>
+                      <span className="text-text-secondary text-xs font-medium px-2">{product.type}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Product Info */}
+                <div className="flex-1">
+                  <h4 className="font-serif text-base font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
+                    {product.name}
+                  </h4>
+                  <p className="font-body text-xs text-text-secondary leading-relaxed mb-3">
+                    {product.description}
+                  </p>
+                  <p className="font-body text-xs text-text-secondary font-medium">
+                    Pre-order now →
                   </p>
                 </div>
               </div>
