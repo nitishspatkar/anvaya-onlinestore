@@ -554,3 +554,75 @@ export function getProductsByCategory(categoryId: string): ProductVariant[] | un
   const category = getCategoryById(categoryId)
   return category?.variants
 }
+
+export interface FeaturedProduct {
+  id: string
+  name: string
+  description: string
+  categoryId: string
+  variantId: string
+  type: string
+}
+
+export const featuredProducts: FeaturedProduct[] = [
+  {
+    id: 'ubtan-face-scrub',
+    name: 'Ubtan Face Scrub',
+    description: 'Traditional Indian face scrub with natural exfoliating properties.',
+    categoryId: 'turmeric',
+    variantId: 'turmeric-powder',
+    type: 'Face Scrub'
+  },
+  {
+    id: 'gulkand-rose-marmalade',
+    name: 'Gulkand Rose Marmalade',
+    description: 'Delicious preserve with cooling and soothing properties.',
+    categoryId: 'rose',
+    variantId: 'rose-marmalade',
+    type: 'Preserve'
+  },
+  {
+    id: 'vetiver-water-sachet',
+    name: 'Vetiver Root Sachet',
+    description: 'Refreshing natural cooling sachet for water and home fragrancing.',
+    categoryId: 'vetiver',
+    variantId: 'vetiver-roots',
+    type: 'Sachet'
+  },
+  {
+    id: 'ayurvedic-ginger-shots',
+    name: 'Ayurvedic Ginger Shots',
+    description: 'Potent health booster made with traditional spices.',
+    categoryId: 'turmeric',
+    variantId: 'turmeric-powder',
+    type: 'Health Shot'
+  },
+  {
+    id: 'kasturi-face-care',
+    name: 'Kasturi Manjal Face Care',
+    description: 'Wild turmeric for brightening and anti-bacterial skin benefits.',
+    categoryId: 'kasturi-manjal',
+    variantId: 'kasturi-powder',
+    type: 'Face Care'
+  },
+  {
+    id: 'kokum-butter',
+    name: 'Kokum Butter',
+    description: 'Natural, rich moisturizer for deep hydration and skin care.',
+    categoryId: 'kokum',
+    variantId: 'kokum-butter',
+    type: 'Body Butter'
+  },
+  {
+    id: 'soap-berries-diy',
+    name: 'Soap Berries DIY Kit',
+    description: 'Make your own natural soap with whole soap berries.',
+    categoryId: 'soap-berries',
+    variantId: 'soap-berries-whole',
+    type: 'DIY Kit'
+  }
+]
+
+export function getFeaturedProducts(): FeaturedProduct[] {
+  return featuredProducts
+}

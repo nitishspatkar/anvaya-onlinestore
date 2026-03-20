@@ -78,7 +78,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       {/* Products Grid */}
       <section className="px-4 py-8">
         <h2 className="font-serif text-2xl font-bold text-text-primary mb-6">
-          Available Forms
+          Our Forms
         </h2>
 
         <div className="grid grid-cols-2 gap-4">
@@ -104,7 +104,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   <h3 className="font-serif text-lg font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
                     {variant.name}
                   </h3>
-                  <p className="font-body text-xs text-text-secondary mb-3 line-clamp-2">
+                  <p className="font-body text-sm text-text-secondary mb-3 leading-relaxed">
                     {variant.description}
                   </p>
                   <p className="font-body text-xs text-text-secondary font-medium">
