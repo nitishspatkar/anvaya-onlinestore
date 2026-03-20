@@ -149,43 +149,4 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div>
     </main>
   )
-
-      {/* Pre-Order CTA */}
-      <section className="px-4 py-4 sticky bottom-0 z-30 bg-background border-t border-border">
-        <PreOrderModal 
-          variant={variant}
-          category={category}
-        />
-      </section>
-
-      {/* Maker Full Story */}
-      <section className="px-4 py-8 border-t border-border">
-        <div className="space-y-6">
-          <div className="relative w-full aspect-square bg-accent-blush rounded-2xl overflow-hidden border border-border/50">
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-              <span className="text-text-secondary text-sm font-medium">Maker Portrait</span>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-1">
-                Meet the Maker
-              </p>
-              <h2 className="font-serif text-2xl text-text-primary">
-                {variant.maker.name}
-              </h2>
-              <p className="font-body text-sm text-text-secondary mt-1">
-                {variant.maker.role} • {variant.maker.location}
-              </p>
-            </div>
-
-            <p className="font-body text-base text-text-secondary leading-relaxed">
-              {variant.maker.brief}
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-  )
 }
