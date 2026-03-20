@@ -83,36 +83,62 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
         <div className="grid grid-cols-2 gap-5">
           {category.variants.map((variant) => (
-            <Link
+            <div
               key={variant.id}
-              href={`/categories/${category.id}/products/${variant.id}`}
-              className="group active:scale-95 transition-transform duration-200"
+              className="group"
             >
-              <div className="space-y-3 h-full flex flex-col bg-white rounded-3xl p-4 border border-border/40 shadow-sm hover:shadow-md transition-shadow">
-                {/* Image/Video Placeholder */}
-                <div className="relative w-full aspect-square bg-muted/40 rounded-2xl overflow-hidden flex-shrink-0">
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/20">
-                    <div className="text-center">
-                      <div className="text-3xl mb-2">✨</div>
-                      <span className="text-text-secondary text-xs font-medium px-2">{variant.type}</span>
+              <Link
+                href={`/categories/${category.id}/products/${variant.id}`}
+                className="block active:scale-95 transition-transform duration-200"
+              >
+                <div className="bg-white rounded-3xl p-4 border border-border/40 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                  {/* Image/Video Placeholder */}
+                  <div className="relative w-full aspect-square bg-muted/40 rounded-2xl overflow-hidden flex-shrink-0 mb-3">
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/20">
+                      <div className="text-center">
+                        <div className="text-3xl mb-2">✨</div>
+                        <span className="text-text-secondary text-xs font-medium px-2">{variant.type}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Product Info */}
-                <div className="flex-1 pt-1">
-                  <h3 className="font-serif text-base font-semibold text-text-primary group-hover:text-primary transition-colors mb-2">
-                    {variant.name}
-                  </h3>
-                  <p className="font-body text-xs text-text-secondary mb-3 leading-relaxed">
-                    {variant.description}
-                  </p>
-                  <p className="font-body text-xs text-text-secondary font-medium text-primary">
-                    Explore →
-                  </p>
+                  {/* Product Info */}
+                  <div className="flex-1">
+                    <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-1">
+                      {variant.type}
+                    </p>
+                    <h3 className="font-serif text-base font-semibold text-text-primary mb-2">
+                      {variant.name}
+                    </h3>
+                    <p className="font-body text-xs text-text-secondary mb-4 leading-relaxed line-clamp-2">
+                      {variant.description}
+                    </p>
+                  </div>
+
+                  {/* Price & Button Row */}
+                  <div className="flex items-center justify-between pt-3 border-t border-border/30">
+                    <div>
+                      <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-1">Price</p>
+                      <p className="font-serif text-xl font-bold text-text-primary">
+                        CHF {variant.price?.toFixed(2) || 'TBD'}
+                      </p>
+                    </div>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        // This will trigger the PreOrderModal on product detail page
+                      }}
+                      className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+                      title="Pre-order this product"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M12 5v14m-7-7h14" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </section>
