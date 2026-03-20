@@ -37,46 +37,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Grid - No Horizontal Scroll */}
-      <section className="px-4 py-8">
-        <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
-          Collections
-        </h3>
-
-        <div className="grid grid-cols-2 gap-4">
-          {categories.map((category) => (
-            <Link
-              key={category.id}
-              href={`/categories/${category.id}`}
-              className="group active:scale-95 transition-transform duration-200"
-            >
-              <div className="space-y-3 h-full">
-                {/* Image Placeholder */}
-                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm">
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-                    <span className="text-text-secondary text-sm font-medium">
-                      {category.name}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Name & Count */}
-                <div className="space-y-1">
-                  <h4 className="font-serif text-lg font-semibold text-text-primary group-hover:text-primary transition-colors">
-                    {category.name}
-                  </h4>
-                  <p className="font-body text-sm text-text-secondary">
-                    {category.variants.length} items
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* Best Selling & Most Loved Products */}
-      <section className="px-4 py-10 mt-4">
+      <section className="px-4 py-8">
         <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
           Best Selling & Most Loved
         </h3>
@@ -109,6 +71,44 @@ export default function HomePage() {
                   </p>
                   <p className="font-body text-xs text-text-secondary font-medium">
                     Pre-order now →
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Categories Grid - No Horizontal Scroll */}
+      <section className="px-4 py-8">
+        <h3 className="font-serif text-2xl font-bold text-text-primary mb-6">
+          Collections
+        </h3>
+
+        <div className="grid grid-cols-2 gap-4">
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              href={`/categories/${category.id}`}
+              className="group active:scale-95 transition-transform duration-200"
+            >
+              <div className="space-y-3 h-full">
+                {/* Image Placeholder */}
+                <div className="relative w-full aspect-square bg-muted rounded-2xl overflow-hidden border border-border/30 shadow-sm">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+                    <span className="text-text-secondary text-sm font-medium">
+                      {category.name}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Name & Count */}
+                <div className="space-y-1">
+                  <h4 className="font-serif text-lg font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    {category.name}
+                  </h4>
+                  <p className="font-body text-sm text-text-secondary">
+                    {category.variants.length} items
                   </p>
                 </div>
               </div>
