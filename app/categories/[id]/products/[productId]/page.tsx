@@ -84,46 +84,54 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </h1>
       </section>
 
-      {/* Product Specs - Left Aligned Key-Value (Plant Explore Style) */}
-      <section className="px-4 py-6 space-y-6 border-b border-border/50">
-        <div className="space-y-4">
-          <div>
-            <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-2">
-              How to Use
-            </p>
-            <p className="font-body text-base text-text-primary leading-relaxed">
-              {variant.description}
-            </p>
-          </div>
+      {/* Product Specs - Styled Cards with Specs Section */}
+      <section className="px-4 py-8">
+        <div className="bg-white rounded-3xl p-6 border border-border/40 shadow-sm space-y-6">
+          <div className="space-y-5">
+            <div>
+              <p className="font-body text-xs text-primary uppercase tracking-wider font-semibold mb-3">
+                How to Use
+              </p>
+              <p className="font-body text-base text-text-primary leading-relaxed">
+                {variant.description}
+              </p>
+            </div>
 
-          <div>
-            <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-2">
-              Storage
-            </p>
-            <p className="font-body text-base text-text-primary">
-              Keep in a cool, dry place away from direct sunlight. Shelf life varies by product form.
-            </p>
-          </div>
+            <div className="h-px bg-border/50" />
 
-          <div>
-            <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-2">
-              Best For
-            </p>
-            <p className="font-body text-base text-text-primary">
-              {variant.type === 'Powder' ? 'Face masks, beauty rituals, culinary use.' : variant.type === 'Sachet' ? 'Refreshing water, fragrance, home rituals.' : variant.type === 'Preserve' ? 'Culinary, wellness, gifting.' : 'Daily rituals and wellness practices.'}
-            </p>
+            <div>
+              <p className="font-body text-xs text-primary uppercase tracking-wider font-semibold mb-3">
+                Storage
+              </p>
+              <p className="font-body text-base text-text-primary leading-relaxed">
+                Keep in a cool, dry place away from direct sunlight. Shelf life varies by product form.
+              </p>
+            </div>
+
+            <div className="h-px bg-border/50" />
+
+            <div>
+              <p className="font-body text-xs text-primary uppercase tracking-wider font-semibold mb-3">
+                Best For
+              </p>
+              <p className="font-body text-base text-text-primary leading-relaxed">
+                {variant.type === 'Powder' ? 'Face masks, beauty rituals, culinary use.' : variant.type === 'Sachet' ? 'Refreshing water, fragrance, home rituals.' : variant.type === 'Preserve' ? 'Culinary, wellness, gifting.' : 'Daily rituals and wellness practices.'}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="px-4 py-8 space-y-4 border-b border-border/50">
-        <h2 className="font-serif text-2xl font-bold text-text-primary">
-          About
-        </h2>
-        <p className="font-body text-base text-text-secondary leading-relaxed">
-          {variant.description} Each batch is handcrafted with care, honoring traditional methods and natural ingredients. This is more than a product—it's a direct connection to the artisans who created it.
-        </p>
+      <section className="px-4 py-8">
+        <div className="bg-white rounded-3xl p-6 border border-border/40 shadow-sm space-y-4">
+          <h2 className="font-serif text-2xl font-bold text-text-primary">
+            About
+          </h2>
+          <p className="font-body text-base text-text-secondary leading-relaxed">
+            {variant.description} Each batch is handcrafted with care, honoring traditional methods and natural ingredients. This is more than a product—it's a direct connection to the artisans who created it.
+          </p>
+        </div>
       </section>
 
       {/* Pre-Order CTA */}

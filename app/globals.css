@@ -4,43 +4,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Plant Explore Inspired: Soft, Calm, Minimal */
-  --background: #F5F3F0;
-  --foreground: #1A1A1A;
-  --text-primary: #1A1A1A;
+  /* Premium Botanical Palette: Warm Cream + Deep Green + Earthy Accents */
+  --background: #F9F6F3;
+  --foreground: #2A2A2A;
+  --text-primary: #2A2A2A;
   --text-secondary: #7A7A7A;
-  --primary: #2D7A3F;
+  --primary: #1F5C3D;
   --primary-foreground: #FAFAF8;
-  --accent-warm: #D4835C;
-  --accent-gold: #E8A852;
-  --accent-blush: #F5E5D3;
-  --accent-terracotta: #D46A4A;
+  --accent-warm: #C89968;
+  --accent-gold: #D4A574;
+  --accent-blush: #E8D4C4;
+  --accent-terracotta: #A86A54;
   --card: #FAFAF8;
-  --card-foreground: #1A1A1A;
+  --card-foreground: #2A2A2A;
   
   /* UI Tokens */
-  --border: #E8E5E0;
+  --border: #E8DFD7;
   --input: #FAFAF8;
-  --ring: #2D7A3F;
+  --ring: #1F5C3D;
   --popover: #FAFAF8;
-  --popover-foreground: #1A1A1A;
-  --secondary: #D4835C;
-  --secondary-foreground: #1A1A1A;
-  --muted: #F0EBE7;
+  --popover-foreground: #2A2A2A;
+  --secondary: #C89968;
+  --secondary-foreground: #2A2A2A;
+  --muted: #EFE9E1;
   --muted-foreground: #9A9A9A;
-  --accent: #D4835C;
-  --accent-foreground: #1A1A1A;
-  --destructive: #D46A4A;
+  --accent: #C89968;
+  --accent-foreground: #2A2A2A;
+  --destructive: #A86A54;
   --destructive-foreground: #FAFAF8;
   --radius: 0.75rem;
   --sidebar: #FAFAF8;
-  --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #2D7A3F;
+  --sidebar-foreground: #2A2A2A;
+  --sidebar-primary: #1F5C3D;
   --sidebar-primary-foreground: #FAFAF8;
-  --sidebar-accent: #D4835C;
-  --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #E8E5E0;
-  --sidebar-ring: #2D7A3F;
+  --sidebar-accent: #C89968;
+  --sidebar-accent-foreground: #2A2A2A;
+  --sidebar-border: #E8DFD7;
+  --sidebar-ring: #1F5C3D;
 }
 
 @theme inline {
