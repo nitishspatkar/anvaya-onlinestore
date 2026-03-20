@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { QuickAddToast } from '@/components/quick-add-toast'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <QuickAddToast />
         <Analytics />
       </body>
     </html>
