@@ -4,43 +4,42 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Premium Botanical Palette: Warm Cream + Deep Green + Earthy Accents */
-  --background: #F9F6F3;
-  --foreground: #2A2A2A;
-  --text-primary: #2A2A2A;
-  --text-secondary: #7A7A7A;
-  --primary: #1F5C3D;
-  --primary-foreground: #FAFAF8;
-  --accent-warm: #C89968;
-  --accent-gold: #D4A574;
-  --accent-blush: #E8D4C4;
-  --accent-terracotta: #A86A54;
-  --card: #FAFAF8;
-  --card-foreground: #2A2A2A;
+  --background: #dbe4da;
+  --foreground: #1f2c23;
+  --text-primary: #1f2c23;
+  --text-secondary: #7d837e;
+  --primary: #234c2f;
+  --primary-foreground: #f4f7f2;
+  --accent-warm: #f3f4f1;
+  --accent-gold: #a4a9a5;
+  --accent-blush: #eef2ec;
+  --accent-terracotta: #234c2f;
+  --card: #ffffff;
+  --card-foreground: #1f2c23;
   
   /* UI Tokens */
-  --border: #E8DFD7;
-  --input: #FAFAF8;
-  --ring: #1F5C3D;
-  --popover: #FAFAF8;
-  --popover-foreground: #2A2A2A;
-  --secondary: #C89968;
-  --secondary-foreground: #2A2A2A;
-  --muted: #EFE9E1;
-  --muted-foreground: #9A9A9A;
-  --accent: #C89968;
-  --accent-foreground: #2A2A2A;
-  --destructive: #A86A54;
-  --destructive-foreground: #FAFAF8;
-  --radius: 0.75rem;
-  --sidebar: #FAFAF8;
-  --sidebar-foreground: #2A2A2A;
-  --sidebar-primary: #1F5C3D;
-  --sidebar-primary-foreground: #FAFAF8;
-  --sidebar-accent: #C89968;
-  --sidebar-accent-foreground: #2A2A2A;
-  --sidebar-border: #E8DFD7;
-  --sidebar-ring: #1F5C3D;
+  --border: #e7ece6;
+  --input: #ffffff;
+  --ring: #234c2f;
+  --popover: #ffffff;
+  --popover-foreground: #1f2c23;
+  --secondary: #eef2ec;
+  --secondary-foreground: #1f2c23;
+  --muted: #f4f7f2;
+  --muted-foreground: #8d918e;
+  --accent: #eef2ec;
+  --accent-foreground: #1f2c23;
+  --destructive: #b15c42;
+  --destructive-foreground: #ffffff;
+  --radius: 1.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2c23;
+  --sidebar-primary: #234c2f;
+  --sidebar-primary-foreground: #f4f7f2;
+  --sidebar-accent: #eef2ec;
+  --sidebar-accent-foreground: #1f2c23;
+  --sidebar-border: #e7ece6;
+  --sidebar-ring: #234c2f;
 }
 
 @theme inline {
@@ -98,40 +97,67 @@
   body {
     @apply bg-background text-text-primary;
     font-family: var(--font-body), system-ui, sans-serif;
-    line-height: 1.6;
-    letter-spacing: 0px;
+    line-height: 1.45;
+    letter-spacing: 0;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display), serif;
+    font-family: var(--font-body), system-ui, sans-serif;
     font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
   
   h1 {
-    @apply text-5xl md:text-6xl;
+    @apply text-3xl md:text-4xl;
   }
   
   h2 {
-    @apply text-4xl md:text-5xl;
-  }
-  
-  h3 {
     @apply text-2xl md:text-3xl;
   }
   
-  h4 {
+  h3 {
     @apply text-xl md:text-2xl;
+  }
+  
+  h4 {
+    @apply text-lg md:text-xl;
   }
   
   p {
     font-weight: 400;
-    @apply text-lg leading-relaxed;
+    @apply text-sm leading-relaxed;
   }
   
   small {
     @apply text-sm;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .device-shell {
+    @apply w-full max-w-[24rem] rounded-[2rem] border border-white/60 bg-card p-5;
+    box-shadow: 0 28px 70px -30px rgba(35, 76, 47, 0.38);
+  }
+
+  .icon-button {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-full text-text-primary transition-colors hover:bg-muted;
+  }
+
+  .tab-label {
+    @apply text-[0.68rem] font-medium uppercase tracking-[0.08em] text-text-secondary;
+  }
+
+  .product-tile {
+    @apply overflow-hidden rounded-2xl border border-border bg-white transition-shadow hover:shadow-md;
+  }
+
+  .product-image-wrap {
+    @apply aspect-square bg-muted p-3;
+  }
+
+  .product-image {
+    @apply flex h-full items-center justify-center rounded-xl bg-white text-4xl;
   }
 }
