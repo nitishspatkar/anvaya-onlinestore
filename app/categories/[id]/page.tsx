@@ -123,18 +123,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                         CHF {variant.price?.toFixed(2) || 'TBD'}
                       </p>
                     </div>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault()
-                        // This will trigger the PreOrderModal on product detail page
-                      }}
-                      className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
-                      title="Pre-order this product"
-                    >
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M12 5v14m-7-7h14" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                    </button>
+                    </div>
                   </div>
                 </div>
               </Link>
