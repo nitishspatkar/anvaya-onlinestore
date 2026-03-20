@@ -2,6 +2,7 @@ import { getCategoryById, getProductVariantById, getAllCategories } from '@/lib/
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { PreOrderModal } from '@/components/preorder-modal'
 
 interface ProductPageProps {
   params: Promise<{ id: string; productId: string }>
@@ -49,75 +50,73 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound()
   }
 
+  const otherVariants = category.variants.filter(v => v.id !== variant.id)
+
   return (
-    <main className="min-h-screen bg-background">
-      {/* Breadcrumb Navigation */}
-      <header className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex items-center gap-2 text-sm text-text-secondary mb-8">
-            <Link href="/" className="hover:text-primary transition-colors">
-              Anvaya
-            </Link>
-            <span>/</span>
-            <Link href={`/categories/${category.id}`} className="hover:text-primary transition-colors">
-              {category.name}
-            </Link>
-            <span>/</span>
-            <span className="text-text-primary">{variant.name}</span>
-          </div>
-
-          {/* Product Hero Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {/* Product Image */}
-            <div className="relative w-full aspect-square bg-accent-blush rounded-sm overflow-hidden border border-border">
-              <Image
-                src={`/images/products/${category.id}-${variant.id}.jpg`}
-                alt={variant.name}
-                width={500}
-                height={500}
-                className="w-full h-full object-cover"
-                priority
-              />
-            </div>
-
-            {/* Product Info */}
-            <div className="flex flex-col justify-start py-4">
-              <div className="mb-6">
-                <p className="font-body text-xs text-text-secondary uppercase tracking-wide mb-2">
-                  {category.name}
-                </p>
-                <h1 className="font-serif text-5xl md:text-6xl text-text-primary mb-4">
-                  {variant.name}
-                </h1>
-                <p className="font-body text-lg text-text-secondary">
-                  {variant.description}
-                </p>
-              </div>
-
-              {/* Product Type */}
-              <div className="mt-8 pt-8 border-t border-border">
-                <p className="font-body text-xs text-text-secondary uppercase tracking-wide mb-2">
-                  Type
-                </p>
-                <p className="font-body text-lg text-text-primary">
-                  {variant.type}
-                </p>
-              </div>
-
-              {/* CTA */}
-              <button className="mt-12 w-full bg-primary text-primary-foreground font-body font-medium py-4 px-6 rounded-sm hover:bg-opacity-90 transition-all duration-300">
-                Pre-Order
-              </button>
-            </div>
-          </div>
-        </div>
+    <main className="min-h-screen bg-background pb-20">
+      {/* Mobile Header */}
+      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border px-4 py-4 flex items-center justify-between">
+        <Link href={`/categories/${category.id}`} className="text-text-secondary hover:text-text-primary transition-colors">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+            <path d="M12 16l-8-8m0 0l8-8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
+        <div className="text-xs text-text-secondary">{category.name}</div>
+        <div className="w-5" />
       </header>
 
-      {/* Maker Story Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {/* Maker Portrait */}
-          <div className="relative w-full aspect-square bg-accent-blush rounded-sm overflow-hidden border border-border">
+      {/* Product Image */}
+      <section className="px-4 py-4">
+        <div className="relative w-full aspect-square bg-accent-blush rounded-2xl overflow-hidden border border-border/50 mb-6">
+          <Image
+            src={`/images/products/${variant.id.split('-').slice(0, -1).join('-') || variant.id}.jpg`}
+            alt={variant.name}
+            width={500}
+            height={500}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </div>
+      </section>
+
+      {/* Product Info */}
+      <section className="px-4 py-4 space-y-4">
+        <div>
+          <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-1">
+            {variant.type}
+          </p>
+          <h1 className="font-serif text-3xl text-text-primary mb-2">
+            {variant.name}
+          </h1>
+          <p className="font-body text-sm text-text-secondary leading-relaxed">
+            {variant.description}
+          </p>
+        </div>
+
+        {/* Maker Quick Info */}
+        <div className="bg-accent-blush/30 rounded-xl p-4">
+          <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-2">Made by</p>
+          <p className="font-serif text-base text-text-primary">
+            {variant.maker.name}
+          </p>
+          <p className="font-body text-xs text-text-secondary mt-1">
+            {variant.maker.location}
+          </p>
+        </div>
+      </section>
+
+      {/* Pre-Order CTA */}
+      <section className="px-4 py-4 sticky bottom-0 z-30 bg-background border-t border-border">
+        <PreOrderModal 
+          variant={variant}
+          category={category}
+        />
+      </section>
+
+      {/* Maker Full Story */}
+      <section className="px-4 py-8 border-t border-border">
+        <div className="space-y-6">
+          <div className="relative w-full aspect-square bg-accent-blush rounded-2xl overflow-hidden border border-border/50">
             <Image
               src={`/images/portraits/${variant.maker.portraitId}.jpg`}
               alt={variant.maker.name}
@@ -127,95 +126,74 @@ export default async function ProductPage({ params }: ProductPageProps) {
             />
           </div>
 
-          {/* Maker Info */}
-          <div className="md:col-span-2 flex flex-col justify-center">
-            <p className="font-body text-xs text-text-secondary uppercase tracking-wide mb-4">
-              Made By
-            </p>
-            <h2 className="font-serif text-4xl text-text-primary mb-2">
-              {variant.maker.name}
-            </h2>
-            <p className="font-body text-lg text-accent-warm mb-6 uppercase tracking-wide">
-              {variant.maker.role}
-            </p>
+          <div className="space-y-4">
+            <div>
+              <p className="font-body text-xs text-text-secondary uppercase tracking-wider mb-1">
+                Meet the Maker
+              </p>
+              <h2 className="font-serif text-2xl text-text-primary">
+                {variant.maker.name}
+              </h2>
+              <p className="font-body text-sm text-text-secondary mt-1">
+                {variant.maker.role} • {variant.maker.location}
+              </p>
+            </div>
 
-            {/* Maker Brief */}
-            <p className="font-body text-text-secondary leading-relaxed mb-8">
+            <p className="font-body text-sm text-text-secondary leading-relaxed">
               {variant.maker.brief}
             </p>
-
-            {/* Maker Details */}
-            <div className="space-y-4 pt-8 border-t border-border">
-              <div>
-                <p className="font-body text-xs text-text-secondary uppercase tracking-wide mb-2">
-                  Location
-                </p>
-                <p className="font-body text-lg text-text-primary">
-                  {variant.maker.location}
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Why This Product Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
-        <div className="max-w-2xl">
-          <h3 className="font-serif text-3xl text-text-primary mb-6">
-            Why this product
-          </h3>
-          <p className="font-body text-lg text-text-secondary leading-relaxed mb-8">
-            This {variant.type.toLowerCase()} from {category.name} is created with meticulous care by {variant.maker.name}. Every batch is sourced sustainably, processed traditionally, and verified to meet our standards of quality and purity. This is more than a product — it's a direct connection to the people and land that created it.
-          </p>
-        </div>
+      {/* Why This Product */}
+      <section className="px-4 py-8 border-t border-border">
+        <h3 className="font-serif text-xl text-text-primary mb-4">
+          Why This Product
+        </h3>
+        <p className="font-body text-sm text-text-secondary leading-relaxed">
+          This {variant.type.toLowerCase()} from {category.name} is created with meticulous care by {variant.maker.name}. Every batch is sourced sustainably, processed traditionally, and verified to meet our standards of quality and purity. This is more than a product — it's a direct connection to the people and land that created it.
+        </p>
       </section>
 
-      {/* Other Variants in This Category */}
-      {category.variants.length > 1 && (
-        <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
-          <h3 className="font-serif text-3xl text-text-primary mb-8">
-            Explore other {category.name} variants
+      {/* Other Variants */}
+      {otherVariants.length > 0 && (
+        <section className="px-4 py-8 border-t border-border">
+          <h3 className="font-serif text-xl text-text-primary mb-4">
+            More from {category.name}
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.variants.map((v) => {
-              if (v.id === variant.id) return null
-              return (
-                <Link
-                  key={v.id}
-                  href={`/categories/${category.id}/products/${v.id}`}
-                  className="group"
-                >
-                  <div className="border border-border rounded-sm p-4 hover:border-primary hover:bg-accent-blush/20 transition-all duration-300">
-                    <h4 className="font-serif text-xl text-text-primary group-hover:text-primary transition-colors mb-2">
+          <div className="space-y-2">
+            {otherVariants.map((v) => (
+              <Link
+                key={v.id}
+                href={`/categories/${category.id}/products/${v.id}`}
+                className="block p-3 bg-white border border-border/50 rounded-xl active:opacity-70 transition-opacity"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex-1 min-w-0">
+                    <p className="font-serif text-sm text-text-primary">
                       {v.name}
-                    </h4>
-                    <p className="font-body text-xs text-text-secondary uppercase tracking-wide mb-3">
+                    </p>
+                    <p className="font-body text-xs text-text-secondary">
                       {v.type}
                     </p>
-                    <p className="font-body text-sm text-text-secondary line-clamp-2">
-                      {v.description}
-                    </p>
                   </div>
-                </Link>
-              )
-            })}
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    className="text-text-secondary flex-shrink-0"
+                  >
+                    <path d="M6 12l6-6m0 0L6 0" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       )}
-
-      {/* Back Navigation */}
-      <section className="max-w-7xl mx-auto px-6 py-16 border-t border-border">
-        <Link
-          href={`/categories/${category.id}`}
-          className="inline-flex items-center gap-2 text-primary hover:text-accent-warm transition-colors"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
-            <path d="M10 12l-6-6m0 0l6-6" strokeWidth="1.5" />
-          </svg>
-          <span className="font-body text-sm">Back to {category.name}</span>
-        </Link>
-      </section>
     </main>
   )
 }
