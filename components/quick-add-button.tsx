@@ -29,7 +29,10 @@ export function QuickAddButton({ label, className }: QuickAddButtonProps) {
       type="button"
       onClick={handleAdd}
       aria-label={`Add ${label} to cart`}
-      className={className ?? 'inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90'}
+      className={
+        className ??
+        'inline-flex h-11 w-11 items-center justify-center rounded-sm bg-primary text-primary-foreground transition-colors hover:bg-primary/90'
+      }
     >
       {justAdded ? <span className="text-xs font-medium">OK</span> : <Plus size={16} />}
     </button>

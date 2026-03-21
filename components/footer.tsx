@@ -4,133 +4,59 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white/50 backdrop-blur-sm">
-      <div className="content-container py-12 lg:py-16">
-        {/* Footer Grid */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-12 mb-10">
-          {/* About */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="font-serif text-lg font-bold text-text-primary mb-3">
-              Anvaya
-            </h4>
-            <p className="font-body text-sm text-text-secondary leading-relaxed">
-              Direct trade botanical essences from Indian farmers and artisans. Authentic. Transparent. Made by hand.
-            </p>
-          </div>
-
-          {/* Collections */}
-          <div>
-            <h5 className="font-body text-xs uppercase font-bold text-text-primary tracking-wider mb-3">
-              Collections
-            </h5>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  Browse All
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  New Arrivals
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  Gift Sets
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h5 className="font-body text-xs uppercase font-bold text-text-primary tracking-wider mb-3">
-              Company
-            </h5>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h5 className="font-body text-xs uppercase font-bold text-text-primary tracking-wider mb-3">
-              Support
-            </h5>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  Shipping Info
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="font-body text-sm text-text-secondary hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="mb-8 border-t border-border pt-8">
-          {/* Newsletter Signup */}
-          <div className="mb-4 max-w-md">
-            <p className="font-body text-sm text-text-primary font-medium mb-3">
-              Stay informed about new essences and collections
-            </p>
-            <form className="flex max-w-md gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-2 bg-white border border-border rounded-lg font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-body text-sm font-medium active:scale-95 transition-transform"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="font-body text-xs text-text-secondary">
-            © 2024 Anvaya. All rights reserved.
+    <footer className="mt-16 bg-surface-container-low text-primary md:mt-24">
+      <div className="stitch-wide grid grid-cols-1 gap-12 py-16 md:grid-cols-4 md:py-20">
+        <div className="flex flex-col space-y-6">
+          <div className="font-headline text-xl text-primary">Anvaya</div>
+          <p className="font-body text-sm font-light leading-relaxed tracking-wide text-on-surface/70">
+            Curating botanical essences between growers in India and careful hands elsewhere. Our practice is slow,
+            intentional, and grounded in plain words—not loud claims.
           </p>
-          <div className="flex gap-4">
-            <Link href="#" className="font-body text-xs text-text-secondary hover:text-primary transition-colors">
-              Terms of Use
-            </Link>
-            <Link href="#" className="font-body text-xs text-text-secondary hover:text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="font-body text-xs text-text-secondary hover:text-primary transition-colors">
-              Cookie Policy
-            </Link>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <span className="font-label text-xs uppercase tracking-widest text-primary">Shop</span>
+          <Link href="/" className="text-sm font-light text-on-surface/70 transition-colors hover:text-secondary">
+            Collections
+          </Link>
+          <Link href="#" className="text-sm font-light text-on-surface/70 transition-colors hover:text-secondary">
+            Shipping &amp; returns
+          </Link>
+          <Link href="#" className="text-sm font-light text-on-surface/70 transition-colors hover:text-secondary">
+            Wholesale
+          </Link>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <span className="font-label text-xs uppercase tracking-widest text-primary">Legal</span>
+          <Link href="#" className="text-sm font-light text-on-surface/70 transition-colors hover:text-secondary">
+            Privacy policy
+          </Link>
+          <Link href="#" className="text-sm font-light text-on-surface/70 transition-colors hover:text-secondary">
+            Terms of service
+          </Link>
+          <Link href="#" className="text-sm font-light text-on-surface/70 transition-colors hover:text-secondary">
+            Contact
+          </Link>
+        </div>
+        <div className="flex flex-col space-y-6">
+          <h4 className="font-label text-xs uppercase tracking-widest text-primary">Journal</h4>
+          <p className="text-sm font-light text-on-surface/70">
+            Occasional notes on provenance and harvest—light touch, no noise.
+          </p>
+          <div className="border-b border-primary/20 pb-2">
+            <input
+              className="w-full border-none bg-transparent p-0 text-sm placeholder:text-primary/30 focus:ring-0"
+              placeholder="Email address"
+              type="email"
+              readOnly
+              aria-label="Email (coming soon)"
+            />
           </div>
         </div>
+      </div>
+      <div className="stitch-wide flex flex-col items-center justify-between gap-4 border-t border-outline-variant/10 px-6 py-8 sm:flex-row">
+        <p className="font-serif text-xs italic opacity-60">
+          © {new Date().getFullYear()} Anvaya. Crafted with care between soil and shelf.
+        </p>
       </div>
     </footer>
   )

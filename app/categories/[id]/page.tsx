@@ -56,158 +56,184 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
     })
 
   const scrollKey = `category-${category.id}-scroll-y`
-  const formatChipLabel = (value: string) =>
-    value.replace(/\b\w/g, (char) => char.toUpperCase())
+  const formatChipLabel = (value: string) => value.replace(/\b\w/g, (char) => char.toUpperCase())
+  const invNo = String(filteredVariants.length).padStart(3, '0')
 
   return (
-    <main className="min-h-screen bg-background pb-24">
+    <main className="min-h-screen bg-surface pb-8">
       <ScrollRestore storageKey={scrollKey} />
 
-      {/* Header */}
-      <header className="sticky top-20 z-40 border-b border-border bg-white/95 backdrop-blur-sm">
-        <div className="content-container flex items-center justify-between py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+      {/* Hero — natural_source_vetiver (scaled) */}
+      <section className="relative flex min-h-[min(55vh,560px)] items-center overflow-hidden px-6 md:px-12">
+        <div className="absolute inset-0 z-0 bg-surface-variant">
+          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/85 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-2xl py-16">
+          <div className="mb-4">
+            <span className="provenance-chip">Provenance: {category.region}</span>
+          </div>
+          <h1 className="font-headline text-5xl leading-[0.95] tracking-tight text-primary italic md:text-8xl">
+            {category.name}
+          </h1>
+          <p className="mt-6 max-w-md font-body text-lg leading-relaxed text-on-surface-variant whitespace-pre-line">
+            {category.description}
+          </p>
+          <div className="mt-10">
+            <a
+              href="#product-family"
+              className="inline-block bg-primary px-8 py-4 font-label text-xs tracking-[0.2em] text-on-primary uppercase transition-transform active:scale-95"
+            >
+              Discover the collection
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky wayfinding */}
+      <header className="sticky top-20 z-40 border-b border-outline-variant/10 bg-surface/95 backdrop-blur-md md:top-24">
+        <div className="stitch-wide flex items-center justify-between py-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 font-body text-sm text-on-surface-variant transition-colors hover:text-primary"
+          >
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 16l-8-8m0 0l8-8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="font-body text-sm font-medium">Back</span>
+            Back
           </Link>
-          <span className="text-xs uppercase tracking-wider text-text-secondary">{category.name}</span>
+          <span className="stitch-label-muted">{category.name}</span>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="content-container py-8">
-        <div className="detail-shell grid gap-6 p-4 sm:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-border/30 bg-muted">
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-              <span className="text-sm font-medium text-text-secondary">{category.name}</span>
+      {/* Product family grid — vetiver */}
+      <section id="product-family" className="scroll-mt-24 bg-surface py-16 md:px-12 md:py-24">
+        <div className="stitch-wide">
+          <div className="mb-10 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-xs">
+              <h2 className="stitch-label mb-4">The product family</h2>
+              <p className="font-headline text-2xl italic text-primary">Forms we carry in this source line.</p>
             </div>
+            <div className="font-serif text-primary/40 italic">Inventory № {invNo}</div>
           </div>
 
-          <div className="space-y-3">
-            <h1 className="detail-title">{category.name}</h1>
-            <p className="font-body whitespace-pre-line text-sm leading-relaxed text-text-secondary sm:text-base">
-              {category.description}
-            </p>
-            <div className="flex flex-wrap items-center gap-3 border-t border-border/30 pt-2 text-xs text-text-secondary sm:text-sm">
-              <span className="font-body">{category.region}</span>
-              <span className="text-border">•</span>
-              <span className="font-body">{category.variants.length} variants</span>
+          <div className="mb-8 flex flex-wrap items-center gap-2 overflow-x-auto pb-2 no-scrollbar md:gap-4">
+            <span className="stitch-label shrink-0">Filter:</span>
+            <div className="flex gap-2">
+              {variantTypes.map((variantType) => {
+                const isActive = variantType === activeType
+                const href = new URLSearchParams()
+                if (variantType !== 'all') href.set('type', variantType)
+                href.set('sort', activeSort)
+                return (
+                  <Link
+                    key={variantType}
+                    href={`/categories/${category.id}${href.toString() ? `?${href.toString()}` : ''}`}
+                    className={`shrink-0 border px-4 py-1.5 font-label text-xs tracking-wider uppercase transition-all ${
+                      isActive
+                        ? 'border-primary bg-primary text-on-primary'
+                        : 'border-outline-variant/30 text-on-surface-variant hover:bg-surface-container-low'
+                    }`}
+                  >
+                    {variantType === 'all' ? 'All types' : formatChipLabel(variantType)}
+                  </Link>
+                )
+              })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="sticky top-[9.25rem] z-30 border-y border-border bg-background/95 py-3 backdrop-blur-sm">
-        <div className="content-container">
-          <div className="mb-2 flex gap-2 overflow-x-auto">
-            {variantTypes.map((variantType) => {
-              const isActive = variantType === activeType
-              const href = new URLSearchParams()
-              if (variantType !== 'all') href.set('type', variantType)
-              href.set('sort', activeSort)
-              return (
-                <Link
-                  key={variantType}
-                  href={`/categories/${category.id}${href.toString() ? `?${href.toString()}` : ''}`}
-                  className={`rounded-full border px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors ${
-                    isActive
-                      ? 'border-primary bg-primary text-primary-foreground'
-                      : 'border-border bg-white text-text-secondary hover:text-text-primary'
-                  }`}
-                >
-                  {variantType === 'all' ? 'All types' : formatChipLabel(variantType)}
-                </Link>
-              )
-            })}
-          </div>
-          <div className="flex gap-2">
-            <Link
-              href={`/categories/${category.id}${activeType === 'all' ? '?sort=price-asc' : `?type=${activeType}&sort=price-asc`}`}
-              className={`rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors ${
-                activeSort === 'price-asc'
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-border bg-white text-text-secondary'
-              }`}
-            >
-              Price low-high
-            </Link>
-            <Link
-              href={`/categories/${category.id}${activeType === 'all' ? '?sort=price-desc' : `?type=${activeType}&sort=price-desc`}`}
-              className={`rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors ${
-                activeSort === 'price-desc'
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-border bg-white text-text-secondary'
-              }`}
-            >
-              Price high-low
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="content-container py-8">
-        <h2 className="mb-4 font-serif text-xl font-semibold text-text-primary">
-          Our Forms
-        </h2>
-
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {filteredVariants.map((variant) => (
-            <div key={variant.id} className="group">
-              <ScrollRestoreLink
-                storageKey={scrollKey}
-                href={`/categories/${category.id}/products/${variant.id}`}
-                className="block h-full active:scale-[0.99] transition-transform duration-200"
+            <div className="ml-auto flex gap-2">
+              <Link
+                href={`/categories/${category.id}${activeType === 'all' ? '?sort=price-asc' : `?type=${activeType}&sort=price-asc`}`}
+                className={`border px-3 py-1.5 font-body text-[10px] font-medium tracking-wide uppercase ${
+                  activeSort === 'price-asc' ? 'border-primary bg-primary text-on-primary' : 'border-outline-variant/30'
+                }`}
               >
-                <div className="h-full rounded-2xl border border-border/50 bg-white p-3 shadow-sm transition-shadow hover:shadow-md sm:p-4">
-                  {/* Image/Video Placeholder */}
-                  <div className="relative w-full aspect-square bg-muted/40 rounded-xl overflow-hidden flex-shrink-0 mb-2">
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/20">
-                      <div className="text-center">
-                        <div className="text-3xl mb-2">✨</div>
-                        <span className="text-text-secondary text-xs font-medium px-2">{variant.type}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Product Info */}
-                  <div className="flex min-h-[7rem] flex-col">
-                    <p className="font-body text-[11px] text-text-secondary uppercase tracking-wider mb-1 line-clamp-1">
-                      {variant.type}
-                    </p>
-                    <h3 className="font-serif text-sm font-semibold text-text-primary mb-2 line-clamp-1">
-                      {variant.name}
-                    </h3>
-                    <div className="mt-auto flex items-center justify-between border-t border-border/40 pt-2">
-                      <div>
-                        <p className="font-body text-[10px] text-text-secondary uppercase tracking-wider mb-1">Price</p>
-                        <p className="font-serif text-base font-semibold text-text-primary">
-                          CHF {(variant.price ?? 19.99).toFixed(2)}
-                        </p>
-                      </div>
-                      <QuickAddButton label={variant.name} />
-                    </div>
-                  </div>
-                </div>
-              </ScrollRestoreLink>
+                Price ↑
+              </Link>
+              <Link
+                href={`/categories/${category.id}${activeType === 'all' ? '?sort=price-desc' : `?type=${activeType}&sort=price-desc`}`}
+                className={`border px-3 py-1.5 font-body text-[10px] font-medium tracking-wide uppercase ${
+                  activeSort === 'price-desc' ? 'border-primary bg-primary text-on-primary' : 'border-outline-variant/30'
+                }`}
+              >
+                Price ↓
+              </Link>
             </div>
-          ))}
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-3 md:gap-y-20">
+            {filteredVariants.map((variant, idx) => (
+              <div
+                key={variant.id}
+                className={`group cursor-pointer ${idx % 3 === 1 ? 'md:mt-12' : ''}`}
+              >
+                <ScrollRestoreLink
+                  storageKey={scrollKey}
+                  href={`/categories/${category.id}/products/${variant.id}`}
+                  className="block"
+                >
+                  <div className="relative mb-6 aspect-[4/5] overflow-hidden bg-surface-container-low transition-colors duration-400 group-hover:bg-surface-container">
+                    <div className="flex h-full w-full items-center justify-center bg-surface-variant/60 transition-transform duration-700 group-hover:scale-105">
+                      <span className="text-center font-body text-xs text-on-surface-variant">{variant.type}</span>
+                    </div>
+                  </div>
+                </ScrollRestoreLink>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <h3 className="font-label text-[11px] uppercase tracking-widest text-primary">{variant.type}</h3>
+                    <p className="mt-1 font-headline text-lg text-primary">{variant.name}</p>
+                    <p className="mt-1 line-clamp-2 text-sm text-on-surface-variant">{variant.description}</p>
+                  </div>
+                  <QuickAddButton
+                    label={variant.name}
+                    className="inline-flex h-9 w-9 shrink-0 items-center justify-center bg-primary text-on-primary transition-colors hover:bg-primary-container"
+                  />
+                </div>
+                <p className="mt-3 font-body text-sm text-primary">CHF {(variant.price ?? 19.99).toFixed(2)}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Info Banner */}
-      <section className="content-container mt-2 py-6">
-        <div className="bg-gradient-to-br from-primary/10 to-accent-warm/5 rounded-2xl p-5 space-y-3 border border-primary/10">
-          <p className="font-body text-xs uppercase font-bold text-primary tracking-wider">
-            Pre-Order Only
-          </p>
-          <p className="font-body text-sm text-text-primary leading-relaxed">
-            Select a form to explore how it's used and place your pre-order.
-          </p>
+      {/* Story band */}
+      <section className="overflow-hidden bg-surface-container-low py-20 md:py-32">
+        <div className="stitch-wide grid grid-cols-1 items-center gap-12 md:grid-cols-12">
+          <div className="relative md:col-span-5">
+            <div className="absolute -top-8 -left-8 hidden h-64 w-64 border border-outline-variant/15 md:block" />
+            <div className="relative z-10 aspect-[3/4] bg-surface-variant">
+              <div className="flex h-full items-center justify-center text-on-surface-variant/50">
+                <span className="font-body text-xs uppercase tracking-widest">Harvest note</span>
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-6 md:col-start-7">
+            <h2 className="stitch-label mb-6">The ritual &amp; provenance</h2>
+            <h3 className="mb-8 font-headline text-4xl leading-tight tracking-tight text-primary italic">
+              From soil to jar—with room for the full story.
+            </h3>
+            <div className="max-w-lg space-y-6 font-body leading-relaxed text-on-surface-variant whitespace-pre-line">
+              {category.description}
+            </div>
+            <div className="mt-12 flex flex-wrap gap-12 border-t border-outline-variant/20 pt-12">
+              <div>
+                <span className="mb-2 block font-label text-[10px] uppercase tracking-widest text-primary">Region</span>
+                <span className="font-headline text-lg italic text-primary">{category.region}</span>
+              </div>
+              <div>
+                <span className="mb-2 block font-label text-[10px] uppercase tracking-widest text-primary">Forms</span>
+                <span className="font-headline text-lg italic text-primary">{category.variants.length} variants</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="stitch-wide py-16 text-center">
+        <p className="font-headline text-2xl leading-snug text-primary italic md:text-3xl">
+          &ldquo;A modest channel between growers and whoever opens the jar.&rdquo;
+        </p>
+        <cite className="mt-6 block font-label text-[11px] not-italic tracking-widest text-secondary uppercase">
+          — What Anvaya stands for
+        </cite>
       </section>
     </main>
   )

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: ProductPageProps) {
 export async function generateStaticParams() {
   const categories = getAllCategories()
   const params: Array<{ id: string; productId: string }> = []
-  
+
   categories.forEach((category) => {
     category.variants.forEach((variant) => {
       params.push({
@@ -50,92 +50,99 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-background pb-20">
-      {/* Header */}
-      <header className="sticky top-20 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="content-container flex items-center justify-between py-4">
-          <Link href={`/categories/${category.id}`} className="text-text-secondary hover:text-text-primary transition-colors">
+    <main className="min-h-screen bg-surface pb-12">
+      <header className="sticky top-20 z-40 border-b border-outline-variant/10 bg-surface/95 backdrop-blur-md md:top-24">
+        <div className="stitch-wide flex items-center justify-between py-4">
+          <Link
+            href={`/categories/${category.id}`}
+            className="text-on-surface-variant transition-colors hover:text-primary"
+            aria-label="Back to category"
+          >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
               <path d="M12 16l-8-8m0 0l8-8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
-          <div className="text-[11px] uppercase tracking-wider text-text-secondary">{category.name}</div>
-          <span className="w-5" />
+          <span className="stitch-label-muted">{category.name}</span>
+          <span className="w-5" aria-hidden />
         </div>
       </header>
 
-      <section className="content-container py-8">
-        <div className="detail-shell grid gap-6 p-4 sm:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-border/30 bg-muted">
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-              <span className="text-sm font-medium text-text-secondary">{variant.name}</span>
+      {/* Hero editorial */}
+      <section className="relative min-h-[min(50vh,480px)] px-6 md:px-12">
+        <div className="absolute inset-0 bg-surface-variant">
+          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 py-16 lg:grid-cols-2 lg:items-end">
+          <div>
+            <div className="mb-4">
+              <span className="provenance-chip">Provenance: {variant.maker.location}</span>
             </div>
-          </div>
-
-          <div className="space-y-3">
-            <p className="detail-meta">{variant.type}</p>
-            <h1 className="detail-title">{variant.name}</h1>
-            <p className="font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+            <p className="stitch-label mb-3">{variant.type}</p>
+            <h1 className="font-headline text-5xl leading-[0.95] tracking-tight text-primary italic md:text-7xl">
+              {variant.name}
+            </h1>
+            <p className="mt-6 max-w-lg font-body text-base leading-relaxed text-on-surface-variant">
               {variant.description}
             </p>
-            <div className="flex flex-wrap items-center gap-3 border-t border-border/30 pt-2 text-xs text-text-secondary sm:text-sm">
-              <span>{category.name}</span>
-              <span className="text-border">•</span>
-              <span>{variant.maker.location}</span>
+          </div>
+          <div className="aspect-[4/3] bg-surface-container-low lg:mb-0">
+            <div className="flex h-full w-full items-center justify-center bg-surface-variant/50">
+              <span className="text-sm text-on-surface-variant">{variant.name}</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="content-container py-2">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="detail-shell rounded-xl p-4">
-            <p className="mb-1 text-[11px] uppercase tracking-wider text-text-secondary">How to Use</p>
-            <p className="font-body text-sm leading-relaxed text-text-primary">{variant.description}</p>
-          </div>
-          <div className="detail-shell rounded-xl p-4">
-            <p className="mb-1 text-[11px] uppercase tracking-wider text-text-secondary">Storage</p>
-            <p className="font-body text-sm leading-relaxed text-text-primary">
-              Keep in a cool, dry place away from direct sunlight.
-            </p>
-          </div>
-          <div className="detail-shell rounded-xl p-4 sm:col-span-2 lg:col-span-1">
-            <p className="mb-1 text-[11px] uppercase tracking-wider text-text-secondary">Best For</p>
-            <p className="font-body text-sm leading-relaxed text-text-primary">
-              {variant.type === 'Powder'
-                ? 'Face masks, beauty rituals, and culinary use.'
-                : variant.type === 'Sachet'
-                  ? 'Cooling water, fragrance, and home rituals.'
-                  : variant.type === 'Preserve'
-                    ? 'Culinary wellness and premium gifting.'
-                    : 'Daily rituals and wellness practices.'}
-            </p>
-          </div>
-        </div>
-      </section>
+      <div className="stitch-wide py-12 lg:grid lg:grid-cols-[1fr_min(340px,38%)] lg:items-start lg:gap-12">
+        <div className="min-w-0 space-y-10">
+          <section>
+            <h2 className="stitch-label mb-4">Artifact details</h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="bg-surface-container-low p-5">
+                <p className="stitch-label mb-2">How to use</p>
+                <p className="font-body text-sm leading-relaxed text-on-surface-variant">{variant.description}</p>
+              </div>
+              <div className="bg-surface-container-low p-5">
+                <p className="stitch-label mb-2">Storage</p>
+                <p className="font-body text-sm leading-relaxed text-on-surface-variant">
+                  Keep in a cool, dry place away from direct sunlight.
+                </p>
+              </div>
+              <div className="bg-surface-container-low p-5 sm:col-span-2">
+                <p className="stitch-label mb-2">Best for</p>
+                <p className="font-body text-sm leading-relaxed text-on-surface-variant">
+                  {variant.type === 'Powder'
+                    ? 'Face masks, beauty rituals, and culinary use.'
+                    : variant.type === 'Sachet'
+                      ? 'Cooling water, fragrance, and home rituals.'
+                      : variant.type === 'Preserve'
+                        ? 'Culinary wellness and premium gifting.'
+                        : 'Daily rituals and wellness practices.'}
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <section className="content-container py-6">
-        <div className="detail-shell p-5">
-          <h2 className="mb-3 font-serif text-xl font-semibold text-text-primary">About</h2>
-          <p className="font-body text-sm leading-relaxed text-text-secondary">
-            {variant.description} Each batch is handcrafted with care, honoring traditional methods and natural ingredients. This is more than a product - it is a direct connection to the artisans who created it.
-          </p>
-        </div>
-      </section>
-
-      <section className="content-container pb-8">
-        <div className="detail-shell flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="font-body text-xs uppercase tracking-wider text-text-secondary">Price</p>
-            <p className="font-serif text-2xl font-semibold text-text-primary">
-              CHF {variant.price?.toFixed(2) || 'TBD'}
+          <section className="bg-surface-container-low p-6 md:p-8">
+            <h2 className="mb-4 font-headline text-2xl text-primary">About this form</h2>
+            <p className="font-body text-sm leading-relaxed text-on-surface-variant">
+              {variant.description} Each batch honours traditional methods and natural ingredients—a direct connection to
+              the people who made it.
             </p>
-          </div>
-          <div className="w-full sm:w-auto sm:min-w-[16rem]">
-            <PreOrderModal variant={variant} category={category} />
-          </div>
+          </section>
         </div>
-      </section>
+
+        <aside className="mt-10 lg:sticky lg:top-28 lg:mt-0 lg:self-start">
+          <div className="bg-surface-container-low p-6 stitch-ghost-border">
+            <p className="stitch-label mb-1">Price</p>
+            <p className="font-headline text-3xl text-primary">CHF {variant.price?.toFixed(2) || 'TBD'}</p>
+            <p className="mt-2 text-xs text-on-surface-variant">{category.name}</p>
+            <div className="mt-6">
+              <PreOrderModal variant={variant} category={category} />
+            </div>
+          </div>
+        </aside>
+      </div>
     </main>
   )
 }

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anvaya | Vetiver: The Golden Root</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c2c8c2",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#773310",
+              "primary-fixed": "#ccead6",
+              "on-primary-container": "#98b5a3",
+              "inverse-on-surface": "#f3f0f0",
+              "tertiary-container": "#533e1f",
+              "secondary": "#944925",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1b1c1c",
+              "on-secondary-fixed-variant": "#76320f",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#eae8e7",
+              "tertiary-fixed": "#feddb3",
+              "background": "#fbf9f8",
+              "inverse-primary": "#b0cdbb",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#324c3e",
+              "surface": "#fbf9f8",
+              "surface-container-highest": "#e4e2e1",
+              "surface-container-low": "#f6f3f2",
+              "primary-fixed-dim": "#b0cdbb",
+              "on-tertiary-container": "#c7aa82",
+              "on-surface-variant": "#424844",
+              "surface-container": "#f0eded",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#360f00",
+              "tertiary-fixed-dim": "#e1c299",
+              "secondary-fixed-dim": "#ffb596",
+              "secondary-container": "#fe9e72",
+              "primary": "#173124",
+              "surface-variant": "#e4e2e1",
+              "surface-dim": "#dcd9d9",
+              "secondary-fixed": "#ffdbcd",
+              "error": "#ba1a1a",
+              "outline": "#727973",
+              "surface-bright": "#fbf9f8",
+              "tertiary": "#3a280b",
+              "inverse-surface": "#303030",
+              "on-tertiary-fixed-variant": "#584324",
+              "on-primary-fixed": "#062014",
+              "on-surface": "#1b1c1c",
+              "primary-container": "#2d4739",
+              "surface-tint": "#496455",
+              "on-tertiary-fixed": "#281801"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .font-serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+      .tracking-widest-2 { letter-spacing: 0.2em; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-[#fbf9f8] dark:bg-[#1b1c1c] transition-colors duration-500 top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-3xl font-headline tracking-tighter text-[#173124] dark:text-[#f6f3f2]">Anvaya</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label uppercase tracking-[0.2em] text-xs text-[#173124] dark:text-[#ffffff] border-b border-[#173124] dark:border-[#ffffff] pb-1" href="#">Collections</a>
+<a class="font-label uppercase tracking-[0.2em] text-xs text-[#1b1c1c]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-[#ffffff] transition-all" href="#">Our Story</a>
+<a class="font-label uppercase tracking-[0.2em] text-xs text-[#1b1c1c]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-[#ffffff] transition-all" href="#">Provenances</a>
+<a class="font-label uppercase tracking-[0.2em] text-xs text-[#1b1c1c]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-[#ffffff] transition-all" href="#">The Archives</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-primary dark:text-surface hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</button>
+<button class="material-symbols-outlined text-primary dark:text-surface hover:opacity-80 transition-opacity" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section: The Curator's Eye -->
+<section class="relative h-[921px] flex items-center overflow-hidden px-12">
+<div class="absolute inset-0 z-0">
+<img alt="Earthen Vetiver Roots" class="w-full h-full object-cover" data-alt="Close up of dried golden vetiver roots on a stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOEa-YCISXcprf5NH8p4Sn4K0jsRF4VfXF24txep6OQEm-YOy-RUiaM0gD0EpCAaSKqRmMtg1SoWXt3MmcaEEq8rYf4eIsCiuOe_gdY87k_IEeKmtakzG_ZFcsx0SBSoEH3o_5M17I-xzd-_Jj3U2MAFy1hWAuyteCLTKexRLSn1cwGHp2UbXQuFVhaLQK2T2rXBr5GZ8fYax4PSCm6w7K-4oG70Zgan2XylriSaCz-niW8olWIKO2stw5faoeoszgrvuFXaJPqNU"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="mb-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 text-[10px] font-label uppercase tracking-widest-2">Provenance: Kannauj</span>
+</div>
+<h1 class="text-7xl md:text-8xl font-headline italic tracking-tight text-primary leading-[0.9]">
+                    Vetiver
+                </h1>
+<p class="mt-6 text-lg text-on-surface-variant font-body leading-relaxed max-w-md">
+                    The oil of tranquillity. Harvested at dawn from the deep silt of the Ganges, our vetiver roots are cured for six months before undergoing slow steam distillation in the Swiss Alps.
+                </p>
+<div class="mt-10">
+<button class="bg-primary text-on-primary px-8 py-4 font-label uppercase tracking-widest-2 text-xs transition-transform active:scale-95">
+                        Discover the Collection
+                    </button>
+</div>
+</div>
+</section>
+<!-- Product Grid: Artifacts of Scent -->
+<section class="py-24 px-12 bg-surface">
+<div class="mb-16 flex justify-between items-end">
+<div class="max-w-xs">
+<h2 class="text-xs font-label uppercase tracking-widest-2 text-secondary mb-4">The Product Family</h2>
+<p class="font-headline italic text-2xl text-primary">A curated selection of earth-bound essentials.</p>
+</div>
+<div class="text-primary/40 font-serif italic">Inventory № 042</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-8">
+<!-- Product Card: Sachet -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden transition-colors duration-400 group-hover:bg-surface-container">
+<img alt="Vetiver Sachet" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Handcrafted linen sachet filled with aromatic vetiver roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoYGS2qgUl37fFIrEjoAm0yxKhy0CJGxgkAX6RmCz_CQno5mrkF957hCW6kxo1E9_gzF3P1WI9kZq-l3idN9825qFhzqoFL5vOZX31mvhnv_rAV-cyhTAUFNcOvwUbXta08La2LT_rvZ3s0Cc3UmThsBWASCA80KW6ngHdxjt1ERnrrf_cTmN78sbLGx-ydhQgFjzsDSpQ3Qb7O4Ytv-ivvxXQ7uhLyz-uNx17F1KKFcfO3uYmGtmhzWgdKNehdE4GzwEDgfsYJS8"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-label uppercase tracking-widest text-[11px] text-primary">Root Sachet</h3>
+<p class="text-sm text-on-surface-variant mt-1">Textile &amp; Linen Refresh</p>
+</div>
+<span class="font-body text-sm text-primary">CHF 32</span>
+</div>
+</div>
+<!-- Product Card: Oil -->
+<div class="group cursor-pointer md:mt-12">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden transition-colors duration-400 group-hover:bg-surface-container">
+<img alt="Vetiver Essential Oil" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Small amber glass bottle of vetiver essential oil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8vtSnQCeZAflikS-UBsxeYRrbOahSTpKnohYfMAsXNo4ImAxZtXujAdb4H3U4oyquSPec2TiodX-hZV2C0rp-i_mDLdF-mtjofSM14fDJh2_q_IibOJfyuy6510LdvBtgewevpSTLFn4UIJGRsN3hm9JCbavn6q_aRhmhAk5-VVswoU9nIicEOnaK6F8eAY6mLbdeGaYlHSFW_ayG40FzQL6PBZL50X98pu2FPC7pRqv5ZBG5kazUToFq_7nQlIJ8cMDuobZCQRY"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-label uppercase tracking-widest text-[11px] text-primary">Pure Distillate Oil</h3>
+<p class="text-sm text-on-surface-variant mt-1">10ml Pure Concentrate</p>
+</div>
+<span class="font-body text-sm text-primary">CHF 85</span>
+</div>
+</div>
+<!-- Product Card: Scrub -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden transition-colors duration-400 group-hover:bg-surface-container">
+<img alt="Vetiver Scrub" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Handwoven vetiver root exfoliating body scrub" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7C33fcyN9KVGUKESibWHz791D5glI_HO00XsTtGzq8BYf1agrBsXPtacmTn6vgwSjgJOox1lzdAgbKThzMdsFhsvkNh75efY5LTUkQvBWGRC-dYmgF8JoIcgILU-8DHHXWk5eB15fw13pSrRsF8lkVCHXAS9aUhZfKUVBhkJioyQ2x-g2LWWYSVKTNEATr_0y3-VuZCEgum-2cSTXK_824sYQmXscr2skQBXHaWxm75VntbW6vk_hBc_zqS7zHEJ1BVNOwZYDMw"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-label uppercase tracking-widest text-[11px] text-primary">Exfoliating Scrub</h3>
+<p class="text-sm text-on-surface-variant mt-1">Hand-woven Roots</p>
+</div>
+<span class="font-body text-sm text-primary">CHF 24</span>
+</div>
+</div>
+<!-- Product Card: Soap -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden transition-colors duration-400 group-hover:bg-surface-container">
+<img alt="Vetiver Soap" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Artisanal cold-pressed soap bar with vetiver fragments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpIPfU4pWKzlFs0g8vn8JeaWDOZoezXOIHTgMHt5T7rEbgoJdDLj7dy8VzFk9vMlEoaZrpXQT3OtZn-iXWjcey1Jeo5QQPKDKNF43y-2ClNpyCnxTbGJPSBjk7hMRRZcgvBb2vpUOa9o37TC4Bv9MPBTGgJpRDcaX7D4DBeHlFqcifw5IxKlQ2dAdE3deFcpaxdL8e4QdW8xihwyskm6SDshpBt-ihhxx_lUiVL21E40oX0YVpTky7bn7HQrLdiysmvCbPCs4Pbf0"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-label uppercase tracking-widest text-[11px] text-primary">Earthen Soap</h3>
+<p class="text-sm text-on-surface-variant mt-1">Cold-Pressed Botanical</p>
+</div>
+<span class="font-body text-sm text-primary">CHF 18</span>
+</div>
+</div>
+<!-- Product Card: Incense -->
+<div class="group cursor-pointer md:mt-12">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden transition-colors duration-400 group-hover:bg-surface-container">
+<img alt="Vetiver Incense" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Traditional charcoal incense sticks with vetiver resin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB78FjNtsHpC2G1Z-GMzDF8SBau7d8578-_R3eEcdGRaZjhB5mivzzF9L7qToPoTbYTCt4_d_4C3nJo9DasR-Ljt0nVmHouG9Mpjfv_AqFUtIh9vCIkJYA9rqwPRwM2sOfFb9_5JUADQlBhDfCEn0eFoLt2yLDJKWnPhHIq850h8dviih-iJTpjE-p1TumefpiXVgNbYuLJJflQFn_c6FqRiu2ZYUk8WZMwQjQncfUmt-uDluGBh-w7B0S-b6-fjS_U7g7jdBdluj8"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-label uppercase tracking-widest text-[11px] text-primary">Temple Incense</h3>
+<p class="text-sm text-on-surface-variant mt-1">Smokeless Slow-Burn</p>
+</div>
+<span class="font-body text-sm text-primary">CHF 38</span>
+</div>
+</div>
+<!-- Product Card: Powder -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden transition-colors duration-400 group-hover:bg-surface-container">
+<img alt="Vetiver Powder" class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Finely milled golden vetiver root powder in a ceramic jar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxeBSW4XRzgwpVO-K8QoAOZUVf6q9xz2MzKu53-4KZsoAwv-wc_29ppwg_3_bSJ8v00jmEXngyqMYLUgXhE2ziE832o8tQ7WNmHNvWtckGuMw9VASaAb6_OMXbkEiQJRHsFSQKafRXM3bFRm2Cr5y7jK3UEqC-1tcCyzxk0TcogBd85og0Ziqacy0Wtex3ZPMXT-wzw3UlM8VqKde1RVBJCPdRYmwfTMe5iU5Og3QXyri4l8AEvupkTe1tnARnlrOKCgllMOADwpo"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-label uppercase tracking-widest text-[11px] text-primary">Mill Powder</h3>
+<p class="text-sm text-on-surface-variant mt-1">Cooling Clay Mask</p>
+</div>
+<span class="font-body text-sm text-primary">CHF 45</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Story & Ritual Section: Asymmetric Editorial -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-[1920px] mx-auto px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 border border-outline-variant opacity-15"></div>
+<img alt="Harvesting Roots" class="relative z-10 w-full aspect-[3/4] object-cover grayscale brightness-90 contrast-110" data-alt="Black and white photo of hands pulling roots from dark river silt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB1uNbPBajVpvgsSAy7xS0UxyU3Ov118F3sZWTT7-z938S2_Q3jax-wSGoPhZg515b6Zs6mIooZRRM3S1IvCUH9ZTM_au-8JA69zi61Aw-8rt2QkTO7aH_k3j-DZp-8e3WrUOPyeMsgQX5V99Q0XBqiUUJ24GB825KcVOqe_r8m-YyO6GNAiz9FFqP_s48DbEaWbC8gYgihRkWORr-6RwQIEogEcOLtQKu5yRM6oLRxy2bZK3oys2bfJh4itBulzmG87jBU_rjwM8"/>
+</div>
+<div class="md:col-span-6 md:col-start-7">
+<h2 class="text-xs font-label uppercase tracking-widest-2 text-secondary mb-6">The Ritual &amp; Provenance</h2>
+<h3 class="text-5xl font-headline italic tracking-tight text-primary leading-tight mb-8">
+                        From the Silt of Kannauj to the Alpine Heights.
+                    </h3>
+<div class="space-y-6 text-on-surface-variant font-body leading-relaxed max-w-lg">
+<p>
+                            In the perfume capital of India, Kannauj, the vetiver grass is more than a botanical; it is a seasonal rhythm. Each root is harvested by hand during the brief window between the monsoons when the earth is most yielding. 
+                        </p>
+<p class="italic font-serif">
+                            "The roots hold the memory of the rain, exhaling a scent that is both woody and oceanic."
+                        </p>
+<p>
+                            Following the harvest, the roots travel to our laboratory in Zurich. Here, using proprietary Swiss refinement techniques, we isolate the cleanest molecules of the 'Khus' oil, removing the harsh smokiness often found in industrial distillates. 
+                        </p>
+</div>
+<div class="mt-12 pt-12 border-t border-outline-variant/20 flex gap-12">
+<div>
+<span class="block font-label uppercase tracking-widest text-[10px] text-primary mb-2">Heritage Site</span>
+<span class="block font-headline italic text-lg">Ganges Silt Bank</span>
+</div>
+<div>
+<span class="block font-label uppercase tracking-widest text-[10px] text-primary mb-2">Process</span>
+<span class="block font-headline italic text-lg">Cryo-Distillation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Quote: Minimalist Impact -->
+<section class="py-40 bg-background text-center px-12">
+<div class="max-w-3xl mx-auto">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-8" data-icon="air">air</span>
+<blockquote class="text-4xl md:text-5xl font-headline italic text-primary leading-snug">
+                    "A root that anchors the soul, a scent that calms the storm. Vetiver is the silent architecture of serenity."
+                </blockquote>
+<cite class="block mt-8 font-label uppercase tracking-widest text-[11px] text-secondary not-italic">— Anvaya Heritage Manifesto</cite>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6f3f2] dark:bg-[#173124] text-[#173124] dark:text-[#c7aa82] mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="flex flex-col space-y-6">
+<div class="text-xl font-headline text-[#173124] dark:text-[#c7aa82]">Anvaya</div>
+<p class="font-body font-light tracking-wide text-sm opacity-80">Curating the finest botanical artifacts between Zurich and Kochi. Our practice is slow, intentional, and grounded in heritage.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-label uppercase tracking-widest text-xs mb-2">Shop</h4>
+<a class="font-body font-light tracking-wide text-sm text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors" href="#">Sustainability</a>
+<a class="font-body font-light tracking-wide text-sm text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body font-light tracking-wide text-sm text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors" href="#">Wholesale</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-label uppercase tracking-widest text-xs mb-2">Legal</h4>
+<a class="font-body font-light tracking-wide text-sm text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors" href="#">Privacy Policy</a>
+<a class="font-body font-light tracking-wide text-sm text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors" href="#">Terms of Service</a>
+<a class="font-body font-light tracking-wide text-sm text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col space-y-6">
+<h4 class="font-label uppercase tracking-widest text-xs mb-2">Journal</h4>
+<p class="font-body font-light tracking-wide text-sm opacity-80">Receive our seasonal dispatch on provenance and ritual.</p>
+<div class="border-b border-primary/20 dark:border-on-tertiary-container/20 pb-2">
+<input class="bg-transparent border-none p-0 text-sm focus:ring-0 w-full placeholder:text-primary/30" placeholder="Email Address" type="email"/>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-primary/5 dark:border-on-tertiary-container/5 text-center">
+<p class="font-serif italic text-xs opacity-60">© 2024 Anvaya Heritage. Crafted between Zurich and Kochi.</p>
+</div>
+</footer>
+</body></html>

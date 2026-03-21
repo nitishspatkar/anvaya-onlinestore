@@ -1,26 +1,30 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import { Noto_Serif, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Navigation } from '@/components/navigation'
+import { BottomNav } from '@/components/bottom-nav'
 import { Footer } from '@/components/footer'
+import { PreLaunchFab } from '@/components/pre-launch-fab'
 import { QuickAddToast } from '@/components/quick-add-toast'
 import './globals.css'
 
-const cormorant = Cormorant_Garamond({
+const notoSerif = Noto_Serif({
   variable: '--font-display',
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: '--font-body',
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
-  title: 'Anvaya — Rare Botanicals from India',
-  description: 'Discover rare, artisan-crafted botanical essences. Sourced directly from Indian farmers and cooperatives, crafted with Swiss precision.',
+  title: 'Anvaya — Botanical essences from India',
+  description:
+    'A quiet store for roots, oils, and botanicals—sourced with care from growers and small makers across India.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -47,11 +51,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`} suppressHydrationWarning>
-      <body className="bg-background text-text-primary antialiased">
+    <html lang="en" className={`${notoSerif.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className="bg-surface font-body text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
         <Navigation />
-        {children}
+        <div className="pb-28 pt-20 md:pb-0 md:pt-24">{children}</div>
         <Footer />
+        <BottomNav />
+        <PreLaunchFab />
         <QuickAddToast />
         <Analytics />
       </body>

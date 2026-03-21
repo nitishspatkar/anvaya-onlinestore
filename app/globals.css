@@ -3,63 +3,115 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Stitch Editorial Heritage — stitch/DESIGN.md + HTML prototypes */
 :root {
-  --background: #dbe4da;
-  --foreground: #1f2c23;
-  --text-primary: #1f2c23;
-  --text-secondary: #7d837e;
-  --primary: #234c2f;
-  --primary-foreground: #f4f7f2;
-  --accent-warm: #f3f4f1;
-  --accent-gold: #a4a9a5;
-  --accent-blush: #eef2ec;
-  --accent-terracotta: #234c2f;
+  --surface: #fbf9f8;
+  --on-surface: #1b1c1c;
+  --on-surface-variant: #424844;
+  --background: #fbf9f8;
+  --foreground: #1b1c1c;
+  --text-primary: #1b1c1c;
+  --text-secondary: #424844;
+
+  --primary: #173124;
+  --on-primary: #ffffff;
+  --primary-foreground: #ffffff;
+  --primary-container: #2d4739;
+  --on-primary-container: #98b5a3;
+
+  --secondary: #944925;
+  --on-secondary: #ffffff;
+  --editorial-secondary: #944925;
+
+  --tertiary: #3a280b;
+  --tertiary-container: #533e1f;
+  --on-tertiary-container: #c7aa82;
+
+  --surface-container-low: #f6f3f2;
+  --surface-container-high: #eae8e7;
+  --surface-variant: #e4e2e1;
+  --surface-container-lowest: #ffffff;
+  --surface-container: #f0eded;
+
+  --outline-variant: #c2c8c2;
+  --outline: #727973;
+
+  --border: color-mix(in srgb, var(--outline-variant) 15%, transparent);
+
   --card: #ffffff;
-  --card-foreground: #1f2c23;
-  
-  /* UI Tokens */
-  --border: #e7ece6;
-  --input: #ffffff;
-  --ring: #234c2f;
+  --card-foreground: #1b1c1c;
+  --muted: var(--surface-container-low);
+  --muted-foreground: var(--on-surface-variant);
+  --input: var(--surface-container-lowest);
+  --ring: var(--primary);
+  --radius: 0.125rem;
+
   --popover: #ffffff;
-  --popover-foreground: #1f2c23;
-  --secondary: #eef2ec;
-  --secondary-foreground: #1f2c23;
-  --muted: #f4f7f2;
-  --muted-foreground: #8d918e;
-  --accent: #eef2ec;
-  --accent-foreground: #1f2c23;
-  --destructive: #b15c42;
+  --popover-foreground: #1b1c1c;
+  --secondary-foreground: #1b1c1c;
+  --accent: var(--surface-container-high);
+  --accent-foreground: #1b1c1c;
+  --destructive: #ba1a1a;
   --destructive-foreground: #ffffff;
-  --radius: 1.5rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1f2c23;
-  --sidebar-primary: #234c2f;
-  --sidebar-primary-foreground: #f4f7f2;
-  --sidebar-accent: #eef2ec;
-  --sidebar-accent-foreground: #1f2c23;
-  --sidebar-border: #e7ece6;
-  --sidebar-ring: #234c2f;
+
+  --primary-fixed: #ccead6;
+  --on-primary-fixed: #062014;
+
+  --accent-warm: var(--surface-container-low);
+  --accent-gold: var(--on-tertiary-container);
+  --accent-blush: var(--surface-container-high);
+  --accent-terracotta: var(--secondary);
+
+  --sidebar: var(--surface-container-lowest);
+  --sidebar-foreground: #1b1c1c;
+  --sidebar-primary: #173124;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--surface-container-low);
+  --sidebar-accent-foreground: #1b1c1c;
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--primary);
 }
 
 @theme inline {
-  --font-sans: var(--font-body);
-  --font-serif: var(--font-display);
+  /* Next.js sets --font-body / --font-display on <html> — stacks add fallbacks */
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+  /* Named stacks for Stitch (no conflict with Next’s --font-body variable name) */
+  --font-headline: var(--font-display), ui-serif, Georgia, serif;
+  --font-label: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', monospace;
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-editorial-secondary: var(--editorial-secondary);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-variant: var(--surface-variant);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container: var(--surface-container);
+  --color-outline-variant: var(--outline-variant);
+  --color-outline: var(--outline);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-warm: var(--accent-warm);
@@ -68,13 +120,15 @@
   --color-accent-terracotta: var(--accent-terracotta);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-on-primary-fixed: var(--on-primary-fixed);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -87,93 +141,100 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/40;
   }
-  
+
   html {
     font-size: 16px;
   }
-  
+
   body {
-    @apply bg-background text-text-primary;
-    font-family: var(--font-body), system-ui, sans-serif;
-    line-height: 1.45;
-    letter-spacing: 0;
+    @apply bg-surface text-on-surface;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-body), system-ui, sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
     font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-  }
-  
-  h1 {
-    @apply text-3xl md:text-4xl;
-  }
-  
-  h2 {
-    @apply text-2xl md:text-3xl;
-  }
-  
-  h3 {
-    @apply text-xl md:text-2xl;
-  }
-  
-  h4 {
-    @apply text-lg md:text-xl;
-  }
-  
-  p {
-    font-weight: 400;
-    @apply text-sm leading-relaxed;
-  }
-  
-  small {
-    @apply text-sm;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 }
 
 @layer components {
+  /* Inter stack — do not @apply font-body here (Tailwind v4 won’t resolve it in this file) */
+  .font-body {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .stitch-label {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    @apply text-[9px] font-bold uppercase tracking-[0.2em] text-secondary;
+  }
+
+  .stitch-label-muted {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    @apply text-[9px] font-medium uppercase tracking-[0.2em] text-on-surface-variant;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Content width — matches prototype max-w-7xl / px-6 */
+  .stitch-container {
+    @apply mx-auto max-w-7xl px-6;
+  }
+
+  .stitch-wide {
+    @apply mx-auto w-full max-w-[1920px] px-6 md:px-12;
+  }
+
+  /* Layered well: no hard stroke (DESIGN “no-line”) */
+  .stitch-well {
+    @apply bg-surface-container-lowest;
+  }
+
+  .stitch-well-inset {
+    @apply bg-surface-container-low;
+  }
+
+  /* Provenance chip — Stitch token */
+  .provenance-chip {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    @apply inline-block bg-tertiary-container px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-on-tertiary-container;
+  }
+
+  /* Ghost boundary fallback */
+  .stitch-ghost-border {
+    @apply border border-outline-variant/10;
+  }
+
+  /* Legacy aliases used in older components */
   .content-container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1920px] px-6 md:px-12;
   }
 
   .detail-shell {
-    @apply rounded-2xl border border-border/40 bg-white shadow-sm;
+    @apply bg-surface-container-lowest;
   }
 
   .detail-title {
-    @apply font-serif text-3xl font-semibold text-text-primary sm:text-4xl;
+    @apply font-serif text-3xl font-semibold tracking-tight text-primary sm:text-4xl md:text-5xl;
   }
 
   .detail-meta {
-    @apply text-xs uppercase tracking-wider text-text-secondary;
-  }
-
-  .device-shell {
-    @apply w-full max-w-[24rem] rounded-[2rem] border border-white/60 bg-card p-5;
-    box-shadow: 0 28px 70px -30px rgba(35, 76, 47, 0.38);
-  }
-
-  .icon-button {
-    @apply inline-flex h-8 w-8 items-center justify-center rounded-full text-text-primary transition-colors hover:bg-muted;
-  }
-
-  .tab-label {
-    @apply text-[0.68rem] font-medium uppercase tracking-[0.08em] text-text-secondary;
-  }
-
-  .product-tile {
-    @apply overflow-hidden rounded-2xl border border-border bg-white transition-shadow hover:shadow-md;
-  }
-
-  .product-image-wrap {
-    @apply aspect-square bg-muted p-3;
-  }
-
-  .product-image {
-    @apply flex h-full items-center justify-center rounded-xl bg-white text-4xl;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    @apply text-[9px] font-bold uppercase tracking-[0.2em] text-secondary;
   }
 }

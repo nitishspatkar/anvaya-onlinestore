@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c2c8c2",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#773310",
+              "primary-fixed": "#ccead6",
+              "on-primary-container": "#98b5a3",
+              "inverse-on-surface": "#f3f0f0",
+              "tertiary-container": "#533e1f",
+              "secondary": "#944925",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1b1c1c",
+              "on-secondary-fixed-variant": "#76320f",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#eae8e7",
+              "tertiary-fixed": "#feddb3",
+              "background": "#fbf9f8",
+              "inverse-primary": "#b0cdbb",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#324c3e",
+              "surface": "#fbf9f8",
+              "surface-container-highest": "#e4e2e1",
+              "surface-container-low": "#f6f3f2",
+              "primary-fixed-dim": "#b0cdbb",
+              "on-tertiary-container": "#c7aa82",
+              "on-surface-variant": "#424844",
+              "surface-container": "#f0eded",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#360f00",
+              "tertiary-fixed-dim": "#e1c299",
+              "secondary-fixed-dim": "#ffb596",
+              "secondary-container": "#fe9e72",
+              "primary": "#173124",
+              "surface-variant": "#e4e2e1",
+              "surface-dim": "#dcd9d9",
+              "secondary-fixed": "#ffdbcd",
+              "error": "#ba1a1a",
+              "outline": "#727973",
+              "surface-bright": "#fbf9f8",
+              "tertiary": "#3a280b",
+              "inverse-surface": "#303030",
+              "on-tertiary-fixed-variant": "#584324",
+              "on-primary-fixed": "#062014",
+              "on-surface": "#1b1c1c",
+              "primary-container": "#2d4739",
+              "surface-tint": "#496455",
+              "on-tertiary-fixed": "#281801"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .font-serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary/30">
+<!-- TopNavBar -->
+<header class="bg-[#fbf9f8] dark:bg-[#1b1c1c] full-width top-0 sticky z-50 transition-colors duration-500">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-3xl font-serif tracking-tighter text-[#173124] dark:text-[#f6f3f2]">Anvaya</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#173124] dark:text-[#ffffff] border-b border-[#173124] dark:border-[#ffffff] pb-1 font-sans uppercase tracking-[0.2em] text-xs" href="#">Collections</a>
+<a class="text-[#1b1c1c]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-[#ffffff] transition-all font-sans uppercase tracking-[0.2em] text-xs" href="#">Our Story</a>
+<a class="text-[#1b1c1c]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-[#ffffff] transition-all font-sans uppercase tracking-[0.2em] text-xs" href="#">Provenances</a>
+<a class="text-[#1b1c1c]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-[#ffffff] transition-all font-sans uppercase tracking-[0.2em] text-xs" href="#">The Archives</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-[#173124] dark:text-[#f6f3f2] cursor-pointer hover:opacity-80 transition-opacity" data-icon="search">search</span>
+<span class="material-symbols-outlined text-[#173124] dark:text-[#f6f3f2] cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+<span class="material-symbols-outlined text-[#173124] dark:text-[#f6f3f2] cursor-pointer hover:opacity-80 transition-opacity" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</nav>
+</header>
+<main class="max-w-[1920px] mx-auto px-12 pt-16">
+<!-- Page Header & Filter Section -->
+<section class="mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="max-w-2xl">
+<h1 class="text-6xl font-headline italic tracking-tight mb-4 text-primary">The Collection</h1>
+<p class="text-on-surface-variant font-body leading-relaxed max-w-lg">A curated assembly of rare botanicals and heritage extractions. Every artifact is a testament to soil, season, and the hands that harvest.</p>
+</div>
+<div class="flex flex-wrap gap-4 font-label uppercase tracking-widest text-[10px]">
+<span class="px-4 py-2 bg-primary text-on-primary cursor-pointer transition-colors">All Sources</span>
+<span class="px-4 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">The Source Families</span>
+<span class="px-4 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">Standalone Sources</span>
+<span class="px-4 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">Anvaya Recipes</span>
+<span class="px-4 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">Fresh On-Demand</span>
+</div>
+</div>
+<!-- Ingredient Filters -->
+<div class="flex items-center gap-6 overflow-x-auto pb-4 hide-scrollbar">
+<span class="text-secondary font-label text-[10px] uppercase tracking-[0.2em] whitespace-nowrap">Filter by Origin:</span>
+<div class="flex gap-2">
+<button class="px-6 py-1.5 border border-outline-variant/30 text-xs font-label uppercase tracking-wider hover:bg-surface-container-low transition-all">Vetiver</button>
+<button class="px-6 py-1.5 border border-outline-variant/30 text-xs font-label uppercase tracking-wider hover:bg-surface-container-low transition-all">Damask Rose</button>
+<button class="px-6 py-1.5 border border-outline-variant/30 text-xs font-label uppercase tracking-wider hover:bg-surface-container-low transition-all">Sandalwood</button>
+<button class="px-6 py-1.5 border border-outline-variant/30 text-xs font-label uppercase tracking-wider hover:bg-surface-container-low transition-all">Jasmine</button>
+<button class="px-6 py-1.5 border border-outline-variant/30 text-xs font-label uppercase tracking-wider hover:bg-surface-container-low transition-all">Patchouli</button>
+<button class="px-6 py-1.5 border border-outline-variant/30 text-xs font-label uppercase tracking-wider hover:bg-surface-container-low transition-all">Oud</button>
+</div>
+</div>
+</section>
+<!-- Product Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-y-24 gap-x-12 pb-32">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 group">
+<div class="aspect-[16/9] bg-surface-variant overflow-hidden relative mb-6">
+<img alt="Heritage Vetiver Oil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Handcrafted essential oil bottle in warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASper2lyT5hjWqYHJWANKLY_126je13ovWD1oyE1cAJcXd5wG_0tjXAd3hnUuKyfYYgrJ180lalcYiEu1No0x-UjY5WNkPiLTNZVpX1-dyYUVrZneY0aXmjJfIiOAxpGcX02VoqvP0eFcwPFcPrljLbUdbQpY0y_r5aBLf-5SujBPhmzvdfWEyMaj6aPHfunuQN76i1d6XKtRH5w3efugT2FZPIF3_LFryBUOypA6r1qlq41xNxlBjRx7-kHMyb1-skziHbH4yybE"/>
+<div class="absolute top-6 left-6">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label text-[10px] uppercase tracking-widest">Sourced from Kerala</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-headline italic text-primary mb-2">Heritage Vetiver Root Extraction</h3>
+<p class="text-on-surface-variant text-sm font-body max-w-md">First-press steam distillation of 24-month aged roots from the Nilgiri foothills.</p>
+</div>
+<div class="text-right">
+<span class="block text-xl font-label text-primary mb-4">€185.00</span>
+<button class="px-8 py-3 bg-primary text-on-primary font-label text-[10px] uppercase tracking-[0.2em] active:scale-95 transition-transform">Reserve for Launch</button>
+</div>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="md:col-span-4 group mt-12 md:mt-24">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden relative mb-6">
+<img alt="Damask Rose Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Delicate rose petals and a glass amber bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwMQIH5Rkfked9j7RsNaFhAXG3hSrKizyW6rPanMt1yiXr0lG9MhrYHNuCDtFU7GtWaEn-eYYJtnlhxBebWiVCUcu0_9_HXe8-wOp1fPLg1nK81m7IpnZZyFYPnfIe8OKAAv_RJ6o8TbYfI2b8I3x4zcupiwct3eyqAaOaff5SdvpGFVHWQgS6XpVqnIASNPiW4kGdq32LeutPFov91mnTQLZd7XshMR5ICr-dKSHTcShQ5-uVdZpZjoiaXV38ctq7PAGL8GH-DTk"/>
+<div class="absolute top-6 left-6">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label text-[10px] uppercase tracking-widest">Limited Vintage</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-2">Damask Rose Morning Dew</h3>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm font-body">100ml / 3.4 fl.oz</span>
+<button class="text-secondary font-label text-[10px] uppercase tracking-widest border-b border-secondary/30 pb-1 hover:border-secondary transition-colors">View Details</button>
+</div>
+</div>
+<!-- Asymmetric Grid Middle Row -->
+<div class="md:col-span-4 group">
+<div class="aspect-[1/1] bg-surface-container-high overflow-hidden relative mb-6">
+<img alt="Mysore Sandalwood Paste" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Wooden sandalwood sticks and traditional carved bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0PANvJ72oXNBOUoErYNd_bOW386iT_19DITQ7eirv29qkw8V00h-oO14izvFaKr6DEdixVFUye_eH9cmm-kNz3w8w9rCFux3JTI8qlPb4NBisaIBwDTD5oyua8kRyPj37kHC3bo3Dg6Jt1z_k7vE3FOhg5A_unkrSDKT7d9vt-7nqsZIDW7FNjPWTYT2k8cGCucrguOu9XhrFWlwInlZSf6Bf855lPd-PzpT41PtwDDQukeQBC_wQsmh86Ov-rCXWwexF7EjNzmg"/>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-2">Mysore Sandalwood Heartwood</h3>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm font-body">€140.00</span>
+<button class="px-6 py-2 bg-primary text-on-primary font-label text-[10px] uppercase tracking-[0.2em] active:scale-95 transition-transform">Reserve</button>
+</div>
+</div>
+<div class="md:col-span-4 group translate-y-12">
+<div class="aspect-[1/1] bg-surface-container-low overflow-hidden relative mb-6">
+<img alt="Anvaya Recipe No. 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract incense smoke and ceramic vessel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfVa7QDqAIYhQzixWLps8ea16rQarkQBZ0yVWoIxXTxFOJOOJQ0FleqkO5gEkQlKw4rULWg2D4TDlBdmCd8JwFJawiARL4dvMd4LfE0D2xQ-oD9N3tgfTJ7CRHutMc62IzBKZEkxeFINkntIHuW7f9Su74zE-EferZqkth-qtsyE9oj_0-O9ScRV6huiW0JOO7GUSV5UleOllOLGLHFgCqikQhwWWOc3iV6jBLYOEKl8_8KEbFtMBGfXztJ5Wi5oe7zxF5Nr8PUAQ"/>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-2">Recipe No. 4: Rain On Clay</h3>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm font-body">€95.00</span>
+<button class="px-6 py-2 bg-primary text-on-primary font-label text-[10px] uppercase tracking-[0.2em] active:scale-95 transition-transform">Reserve</button>
+</div>
+</div>
+<div class="md:col-span-4 group">
+<div class="aspect-[1/1] bg-surface-variant overflow-hidden relative mb-6">
+<img alt="Fresh Jasmine Garland" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Fresh white jasmine flowers in a copper bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY-QWcUiE_s6uuGarQDopVPL2gU-h2kddi95PYaAyS4JZGLZwd3A0uZTdYpcYtxNW3JPPqc0CyJkfq66sI8SAGmS671il9rgYZxxIIMTy6wKMUoDFhIol1qsywLIlaZJbWgOK-Ez0TNtqK6vzWfNR9nJhmhpsqk7Pb-3njC3lA7wgTGY-ugrz1LDnSiO-6bkKeNjEqLbQuihFlObUSXuyoEIBWSSFxDFLvHkFxEZBMuajIvelR8ul8O6aLHnyz2ZAikuh8uZWD8NU"/>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-2">Fresh Madurai Jasmine</h3>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm font-body">Subscription Only</span>
+<button class="text-secondary font-label text-[10px] uppercase tracking-widest border-b border-secondary/30 pb-1 hover:border-secondary transition-colors">Join Waitlist</button>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Section -->
+<section class="bg-surface-container-low px-12 py-24 -mx-12 mb-24 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="text-4xl font-headline italic text-primary mb-6">The provenance report</h2>
+<p class="text-on-surface-variant font-body leading-relaxed mb-8">Receive quarterly insights into harvest yields, rare botanical discoveries, and upcoming batch releases directly from our sourcing families.</p>
+<div class="flex border-b border-outline-variant max-w-md">
+<input class="bg-transparent border-none w-full py-4 text-xs font-label uppercase tracking-widest focus:ring-0" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="text-primary font-label text-[10px] uppercase tracking-widest px-4">Subscribe</button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[3/2] bg-surface-container-high overflow-hidden">
+<img alt="Landscape of source" class="w-full h-full object-cover opacity-80" data-alt="Misty mountain landscape with spice plantations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQuazwUdNu9hrNhWCZKYhi2UWEPP91kWouOgB97cbsDSvGQnkmtPf4r6xKcrWnlJuqX06GXvj_kMYavug1bGSeCGsH3ZRfZQ0szSdyDFNXv8EHGa5w2GTrKHbXIZqTG1bMqlGvuE5zbpFPkfqo8vUcbM5UzavCmgE7tv7_-sFKAvd52hsMs2HlS3DDc2ae0-h5VkXO-yEagCkn3He0Z5Ht7NfVhnWbwiXNB32AbqPh5w5XUnbf1o28PRbly7f7C_ptv_AxAx_dYwU"/>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-surface p-8 max-w-xs shadow-sm">
+<span class="font-serif-italic text-secondary text-sm block mb-2">Curator's Note</span>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">"This season's Damask harvest is exceptionally concentrated due to the late monsoon cooling."</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6f3f2] dark:bg-[#173124] full-width mt-24 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="col-span-1">
+<div class="text-xl font-serif text-[#173124] dark:text-[#c7aa82] mb-6">Anvaya</div>
+<p class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 font-sans font-light tracking-wide text-sm leading-relaxed">Preserving the olfactory heritage of the Indian subcontinent through rigorous sourcing and digital transparency.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label uppercase tracking-widest text-xs text-[#173124] dark:text-[#c7aa82]">Shop</span>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Sustainability</a>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Shipping &amp; Returns</a>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Wholesale</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label uppercase tracking-widest text-xs text-[#173124] dark:text-[#c7aa82]">Legal</span>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label uppercase tracking-widest text-xs text-[#173124] dark:text-[#c7aa82]">Contact</span>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Zurich Studio</a>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm" href="#">Kochi Distillery</a>
+<a class="text-[#1b1c1c]/70 dark:text-[#f6f3f2]/70 hover:text-[#944925] dark:hover:text-[#c7aa82] transition-colors text-sm underline decoration-1 underline-offset-4" href="#">Contact</a>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant/10 flex justify-between items-center w-full max-w-[1920px] mx-auto">
+<p class="font-serif italic text-[#173124] dark:text-[#c7aa82] text-xs">© 2024 Anvaya Heritage. Crafted between Zurich and Kochi.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-sm text-[#173124] dark:text-[#c7aa82]" data-icon="public">public</span>
+<span class="material-symbols-outlined text-sm text-[#173124] dark:text-[#c7aa82]" data-icon="camera">camera</span>
+</div>
+</div>
+</footer>
+</body></html>

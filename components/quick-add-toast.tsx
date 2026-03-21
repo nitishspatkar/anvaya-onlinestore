@@ -20,7 +20,7 @@ export function QuickAddToast() {
   if (!message) return null
 
   return (
-    <div className="fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
+    <div className="fixed bottom-28 left-1/2 z-[60] -translate-x-1/2 rounded-sm bg-primary px-4 py-2 text-xs font-medium text-on-primary shadow-lg md:bottom-6">
       {message}
     </div>
   )

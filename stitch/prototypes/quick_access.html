@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#98b5a3",
+              "surface-container-highest": "#e4e2e1",
+              "primary-fixed-dim": "#b0cdbb",
+              "outline-variant": "#c2c8c2",
+              "secondary-fixed": "#ffdbcd",
+              "on-tertiary-fixed": "#281801",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#f6f3f2",
+              "surface-bright": "#fbf9f8",
+              "on-tertiary-fixed-variant": "#584324",
+              "surface-variant": "#e4e2e1",
+              "tertiary-container": "#533e1f",
+              "secondary-fixed-dim": "#ffb596",
+              "on-primary-fixed": "#062014",
+              "inverse-primary": "#b0cdbb",
+              "primary": "#173124",
+              "inverse-surface": "#303030",
+              "secondary": "#944925",
+              "primary-container": "#2d4739",
+              "surface": "#fbf9f8",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#76320f",
+              "inverse-on-surface": "#f3f0f0",
+              "surface-tint": "#496455",
+              "on-surface-variant": "#424844",
+              "on-background": "#1b1c1c",
+              "surface-dim": "#dcd9d9",
+              "primary-fixed": "#ccead6",
+              "on-surface": "#1b1c1c",
+              "on-secondary": "#ffffff",
+              "background": "#fbf9f8",
+              "tertiary-fixed-dim": "#e1c299",
+              "on-secondary-container": "#773310",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline": "#727973",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#360f00",
+              "on-primary-fixed-variant": "#324c3e",
+              "on-error": "#ffffff",
+              "surface-container-high": "#eae8e7",
+              "on-tertiary-container": "#c7aa82",
+              "surface-container": "#f0eded",
+              "error": "#ba1a1a",
+              "tertiary": "#3a280b",
+              "secondary-container": "#fe9e72",
+              "tertiary-fixed": "#feddb3"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f8]/90 dark:bg-stone-950/90 backdrop-blur-md flex justify-between items-center px-6 py-4 border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<button class="text-[#173124] dark:text-[#fbf9f8] hover:text-[#944925] transition-colors active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="text-2xl font-serif font-bold tracking-widest text-[#173124] dark:text-[#fbf9f8]">ANVAYA</div>
+<div class="flex items-center gap-6">
+<button class="text-[#173124] dark:text-[#fbf9f8] hover:text-[#944925] transition-colors active:scale-95">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Hero Section -->
+<section class="px-6 mb-12 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-end gap-6 mb-8">
+<div class="flex-1">
+<span class="text-[9px] uppercase tracking-[0.2em] text-secondary font-semibold mb-2 block">The Digital Curator</span>
+<h1 class="text-4xl md:text-7xl font-serif tracking-tight text-primary leading-tight">The Origin <br/><span class="italic font-normal">Collection</span></h1>
+</div>
+</div>
+<!-- Shop by Ingredient Chips -->
+<div class="mb-8 -mx-6 px-6 overflow-x-auto no-scrollbar">
+<div class="flex gap-2 whitespace-nowrap pb-2">
+<button class="bg-primary text-on-primary px-5 py-2.5 text-[10px] uppercase tracking-widest font-bold">All Sources</button>
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 text-[10px] uppercase tracking-widest font-medium hover:bg-outline-variant/30">Vetiver</button>
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 text-[10px] uppercase tracking-widest font-medium hover:bg-outline-variant/30">Damask Rose</button>
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 text-[10px] uppercase tracking-widest font-medium hover:bg-outline-variant/30">Neem</button>
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 text-[10px] uppercase tracking-widest font-medium hover:bg-outline-variant/30">Amla</button>
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 text-[10px] uppercase tracking-widest font-medium hover:bg-outline-variant/30">Shatavari</button>
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 text-[10px] uppercase tracking-widest font-medium hover:bg-outline-variant/30">Turmeric</button>
+</div>
+</div>
+<!-- Bento Reservation Banner -->
+<div class="bg-surface-container-low p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden border border-outline-variant/10">
+<div class="relative z-10">
+<h2 class="text-xl font-serif text-primary mb-1">Pre-Launch Access</h2>
+<p class="text-on-surface-variant text-xs max-w-sm">Secure your position in the next harvest cycle.</p>
+</div>
+<button class="relative z-10 bg-primary text-on-primary w-full md:w-auto px-8 py-3.5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary-container transition-all">
+                    Register for Reservation
+                </button>
+<div class="absolute -right-20 -top-20 w-48 h-48 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- 1. Source Families (More Compact) -->
+<section class="mb-16 px-6 max-w-7xl mx-auto">
+<div class="flex justify-between items-baseline mb-6 border-b border-outline-variant/20 pb-2">
+<h3 class="text-xl font-serif text-primary italic">The Source Families</h3>
+<span class="text-[9px] uppercase tracking-[0.2em] text-on-surface-variant">04 Pillars</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Family Card: Vetiver -->
+<div class="group cursor-pointer">
+<div class="aspect-[1/1] overflow-hidden mb-3 relative bg-surface-variant">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATH8oEjR2muYirHwIoEYnTS28peo3Uc5N3TlmchauneG-yvmxBtBa5jOcZ2cB_U8PJHugHQKpNLi9ADlMAZ-zXt8w2jZd7p5ns9C8DOuRFNPwSPl-wWWNaESMsjTRBj4XvFNNYB2DFJsrgChSus3wxsbbbY30fitUkj6CLfgjXPJy2IjIAQeBZnLFgM0hdLoSHSEpCzNUSHRTX_xPx1qUW77MSKwcLvvhUg0wQ5GiF9VLG6ANmY0KhQCPhcoSIRLGrK0JH2cHXyxs"/>
+<div class="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-white px-2 py-0.5 text-[8px] uppercase tracking-widest">08</div>
+</div>
+<h4 class="text-sm font-serif text-primary leading-tight">The Vetiver Roots</h4>
+<p class="text-[10px] text-on-surface-variant mt-1 line-clamp-1">Bharatpur Wetlands</p>
+</div>
+<!-- Family Card: Rose -->
+<div class="group cursor-pointer">
+<div class="aspect-[1/1] overflow-hidden mb-3 relative bg-surface-variant">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6xqRY8fCOxDixQdrDQOfC6f89zmupnXrVIhWbekZYQML6y2FAUWabXqFOA1JMA9VwbT-USyd02AGPmaE0P4YzlCz-6hyz3j9R-RAfWMRBcFIfLeRDmG7wFNFBwh8b3gWIiDcKdsaa9QSkBMbbHnQXoJg8kGRn1EPxfVw92m2-0GTweRV_oKrQ1TEemIP2EGkysYyzybInYuFhGdnLck_1Yi3UBEVg0homEtXG4Vy-6fuOHa6JQ13vJIXjms_krMznqu9ET_fWnAE"/>
+<div class="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-white px-2 py-0.5 text-[8px] uppercase tracking-widest">12</div>
+</div>
+<h4 class="text-sm font-serif text-primary leading-tight">Damask Rose</h4>
+<p class="text-[10px] text-on-surface-variant mt-1 line-clamp-1">Kannauj Steam Distilled</p>
+</div>
+<!-- Family Card Placeholder: Neem -->
+<div class="group cursor-pointer">
+<div class="aspect-[1/1] overflow-hidden mb-3 relative bg-surface-variant">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxp94pCkWrJCeiIDF3m9hh85Bcu3gwkMutWZ8BPsWjAC-u8qFa59bMhTp_Vb_Omw6eLdnuYM4bLoCDh649bOYmtquxtVvWp_MBNzimj0rXD-c8Nr9x53a08bXGa-UvBP6x7TUd1OnmM3zc28k92v-s98nSRf1hm8shE5FQIOkSfZLAE5fEgBx8zpw2pKMGq13iyGAO8VocjlG2QEYSmMFut8JMatwdDzejIDtKpzMfyW_3pzoVGOoBv8s9y035WcyiR8vXjol_kUo"/>
+<div class="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-white px-2 py-0.5 text-[8px] uppercase tracking-widest">05</div>
+</div>
+<h4 class="text-sm font-serif text-primary leading-tight">Sacred Neem</h4>
+<p class="text-[10px] text-on-surface-variant mt-1 line-clamp-1">Tamil Nadu Wild Harvest</p>
+</div>
+<!-- Family Card Placeholder: Turmeric -->
+<div class="group cursor-pointer">
+<div class="aspect-[1/1] overflow-hidden mb-3 relative bg-surface-variant">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxg9zkcKzGHwhRzSLEPtFi0aR-CurONqiDaVtr443dyTA25QfntleSmY1uImXAnLwRqx09dKzRD_7PKUxuF32GDBP1X1AGDPVWlM4dsqQaR7H6bdfGKKVeaxUK8sB2M2ppPfvhQgBmhtRkIh3pxk4_OwhT6ciXOdKrTfqNslGodlOt4CMAkzaBWzyP61ENU_gWH3-SrIQBU3qAPHIdvBNbD63rAibS5--H9cpGfxay9-EemclSurDnbj0h-gyWm3ndGuROWVKhPUQ"/>
+<div class="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-white px-2 py-0.5 text-[8px] uppercase tracking-widest">09</div>
+</div>
+<h4 class="text-sm font-serif text-primary leading-tight">Wild Turmeric</h4>
+<p class="text-[10px] text-on-surface-variant mt-1 line-clamp-1">Erode Single Origin</p>
+</div>
+</div>
+</section>
+<!-- 2. Standalone Sources (Brought Higher) -->
+<section class="mb-16 bg-surface-container-low py-12 px-6 border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div class="max-w-xl">
+<h3 class="text-2xl font-serif text-primary mb-2">Standalone Essences</h3>
+<p class="text-on-surface-variant text-sm">Single-origin botanicals that command presence.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Source: Kasturi Manjal -->
+<div class="bg-surface group border border-outline-variant/10">
+<div class="aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxg9zkcKzGHwhRzSLEPtFi0aR-CurONqiDaVtr443dyTA25QfntleSmY1uImXAnLwRqx09dKzRD_7PKUxuF32GDBP1X1AGDPVWlM4dsqQaR7H6bdfGKKVeaxUK8sB2M2ppPfvhQgBmhtRkIh3pxk4_OwhT6ciXOdKrTfqNslGodlOt4CMAkzaBWzyP61ENU_gWH3-SrIQBU3qAPHIdvBNbD63rAibS5--H9cpGfxay9-EemclSurDnbj0h-gyWm3ndGuROWVKhPUQ"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-base font-serif text-primary">Kasturi Manjal</h5>
+<span class="text-[9px] font-body bg-tertiary-container/10 text-tertiary px-1.5 py-0.5">Kerala</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mb-4 uppercase tracking-wide">Wild Turmeric • Pure Powder</p>
+<button class="w-full py-2.5 bg-primary text-on-primary text-[10px] uppercase tracking-widest font-bold hover:bg-primary-container transition-colors">Reserve Unit</button>
+</div>
+</div>
+<!-- Source: Amla -->
+<div class="bg-surface group border border-outline-variant/10">
+<div class="aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARV3nUk0j-D8Bjz3MBAmQfLakxiWC7VOcWh48afUv8wR_HzGMytzD4X7TcnK-FEsMGb7mOw3UoaZrH2WlP-hLSra6PR4VcM5JCxX2k-vp-cq12ZCzc_YuuzxZ1-R-B-n7zbHnfr8fRVGDP60f8K2DYnw2dBre609jtVzd0jIWzI26k0DoPyq_Wuq-PAEgKnnN5YPXIOXmZAoE1myaB_6PrTAJHow7Dum5wXuu9m_Din-NUdxKHwo5ItaATXNn6oipu5f0iK5sokCM"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-base font-serif text-primary">Pratapgarh Amla</h5>
+<span class="text-[9px] font-body bg-tertiary-container/10 text-tertiary px-1.5 py-0.5">UP</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mb-4 uppercase tracking-wide">Gooseberry • Cold Pressed</p>
+<button class="w-full py-2.5 bg-primary text-on-primary text-[10px] uppercase tracking-widest font-bold hover:bg-primary-container transition-colors">Reserve Unit</button>
+</div>
+</div>
+<!-- Source: Shatavari -->
+<div class="bg-surface group border border-outline-variant/10">
+<div class="aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dFw4b8OVAEwuGPq-m60myjWracqP8XxMoE6c1o0KgNSIYQsyFm2oVS7a_LWU7tZn9A91K_VsNl10lfX-C5i6YS--S7ylXslT2bQgrSLaFe9Ne3Vm1ZWJU1dYC_n0AJ3XOwDjltmQcJv1bv4Qd8bqRf2qfrVAc7PVYQDVzvPmhA4XuDHWkpaqM79C6hp3sFmkZWR6tUNL9qNPrXOwLBeFd54wqfB0GpTRlOwxgHOfRAwlYDB9UzxCPxzdmb0txp5yXbiCFR3qo0c"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-base font-serif text-primary">Shatavari</h5>
+<span class="text-[9px] font-body bg-tertiary-container/10 text-tertiary px-1.5 py-0.5">Himalayas</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mb-4 uppercase tracking-wide">Root Extract • Sun Dried</p>
+<button class="w-full py-2.5 bg-primary text-on-primary text-[10px] uppercase tracking-widest font-bold hover:bg-primary-container transition-colors">Reserve Unit</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Recipes & Blends (Brought Higher & Compacted) -->
+<section class="mb-16 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<span class="text-[9px] uppercase tracking-[0.2em] text-secondary font-bold mb-2 block">The Alchemy</span>
+<h3 class="text-3xl font-serif text-primary mb-4">Anvaya Recipes</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                        Revived from family manuscripts and regional traditions. Medicinal symphonies of multiple sources.
+                    </p>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-3 bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-colors group cursor-pointer">
+<div class="w-10 h-10 flex-shrink-0 bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">auto_fix_high</span>
+</div>
+<div class="flex-1">
+<h6 class="font-serif text-base text-primary">The Ubatan Mask</h6>
+<p class="text-[10px] text-on-surface-variant">14-ingredient herbal blend</p>
+</div>
+<button class="text-[9px] font-bold uppercase tracking-widest text-secondary group-hover:underline">Reserve</button>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-colors group cursor-pointer">
+<div class="w-10 h-10 flex-shrink-0 bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">bolt</span>
+</div>
+<div class="flex-1">
+<h6 class="font-serif text-base text-primary">Golden Mix</h6>
+<p class="text-[10px] text-on-surface-variant">Therapeutic grade turmeric</p>
+</div>
+<button class="text-[9px] font-bold uppercase tracking-widest text-secondary group-hover:underline">Reserve</button>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[16/8] overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAshlFJAQfS1X4kEEnpILcKwwjgmLz9cwN3HzcyFle4fgqHtr-kZ0EDZp3gmUYz8_nj-_FwsIVTUOPBHyj8ZMTs0GVMkiTbFwCRugOILb9OnoHeY0226Td2FM89EUepOU4Qs_hvT-PdvCYrXgHpaEKV8FuciRAOOel6HDAAnaTwcV74Z09YnU8_MfnlosVc77EbPpms2v5KvaMUfQ3K8X3vXt2MDLdUG71wZcV8rhWlUKwljgkACZl1rbFpJW2fbgzdUaKe5ET-Ro4"/>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-surface p-4 shadow-lg max-w-[200px] border border-outline-variant/10 hidden md:block">
+<p class="text-[10px] italic font-serif text-primary leading-tight">"Measured by the season's potency, never a fixed formula."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Fresh On-Demand -->
+<section class="mb-16 px-6 max-w-7xl mx-auto">
+<div class="bg-primary text-on-primary p-10 relative overflow-hidden">
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 bg-on-primary-container/20 rounded-full mb-4">
+<span class="w-1 h-1 rounded-full bg-on-primary-container animate-pulse"></span>
+<span class="text-[8px] uppercase tracking-widest">Harvesting Now</span>
+</div>
+<h3 class="text-3xl font-serif mb-4 leading-tight">Fresh On-Demand</h3>
+<p class="text-on-primary-container text-sm max-w-sm mb-8 leading-relaxed">
+                            Prepared upon order and shipped in climate-controlled vessels. 
+                        </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<span class="block text-[8px] uppercase tracking-widest text-on-primary-container mb-1">Signature</span>
+<h6 class="font-serif text-lg">Ginger-Tulsi</h6>
+</div>
+<div>
+<span class="block text-[8px] uppercase tracking-widest text-on-primary-container mb-1">Small Batch</span>
+<h6 class="font-serif text-lg">Bilona Ghee</h6>
+</div>
+</div>
+<button class="bg-white text-primary px-8 py-3 text-[10px] uppercase tracking-widest font-bold">Request Fresh Batch</button>
+</div>
+<div class="flex items-center justify-center md:justify-end">
+<div class="w-48 h-64 overflow-hidden relative border border-white/20">
+<img class="w-full h-full object-cover grayscale brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxp94pCkWrJCeiIDF3m9hh85Bcu3gwkMutWZ8BPsWjAC-u8qFa59bMhTp_Vb_Omw6eLdnuYM4bLoCDh649bOYmtquxtVvWp_MBNzimj0rXD-c8Nr9x53a08bXGa-UvBP6x7TUd1OnmM3zc28k92v-s98nSRf1hm8shE5FQIOkSfZLAE5fEgBx8zpw2pKMGq13iyGAO8VocjlG2QEYSmMFut8JMatwdDzejIDtKpzMfyW_3pzoVGOoBv8s9y035WcyiR8vXjol_kUo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community Section -->
+<section class="px-6 max-w-2xl mx-auto text-center py-12 border-t border-outline-variant/10">
+<h4 class="text-2xl font-serif text-primary mb-3">Join The Circle</h4>
+<p class="text-on-surface-variant text-sm mb-8">Invitations to private harvests and seasonal provenance reports.</p>
+<form class="flex flex-col md:flex-row gap-2">
+<input class="flex-1 bg-surface-container-low border border-outline-variant/20 focus:ring-0 focus:border-primary px-4 py-3 text-sm placeholder:text-on-surface-variant/40" placeholder="Your electronic address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 text-[10px] uppercase tracking-widest font-bold">Subscribe</button>
+</form>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#fbf9f8]/95 dark:bg-stone-950/95 backdrop-blur-md px-4 border-t border-outline-variant/20">
+<a class="flex flex-col items-center justify-center text-on-surface/40 hover:text-primary transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+<span class="text-[9px] font-medium tracking-wider">Our Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary scale-105" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[9px] font-medium tracking-wider">Collection</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface/40 hover:text-primary transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl">loyalty</span>
+<span class="text-[9px] font-medium tracking-wider">The Circle</span>
+</a>
+</nav>
+<!-- Pre-launch FAB -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="bg-secondary text-on-secondary w-12 h-12 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">event_seat</span>
+</button>
+</div>
+</body></html>
