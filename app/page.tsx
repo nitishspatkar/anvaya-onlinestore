@@ -6,7 +6,8 @@ import { ScrollRestoreLink } from '@/components/scroll-restore-link'
 
 export const metadata = {
   title: 'Anvaya — Botanical Essences from India',
-  description: 'Pre-order authentic botanical essences directly sourced from Indian farmers and artisans. Direct trade, transparent, made by hand.',
+  description:
+    'A small store for roots, oils, and botanicals from India. We try to work fairly and clearly with growers and small makers.',
 }
 
 interface HomePageProps {
@@ -36,27 +37,28 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     <main className="min-h-screen bg-background pb-24">
       <ScrollRestore storageKey="home-scroll-y" />
 
-      {/* Hero Section */}
+      {/* Opening & what we stand for */}
       <section className="content-container py-8">
-        <div className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
-          <div className="detail-shell p-5 sm:p-6">
-            <div className="max-w-3xl space-y-3">
-              <h2 className="font-serif text-3xl font-semibold leading-tight text-text-primary sm:text-4xl">
-                Authentic essences, directly from makers
-              </h2>
+        <div className="detail-shell space-y-6 p-5 sm:p-8">
+          <p className="font-serif text-lg leading-relaxed text-text-primary sm:text-xl md:max-w-3xl">
+            This is a small store for roots, oils, and botanicals we trust—offered in the hope they find a quiet place in your home.
+          </p>
+          <div className="border-t border-border/40 pt-6">
+            <h2 className="font-serif text-xl font-semibold text-text-primary sm:text-2xl">
+              What Anvaya stands for
+            </h2>
+            <div className="mt-4 space-y-4">
               <p className="font-body text-sm leading-relaxed text-text-secondary sm:text-base">
-                Pre-order directly from Indian farmers and artisans. No middlemen. Complete transparency. Everything handcrafted.
+                <span className="font-medium text-text-primary">Anvaya</span> means interconnectedness in Sanskrit. We are not claiming to change the world—only to remember that soil, weather, hands, and whoever opens a jar belong to the same story.
+              </p>
+              <p className="font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+                We try to bring modest channels between small growers, craftspeople, and anyone who cares where things come from. When we fall short, we hope you will tell us. When something is good, it is because of them—not us.
+              </p>
+              <p className="font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+                We prefer plain words to loud ones: fair terms where we can, clear information, and no promise we cannot keep.
               </p>
             </div>
           </div>
-          <aside className="detail-shell hidden p-5 lg:block">
-            <p className="mb-2 text-xs uppercase tracking-wider text-text-secondary">Why this store</p>
-            <ul className="space-y-2 text-sm text-text-primary">
-              <li>Direct-from-maker sourcing model</li>
-              <li>Small-batch inventory and freshness</li>
-              <li>Transparent pre-order pricing</li>
-            </ul>
-          </aside>
         </div>
       </section>
 
@@ -163,26 +165,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </div>
             </ScrollRestoreLink>
           ))}
-        </div>
-      </section>
-
-      {/* What Anvaya Stands For Section */}
-      <section className="content-container mt-2 py-8">
-        <div className="bg-gradient-to-br from-primary/10 to-accent-warm/5 rounded-2xl p-5 space-y-4 border border-primary/10">
-          <h3 className="font-serif text-xl font-semibold text-text-primary">
-            What Anvaya Stands For
-          </h3>
-          <div className="space-y-3">
-            <p className="font-body text-sm text-text-secondary leading-relaxed">
-              <span className="font-semibold text-text-primary">Anvaya</span> means "interconnectedness" in Sanskrit - a philosophy we live by. It's not just our name; it's our promise. Every essence we offer represents the interconnected relationship between farmers, artisans, nature, and you.
-            </p>
-            <p className="font-body text-sm text-text-secondary leading-relaxed">
-              We empower grassroot producers and small-scale farmers by creating direct channels to global audiences. Their knowledge, craftsmanship, and dedication deserve recognition. Our role is simple: connect authentic makers with people who value quality and transparency.
-            </p>
-            <p className="font-body text-xs text-text-secondary italic">
-              Direct trade. Fair terms. Complete transparency. Always.
-            </p>
-          </div>
         </div>
       </section>
 
