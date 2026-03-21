@@ -268,7 +268,7 @@ export const categories: Category[] = [
     variants: [
       {
         id: 'neem-powder',
-        name: 'Powder',
+        name: 'The Bitter Gift',
         description: 'Natural remedy for skin and hair health. Mix with water to make a paste or add to face masks.',
         type: 'Fine Powder',
         maker: {
@@ -340,7 +340,7 @@ export const categories: Category[] = [
     variants: [
       {
         id: 'kokum-butter',
-        name: 'Butter',
+        name: 'Velvet Shore',
         description: 'Rich, natural moisturizer from kokum seeds. Apply to dry skin for deep hydration.',
         type: 'Body Butter',
         maker: {
@@ -376,7 +376,7 @@ export const categories: Category[] = [
     variants: [
       {
         id: 'rose-water',
-        name: 'Rose Water',
+        name: 'The Petal Rinse',
         description: 'Natural toner and skin refresher. Apply to skin with a cotton pad or add to recipes.',
         type: 'Flower Water',
         maker: {
@@ -402,7 +402,7 @@ export const categories: Category[] = [
       },
       {
         id: 'rose-marmalade',
-        name: 'Marmalade',
+        name: 'Summer in a Jar',
         description: 'Delicious, fragrant preserve made from rose petals. Spread on toast or add to desserts.',
         type: 'Preserve',
         maker: {
@@ -546,7 +546,7 @@ export const categories: Category[] = [
     variants: [
       {
         id: 'soap-berries-whole',
-        name: 'Whole Berries',
+        name: 'The First Soap',
         description: 'Used for natural laundry detergent. Place in a cloth bag for laundry.',
         type: 'Whole Berries',
         maker: {
@@ -604,7 +604,7 @@ export interface FeaturedProduct {
 export const featuredProducts: FeaturedProduct[] = [
   {
     id: 'ubtan-face-scrub',
-    name: 'Ubtan Face Scrub',
+    name: 'Before the Ceremony',
     description: 'Traditional Indian face scrub with natural exfoliating properties.',
     href: '/categories/turmeric/products/turmeric-powder',
     type: 'Face Scrub',
@@ -612,7 +612,7 @@ export const featuredProducts: FeaturedProduct[] = [
   },
   {
     id: 'gulkand-rose-marmalade',
-    name: 'Gulkand Rose Marmalade',
+    name: 'Summer in a Jar',
     description: 'Delicious preserve with cooling and soothing properties.',
     href: '/categories/rose/products/rose-marmalade',
     type: 'Preserve',
@@ -628,7 +628,7 @@ export const featuredProducts: FeaturedProduct[] = [
   },
   {
     id: 'ayurvedic-ginger-shots',
-    name: 'Ayurvedic Ginger Shots',
+    name: 'Fire Shot',
     description: 'Potent health booster made with traditional spices.',
     href: '/categories/turmeric/products/turmeric-powder',
     type: 'Health Shot',
@@ -644,7 +644,7 @@ export const featuredProducts: FeaturedProduct[] = [
   },
   {
     id: 'kokum-butter',
-    name: 'Kokum Butter',
+    name: 'Velvet Shore',
     description: 'Natural, rich moisturizer for deep hydration and skin care.',
     href: '/categories/kokum/products/kokum-butter',
     type: 'Body Butter',
