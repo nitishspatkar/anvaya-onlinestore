@@ -75,8 +75,7 @@ This project embodies the **Switzerland-India Bridge**:
 
 1. **Vetiver** — Cooling root essence from Tamil Nadu
 2. **Sandalwood** — Sacred wood of spiritual warmth from Karnataka
-3. **Jasmine** — Moonlit flowers of the night from Rajasthan
-4. **Turmeric** — Golden root of ancient healing from Kerala
+3. **Turmeric** — Golden root of ancient healing from Kerala
 
 Each product includes:
 - Poetic storytelling

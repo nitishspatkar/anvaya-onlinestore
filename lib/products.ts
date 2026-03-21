@@ -28,7 +28,8 @@ export const categories: Category[] = [
   {
     id: 'vetiver',
     name: 'Vetiver',
-    description: 'Cooling root essence from the earth. Grown deep in Tamil Nadu soil, vetiver\'s roots reach where nothing else does. Ancient, cooling, grounding — it calms the body and purifies the air.',
+    description:
+      'Vetiver is a tall perennial grass native to India, where it has been treasured for thousands of years not for what grows above the ground, but for what lies beneath it. Its deep, complex root system produces one of the most distinctive natural scents known — earthy, smoky, woody, with a cool undertone that somehow feels both ancient and calming.\n\nVetiver thrives in the hot dry plains where its roots can reach deep into the soil. The same roots that prevent soil erosion also hold the key to its many uses.\n\nVetiver is used in several ways. The roots are woven into cooling mats, screens and baskets that release a gentle fragrance when sprinkled with water — a traditional Indian method of cooling rooms before air conditioning existed. Vetiver essential oil is used in perfumery, skincare and aromatherapy.',
     region: 'Tamil Nadu',
     imageId: 'vetiver',
     variants: [
@@ -121,8 +122,9 @@ export const categories: Category[] = [
   {
     id: 'sandalwood',
     name: 'Sandalwood',
-    description: 'Sacred wood of spiritual warmth. The finest sandalwood from Karnataka\'s Western Ghats, harvested sustainably to protect these precious forests.',
-    region: 'Karnataka',
+    description:
+      'Indian sandalwood is among the most precious natural materials on earth. Its warm, creamy, softly sweet scent is unlike anything else — it does not fade the way most fragrances do, but deepens and mellows over time on skin or in a room. It has been at the centre of Indian ritual, medicine and perfumery for over 4,000 years, and the finest quality still comes from the forests of Karnataka and Tamil Nadu, where trees must grow for at least 15 years before their heartwood develops its full fragrance.\n\nDue to its slow growth and high demand, genuine Indian sandalwood is now strictly regulated and commands prices comparable to precious metals in the fragrance industry.\n\nSandalwood paste, made by grinding the wood against a stone with a few drops of water, has been used in Indian skincare for centuries — applied to the face to cool, brighten and soothe the skin. Sandalwood essential oil is used in luxury perfumery, meditation practices and premium skincare. Sandalwood powder is used in face masks, incense and ritual preparations.',
+    region: 'Karnataka & Tamil Nadu',
     imageId: 'sandalwood',
     variants: [
       {
@@ -167,58 +169,11 @@ export const categories: Category[] = [
     ]
   },
   {
-    id: 'jasmine',
-    name: 'Jasmine',
-    description: 'Moonlit flowers of the night. Jasmine blooms at night, releasing its most intoxicating fragrance under the stars.',
-    region: 'Rajasthan',
-    imageId: 'jasmine',
-    variants: [
-      {
-        id: 'jasmine-water',
-        name: 'Rose Water',
-        description: 'Natural toner and skin refresher. Apply with a cotton pad or add to recipes.',
-        type: 'Flower Water',
-        maker: {
-          name: 'Priya & family',
-          role: 'Night Gardeners',
-          location: 'Rajasthan',
-          brief: 'Priya and her family have tended jasmine gardens for three generations.',
-          portraitId: 'priya'
-        }
-      },
-      {
-        id: 'jasmine-powder',
-        name: 'Powder',
-        description: 'Fragrant addition to culinary dishes and skincare. Mix into face masks or desserts.',
-        type: 'Fine Powder',
-        maker: {
-          name: 'Priya & family',
-          role: 'Night Gardeners',
-          location: 'Rajasthan',
-          brief: 'Priya and her family have tended jasmine gardens for three generations.',
-          portraitId: 'priya'
-        }
-      },
-      {
-        id: 'jasmine-marmalade',
-        name: 'Marmalade',
-        description: 'Delicious, fragrant preserve made from jasmine petals. Spread on toast or add to desserts.',
-        type: 'Preserve',
-        maker: {
-          name: 'Priya & family',
-          role: 'Night Gardeners',
-          location: 'Rajasthan',
-          brief: 'Priya and her family have tended jasmine gardens for three generations.',
-          portraitId: 'priya'
-        }
-      }
-    ]
-  },
-  {
     id: 'turmeric',
     name: 'Turmeric',
-    description: 'Golden root of ancient healing. Turmeric has been trusted for over 4,000 years to heal, warm, and protect.',
-    region: 'Kerala',
+    description:
+      'Turmeric needs little introduction — but the distance between what most people know and what turmeric actually is remains vast. The dried orange powder in the supermarket spice rack is a shadow of freshly ground, high-curcumin turmeric sourced from the right region and processed carefully. The difference in colour, aroma and potency is immediate and obvious.\n\nIndia produces over 75% of the world\'s turmeric.\n\nThe foundation of Indian cooking — used in curries, lentils, rice and marinades. Golden milk (turmeric in warm milk with black pepper and honey) has become a global wellness ritual. Taken daily in small quantities as an anti-inflammatory supplement.\n\nMixed with oil or milk as a brightening face mask. Combined with neem or sandalwood for targeted skin treatments.',
+    region: 'India',
     imageId: 'turmeric',
     variants: [
       {
@@ -239,8 +194,9 @@ export const categories: Category[] = [
   {
     id: 'neem',
     name: 'Neem',
-    description: 'Valued in traditional medicine for its antibacterial properties. Used in skincare and health remedies.',
-    region: 'Multiple',
+    description:
+      'Few plants in India carry as much everyday significance as neem. Called "the village pharmacy" for generations, this fast-growing tree is found across almost every state in India — in backyards, along roadsides, in temple courtyards. Every part of it — leaf, bark, seed, oil — has a documented use, and it has been central to Ayurvedic practice for over 4,000 years.\n\nNeem oil, cold-pressed from its seeds, is used in skincare for acne-prone and oily skin, in hair care to combat dandruff and scalp conditions, and as a natural pesticide in organic farming. Neem leaf powder is used in face masks and herbal preparations. Neem twigs have been used as natural toothbrushes across India and Africa for centuries.',
+    region: 'India',
     imageId: 'neem',
     variants: [
       {
@@ -274,8 +230,9 @@ export const categories: Category[] = [
   {
     id: 'tulsi',
     name: 'Tulsi (Holy Basil)',
-    description: 'Immune-boosting and stress-relieving properties. Revered in Ayurveda and traditional medicine.',
-    region: 'Multiple',
+    description:
+      'In India, tulsi is more than a herb. It grows in a clay pot at the entrance of almost every traditional home, tended to daily, considered sacred in Hindu tradition and regarded as one of the most important medicinal plants in Ayurveda.\n\nTulsi grows across India in almost every climate, but the finest varieties — Rama, Krishna and Vana tulsi — come from the fertile plains of Uttar Pradesh and Madhya Pradesh, where small farming cooperatives grow it organically and harvest it by hand.\n\nDried tulsi leaves are brewed as a tea — warming, aromatic and traditionally drunk to support immunity, reduce stress and ease respiratory complaints. It is used in herbal chai blends, infusions and Ayurvedic tonics. Fresh leaves are used in Indian cooking in small quantities.',
+    region: 'Uttar Pradesh & Madhya Pradesh',
     imageId: 'tulsi',
     variants: [
       {
@@ -309,8 +266,9 @@ export const categories: Category[] = [
   {
     id: 'kokum',
     name: 'Kokum',
-    description: 'Tropical fruit known for its cooling properties. Used in skincare and refreshing summer drinks.',
-    region: 'Maharashtra & Goa',
+    description:
+      'Kokum is one of India\'s best kept secrets — a deep purple fruit that grows wild along the lush Konkan coast of Maharashtra and Goa, and in the forests of Kerala and Karnataka. It is sour, fruity and intensely refreshing, and has been a staple of coastal Indian cooking and traditional medicine for as long as anyone can remember.\n\nThe kokum tree grows in tropical rainforest conditions close to the sea, producing fruit once a year that is hand-harvested and sun-dried by coastal farming communities who have built their livelihoods around it.\n\nDried kokum is used to add a distinctive fruity sourness to curries, lentils, fish dishes and chutneys as an alternative to tamarind. Amrut Kokum — dried kokum steeped in water with a touch of sugar and salt — is a traditional cooling summer drink in Maharashtra and Goa. As a digestive, it is drunk after heavy meals. Kokum butter, extracted from the seeds, is one of the finest natural moisturisers available. Non-greasy and deeply nourishing, it is used in lip balms, body butters and intensive skin treatments.',
+    region: 'Konkan coast & Western Ghats',
     imageId: 'kokum',
     variants: [
       {
@@ -344,8 +302,9 @@ export const categories: Category[] = [
   {
     id: 'rose',
     name: 'Rose',
-    description: 'Rose water and extracts cherished for their floral aroma and soothing effects in beauty and culinary uses.',
-    region: 'Himachal Pradesh',
+    description:
+      'The roses of India — Desi Gulab — are different. They produce a depth of scent that the commercial roses of Europe rarely match. These are not ornamental flowers grown for appearance. They are grown for their essence, their petals, their water — and they have been for centuries.\n\nIndia has one of the oldest traditions of rose distillation in the world, and the rose water and oil produced in Rajasthan and Uttar Pradesh remain among the finest available.\n\nRose water is used extensively in Indian sweets — gulab jamun, kheer, lassi — and in Middle Eastern and Persian cooking. It is used to flavour cold drinks, teas and desserts with a delicate floral note. Dried rose petals are brewed as a mild calming tea or added to herbal blends.\n\nRose water is one of the gentlest and most effective natural toners, used to hydrate, soothe and balance skin pH. Rose hip oil, distinct from rose petal products, is used in premium skincare for its high Vitamin A content and skin-regenerating properties.',
+    region: 'Rajasthan & Uttar Pradesh',
     imageId: 'rose',
     variants: [
       {
@@ -392,7 +351,8 @@ export const categories: Category[] = [
   {
     id: 'shatavari',
     name: 'Shatavari',
-    description: 'Adaptogenic herb known for supporting women\'s health and hormonal balance. Used in Ayurvedic medicine.',
+    description:
+      'Shatavari is one of Ayurveda\'s most revered herbs, sometimes called the queen of herbs for its particular association with women\'s health and hormonal balance across all life stages. Its name in Sanskrit translates roughly as "she who possesses a hundred husbands" — a reference to its traditional reputation for vitality and resilience. The roots are dried and ground into a fine pale powder that carries a mild, slightly sweet taste.\n\nShatavari powder is taken as a daily supplement mixed into warm milk, water or smoothies. It is traditionally used to support hormonal balance, reproductive health, lactation, digestion and general vitality. In Ayurvedic practice it is considered a rasayana — a rejuvenating tonic for long-term wellbeing rather than short-term relief.',
     region: 'Madhya Pradesh',
     imageId: 'shatavari',
     variants: [
@@ -427,8 +387,9 @@ export const categories: Category[] = [
   {
     id: 'kasturi-manjal',
     name: 'Kasturi Manjal',
-    description: 'Also known as wild turmeric. Used in skincare for brightening and antibacterial properties.',
-    region: 'South India',
+    description:
+      'Kasturi Manjal is not the turmeric you cook with. It is a wild relative, rarer and far more potent in its skincare properties, that grows in the forests of South India — primarily Kerala, Tamil Nadu and Karnataka. Its rhizomes are smaller, darker and more aromatic than culinary turmeric, and unlike its common cousin it is not edible.\n\nIt has been used for centuries in South Indian bridal rituals — applied to the face and body as part of the pre-wedding skincare ceremony — and in traditional Ayurvedic preparations for its remarkable ability to brighten, even and clarify the skin. Used exclusively in skincare. Kasturi Manjal powder is mixed with milk, rose water or honey and applied as a face mask. It brightens uneven skin tone, reduces dark spots, calms inflammation and gives the skin a distinctive luminosity. Unlike common turmeric it does not stain the skin yellow.',
+    region: 'Kerala, Tamil Nadu & Karnataka',
     imageId: 'kasturi-manjal',
     variants: [
       {
@@ -462,8 +423,9 @@ export const categories: Category[] = [
   {
     id: 'amla',
     name: 'Amla (Indian Gooseberry)',
-    description: 'Rich in vitamin C and used to promote skin health and boost immunity. A staple in Ayurvedic practice.',
-    region: 'Multiple',
+    description:
+      'Amla is arguably the most nutrient-dense fruit in the world. Small, pale green and intensely tart, it contains one of the highest concentrations of Vitamin C found in any natural food — far exceeding oranges — in a form that remains stable even when dried or heated, which is unusual for Vitamin C.\n\nEaten fresh, pickled, dried, or as juice. Used in chutneys, jams and Ayurvedic formulas. Amla powder is added to smoothies, warm water or yoghurt as a daily wellness supplement known to support immunity, digestion and skin health from within. Amla oil is one of the most traditional hair treatments in India — used to strengthen hair, reduce greying and nourish the scalp. In powder form it is used in face masks and herbal hair washes.',
+    region: 'India',
     imageId: 'amla',
     variants: [
       {
@@ -509,9 +471,10 @@ export const categories: Category[] = [
   },
   {
     id: 'soap-berries',
-    name: 'Soap Berries',
-    description: 'Natural soap berries are an eco-friendly alternative to chemical-based cleansers. Used for laundry and hair care.',
-    region: 'Northeast India',
+    name: 'Soap Berries (Reetha)',
+    description:
+      'Long before synthetic detergents existed, Indian households washed their clothes, hair and skin with the dried fruit of the soapberry tree. Reetha, as it is known across India, contains a natural compound called saponin that lathers gently in water and cleanses without stripping or irritating.\n\nThe soapberry trees grow in various parts of India.\n\nDried reetha shells are soaked in warm water to create a natural cleaning liquid used for laundry, hair washing and gentle skincare. It is especially popular as a shampoo for sensitive scalps and is widely used in Ayurvedic hair care. It is also used as a natural jewellery cleaner and gentle household detergent.',
+    region: 'India',
     imageId: 'soap-berries',
     variants: [
       {

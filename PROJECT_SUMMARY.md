@@ -37,8 +37,7 @@ Each product has a dedicated page with structured storytelling:
 
 1. **Vetiver** — Cooling root essence from Tamil Nadu
 2. **Sandalwood** — Sacred wood from Karnataka
-3. **Jasmine** — Moonlit flowers from Rajasthan (marked as "Gift Favourite")
-4. **Turmeric** — Golden root of healing from Kerala
+3. **Turmeric** — Golden root of healing from Kerala
 
 Each product features:
 - Poetic storytelling aligned with brand values
@@ -121,20 +120,20 @@ Configuration
 
 ## Image Assets
 
-### Product Images (4)
+### Product images
 - Elegant glass bottles/containers on ivory white background
 - Warm, golden-hour lighting
 - Natural, editorial style
 - Centered composition with breathing room
-- Files: `/public/images/products/{vetiver,sandalwood,jasmine,turmeric}.jpg`
+- Files: `/public/images/products/{vetiver,sandalwood,turmeric,...}.jpg`
 
-### Portrait Images (4)
+### Portrait images
 - Warm, dignified portraits of farmers and artisans
 - Regional settings visible in soft-focus background
 - Soft, golden-hour, warm-toned lighting
 - Traditional or natural clothing
 - Respectful, celebratory, inspiring tone
-- Files: `/public/images/portraits/{vetiver,sandalwood,jasmine,turmeric}.jpg`
+- Files: `/public/images/portraits/{vetiver,sandalwood,turmeric,...}.jpg`
 
 ## Navigation and UX
 

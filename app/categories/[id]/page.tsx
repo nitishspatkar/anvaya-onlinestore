@@ -87,7 +87,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
 
           <div className="space-y-3">
             <h1 className="detail-title">{category.name}</h1>
-            <p className="font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+            <p className="font-body whitespace-pre-line text-sm leading-relaxed text-text-secondary sm:text-base">
               {category.description}
             </p>
             <div className="flex flex-wrap items-center gap-3 border-t border-border/30 pt-2 text-xs text-text-secondary sm:text-sm">
