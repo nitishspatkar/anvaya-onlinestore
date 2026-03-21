@@ -6,6 +6,25 @@ export interface Maker {
   portraitId: string
 }
 
+/** Optional rich PDP (Stitch prototypes — see stitch/prototypes/product_triple_milled_khus_soap_*.html). */
+export interface ProductPdpContent {
+  heroImage?: string
+  botanicalImage?: string
+  provenanceImage?: string
+  weightLabel?: string
+  heroOverlay?: { title: string; body: string }
+  headlinePrimary?: string
+  headlineAccent?: string
+  longDescription?: string
+  provenanceChipTitle?: string
+  provenanceChipBody?: string
+  ingredients?: { title: string; subtitle: string }[]
+  ritualSteps?: { title: string; body: string }[]
+  provenanceHeading?: string
+  provenanceSubheading?: string
+  provenanceBody?: string
+}
+
 export interface ProductVariant {
   id: string
   name: string
@@ -13,6 +32,7 @@ export interface ProductVariant {
   type: string
   maker: Maker
   price: number
+  pdp?: ProductPdpContent
 }
 
 export interface Category {
@@ -101,6 +121,53 @@ export const categories: Category[] = [
           location: 'Tamil Nadu',
           brief: 'Radha and 12 women harvest vetiver by hand, preserving soil integrity since 1987.',
           portraitId: 'radha'
+        },
+        pdp: {
+          heroImage:
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuDGLe_v3_pCO-SKkXtfNpdGX_qVPx-vKIrxE70Lnl6no6qbUYoNEmi4lHnbPAwIh-NR7IbQWNCmxiIEFNnXZ032iUg93ZWX2lmv3-q2wURpSBvxWQ-Os6l2n4L3VQm_CbuvV3Nro_XG4SKsGaStpVIuSo6Efu3LJLrjbVUkJxY0zJQQFPhfBUCNK4G8_dcpiEH3lWDzLzqNyY0hbSeiNfVichSNrRrXmNsbV8z7e8Ys985D8fGtz9wudluAktiGQcdvCEYdUIlaAUA',
+          botanicalImage:
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuDZbolle_6z7wuDOKogZu-Gu_CL6xJelT48V0VUbHgbjm7KKTD8_ijbP0GyUqhswQmpIHvqDSccbAd9CRFf_lljNJD1Q1NH_ytwUtlak6wv9H80Hduyn_QrPkjm7RYC7G6mN3j-GHZmWrOVtxTuTzsPDweiQwowYIo5vJe5sIlfl373jC4PnADaIsDtSAFAqt0FMqlUUtaBOvD_UFh6ysY23kwo0T7SxqhMo7PtY4gDWSLUY8G3mrsb6nw3w6U3FrRM0atLp_Uk4gI',
+          provenanceImage:
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuBMxdH_9vZ_SydJJzTJcHgaENuUUCXjO9Gfi9eQrYTXGe9IqJ9a0Te90PIbQdOCIDQarKGZ1bnY48URbXnqjCeR1VVy-EriLgPj_dr48xyoI0DzlqoNT2G3WQz6RgMtoiY-DsqEmF2qrj9eBJxu55cU7AzFEyCAv3TZ-nUZJhAvyCOxXsrRDv4F9GrSYWY0YhtYrvMMGIPAmOt9hMu2xRn-gjcUBZsmXeVEZm_bZHyJpy7aTn9hrZukx5f4bQiQpUnkgv8LZlaGUhI',
+          weightLabel: '125g / 4.4oz',
+          heroOverlay: {
+            title: 'Architectural texture',
+            body: 'Compressed through stainless steel rollers three times to ensure lasting fragrance and a dense, creamy lather.',
+          },
+          headlinePrimary: 'Triple Milled Khus',
+          headlineAccent: '(Vetiver) Soap',
+          longDescription:
+            'A grounding olfactory experience crafted with wild-harvested vetiver roots. This soap offers an earthy, woody aroma that lingers on the skin, balancing the senses while deep-cleaning without depletion.',
+          provenanceChipTitle: 'Origin: Kannauj',
+          provenanceChipBody:
+            'Roots harvested during the transition of seasons to ensure peak essential oil concentration.',
+          ingredients: [
+            { title: 'Chrysopogon zizanioides', subtitle: 'Wild vetiver root oil' },
+            { title: 'Cocos nucifera', subtitle: 'Virgin coconut base' },
+            { title: 'Santalum album', subtitle: 'Pure sandalwood extract' },
+          ],
+          ritualSteps: [
+            {
+              title: 'Tempering',
+              body: 'Introduce the bar to warm water. The triple-milling process requires a few seconds of warmth to release the first layer of volatile aromatic oils.',
+            },
+            {
+              title: 'Lathering',
+              body: 'Work into a dense, non-bubbling cream between the palms. The texture should feel more like a moisturizing balm than a traditional soap.',
+            },
+            {
+              title: 'Absorption',
+              body: 'Massage directly onto damp skin in slow, circular motions. Focus on pulse points to allow the cooling nature of khus to settle.',
+            },
+            {
+              title: 'Cleansing',
+              body: 'Rinse with cool water to lock in the earthy scent. Pat dry gently to preserve the fine veil of essential oils left on the epidermis.',
+            },
+          ],
+          provenanceHeading: 'Kannauj: The',
+          provenanceSubheading: 'Perfume capital',
+          provenanceBody:
+            "Our khus roots are harvested from the alluvial plains of the Ganges. Using the ancient Deg-Bhapka method—traditional steam distillation in copper stills—we capture the essence of mitti (earth) and vetiver. This centuries-old process ensures that no synthetic stabilizers are needed, leaving the scent as pure as the soil itself.",
         }
       },
       {

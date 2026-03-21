@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#324c3e",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#773310",
+              "secondary": "#944925",
+              "outline-variant": "#c2c8c2",
+              "surface-container": "#f0eded",
+              "secondary-container": "#fe9e72",
+              "surface-container-low": "#f6f3f2",
+              "surface-container-high": "#eae8e7",
+              "tertiary-container": "#533e1f",
+              "on-tertiary-fixed": "#281801",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#c7aa82",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1b1c1c",
+              "on-secondary-fixed": "#360f00",
+              "surface-dim": "#dcd9d9",
+              "on-surface-variant": "#424844",
+              "inverse-surface": "#303030",
+              "tertiary-fixed-dim": "#e1c299",
+              "surface": "#fbf9f8",
+              "primary-fixed-dim": "#b0cdbb",
+              "background": "#fbf9f8",
+              "surface-tint": "#496455",
+              "primary-container": "#2d4739",
+              "inverse-primary": "#b0cdbb",
+              "error": "#ba1a1a",
+              "outline": "#727973",
+              "on-tertiary-fixed-variant": "#584324",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c1c",
+              "primary": "#173124",
+              "on-primary-container": "#98b5a3",
+              "secondary-fixed-dim": "#ffb596",
+              "primary-fixed": "#ccead6",
+              "tertiary": "#3a280b",
+              "on-secondary-fixed-variant": "#76320f",
+              "inverse-on-surface": "#f3f0f0",
+              "surface-container-highest": "#e4e2e1",
+              "surface-variant": "#e4e2e1",
+              "secondary-fixed": "#ffdbcd",
+              "tertiary-fixed": "#feddb3",
+              "on-primary-fixed": "#062014",
+              "surface-bright": "#fbf9f8"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .hero-split {
+            height: calc(100vh - 80px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f8]/80 dark:bg-stone-900/80 backdrop-blur-md">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="flex items-center">
+<span class="text-2xl font-headline tracking-tighter text-[#173124] dark:text-[#f6f3f2]">Digital Curator</span>
+</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-headline uppercase tracking-[0.2em] text-[11px] font-medium text-[#173124] dark:text-[#f6f3f2]/60 hover:opacity-70 transition-opacity" href="#">Heritage</a>
+<a class="font-headline uppercase tracking-[0.2em] text-[11px] font-medium text-[#173124] dark:text-white border-b border-[#173124] dark:border-[#f6f3f2] pb-1" href="#">The Collection</a>
+<a class="font-headline uppercase tracking-[0.2em] text-[11px] font-medium text-[#173124]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-white transition-colors duration-300" href="#">Ingredients</a>
+<a class="font-headline uppercase tracking-[0.2em] text-[11px] font-medium text-[#173124]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-white transition-colors duration-300" href="#">Journal</a>
+<a class="font-headline uppercase tracking-[0.2em] text-[11px] font-medium text-[#173124]/60 dark:text-[#f6f3f2]/60 hover:text-[#173124] dark:hover:text-white transition-colors duration-300" href="#">Provenance</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-[#173124] dark:text-[#f6f3f2] hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-[#173124] dark:text-[#f6f3f2] hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Split Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 hero-split min-h-[800px]">
+<!-- Product Visuals -->
+<div class="bg-surface-container-low flex items-center justify-center p-12 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-high/30 to-transparent"></div>
+<img alt="Triple Milled Khus Soap" class="w-full h-full object-cover mix-blend-multiply opacity-90 scale-105" data-alt="Artisanal triple milled vetiver soap bar with natural fiber texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGLe_v3_pCO-SKkXtfNpdGX_qVPx-vKIrxE70Lnl6no6qbUYoNEmi4lHnbPAwIh-NR7IbQWNCmxiIEFNnXZ032iUg93ZWX2lmv3-q2wURpSBvxWQ-Os6l2n4L3VQm_CbuvV3Nro_XG4SKsGaStpVIuSo6Efu3LJLrjbVUkJxY0zJQQFPhfBUCNK4G8_dcpiEH3lWDzLzqNyY0hbSeiNfVichSNrRrXmNsbV8z7e8Ys985D8fGtz9wudluAktiGQcdvCEYdUIlaAUA"/>
+<!-- Floating Detail Overlay -->
+<div class="absolute bottom-12 left-12 p-6 bg-surface-container-lowest/80 backdrop-blur-sm shadow-sm max-w-xs">
+<p class="font-headline italic text-primary text-sm mb-2">Architectural Texture</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Compressed through stainless steel rollers three times to ensure lasting fragrance and a dense, creamy lather.</p>
+</div>
+</div>
+<!-- Product Details -->
+<div class="flex flex-col justify-center px-12 lg:px-24 py-12 bg-surface">
+<nav class="mb-8 flex space-x-4 text-[10px] uppercase tracking-widest text-on-surface-variant">
+<span>Collection</span>
+<span>/</span>
+<span class="text-primary font-bold">Bath &amp; Ritual</span>
+</nav>
+<h1 class="font-headline text-5xl lg:text-7xl text-primary leading-tight mb-6">
+                    Triple Milled Khus <br/>
+<span class="italic text-secondary font-light">(Vetiver) Soap</span>
+</h1>
+<div class="flex items-baseline space-x-6 mb-12">
+<span class="text-2xl font-light text-on-surface">€12.00</span>
+<span class="text-sm font-label tracking-wider text-on-surface-variant uppercase">125g / 4.4oz</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-12 max-w-md font-body text-lg">
+                    A grounding olfactory experience crafted with wild-harvested Vetiver roots. This soap offers an earthy, woody aroma that lingers on the skin, balancing the senses while deep-cleaning without depletion.
+                </p>
+<!-- CTA -->
+<div class="flex flex-col space-y-4 mb-16">
+<button class="bg-primary text-on-primary py-5 px-12 text-sm uppercase tracking-[0.2em] font-medium hover:bg-primary-container transition-all duration-500 flex items-center justify-center space-x-4 group">
+<span>Reserve for Launch</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-[10px] text-center text-on-surface-variant uppercase tracking-widest">Ships early Autumn 2024. Limited batch release.</p>
+</div>
+<!-- Provenance Chip -->
+<div class="bg-tertiary-container/10 border border-outline-variant/15 p-6 flex items-start space-x-4">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="location_on">location_on</span>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-tertiary-container mb-1">Origin: Kannauj</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Roots harvested during the transition of seasons to ensure peak essential oil concentration.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Section: The Ritual & Ingredients -->
+<section class="px-12 py-32 max-w-[1440px] mx-auto bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Column 1: Ingredients -->
+<div class="lg:col-span-4 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-xs uppercase tracking-[0.3em] text-secondary mb-8">Botanical Composition</h3>
+<ul class="space-y-6">
+<li class="border-b border-outline-variant/20 pb-4">
+<span class="block font-headline text-lg text-primary">Chrysopogon Zizanioides</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Wild Vetiver Root Oil</span>
+</li>
+<li class="border-b border-outline-variant/20 pb-4">
+<span class="block font-headline text-lg text-primary">Cocos Nucifera</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Virgin Coconut Base</span>
+</li>
+<li class="border-b border-outline-variant/20 pb-4">
+<span class="block font-headline text-lg text-primary">Santalum Album</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Pure Sandalwood Extract</span>
+</li>
+</ul>
+</div>
+<div class="mt-12">
+<img alt="Vetiver Roots" class="w-full aspect-square object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700" data-alt="Dried vetiver roots bundled with twine on a stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZbolle_6z7wuDOKogZu-Gu_CL6xJelT48V0VUbHgbjm7KKTD8_ijbP0GyUqhswQmpIHvqDSccbAd9CRFf_lljNJD1Q1NH_ytwUtlak6wv9H80Hduyn_QrPkjm7RYC7G6mN3j-GHZmWrOVtxTuTzsPDweiQwowYIo5vJe5sIlfl373jC4PnADaIsDtSAFAqt0FMqlUUtaBOvD_UFh6ysY23kwo0T7SxqhMo7PtY4gDWSLUY8G3mrsb6nw3w6U3FrRM0atLp_Uk4gI"/>
+</div>
+</div>
+<!-- Column 2: The Ritual -->
+<div class="lg:col-span-8 bg-surface-container-low p-12 lg:p-24 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline text-4xl lg:text-5xl text-primary mb-12">The Ritual</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<span class="text-secondary font-headline italic text-2xl">01.</span>
+<h4 class="font-bold uppercase tracking-widest text-[11px] text-primary">Tempering</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Introduce the bar to warm water. The triple-milling process requires a few seconds of warmth to release the first layer of volatile aromatic oils.</p>
+</div>
+<div class="space-y-4">
+<span class="text-secondary font-headline italic text-2xl">02.</span>
+<h4 class="font-bold uppercase tracking-widest text-[11px] text-primary">Lathering</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Work into a dense, non-bubbling cream between the palms. The texture should feel more like a moisturizing balm than a traditional soap.</p>
+</div>
+<div class="space-y-4">
+<span class="text-secondary font-headline italic text-2xl">03.</span>
+<h4 class="font-bold uppercase tracking-widest text-[11px] text-primary">Absorption</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Massage directly onto damp skin in slow, circular motions. Focus on pulse points to allow the cooling nature of Khus to settle.</p>
+</div>
+<div class="space-y-4">
+<span class="text-secondary font-headline italic text-2xl">04.</span>
+<h4 class="font-bold uppercase tracking-widest text-[11px] text-primary">Cleansing</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Rinse with cool water to lock in the earthy scent. Pat dry gently to preserve the fine veil of essential oils left on the epidermis.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Provenance Section -->
+<section class="bg-primary text-on-primary py-32 overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 border border-on-primary/10 rounded-full"></div>
+<img alt="Traditional Distillation" class="relative z-10 w-full aspect-[4/5] object-cover shadow-2xl" data-alt="Ancient copper distillation vessels in a traditional Indian perfumery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMxdH_9vZ_SydJJzTJcHgaENuUUCXjO9Gfi9eQrYTXGe9IqJ9a0Te90PIbQdOCIDQarKGZ1bnY48URbXnqjCeR1VVy-EriLgPj_dr48xyoI0DzlqoNT2G3WQz6RgMtoiY-DsqEmF2qrj9eBJxu55cU7AzFEyCAv3TZ-nUZJhAvyCOxXsrRDv4F9GrSYWY0YhtYrvMMGIPAmOt9hMu2xRn-gjcUBZsmXeVEZm_bZHyJpy7aTn9hrZukx5f4bQiQpUnkgv8LZlaGUhI"/>
+</div>
+<div>
+<h2 class="font-headline text-xs uppercase tracking-[0.4em] text-on-primary-container mb-8">The Provenance</h2>
+<h3 class="font-headline text-5xl mb-8 leading-tight">Kannauj: The <br/><span class="italic font-light">Perfume Capital</span></h3>
+<p class="text-on-primary-container text-lg leading-relaxed mb-12 max-w-lg">
+                        Our Khus roots are harvested from the alluvial plains of the Ganges. Using the ancient <i>Deg-Bhapka</i> method—a traditional steam distillation in copper stills—we capture the essence of 'Mitti' (earth) and Vetiver. This centuries-old process ensures that no synthetic stabilizers are needed, leaving the scent as pure as the soil itself.
+                    </p>
+<a class="inline-flex items-center space-x-4 group" href="#">
+<span class="text-xs uppercase tracking-[0.2em] font-medium border-b border-on-primary pb-1 group-hover:text-secondary transition-colors">Explore the distillery journal</span>
+<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6f3f2] dark:bg-stone-800 w-full mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 border-t border-[#c2c8c2]/15 max-w-[1440px] mx-auto">
+<div class="space-y-6">
+<span class="font-headline italic text-lg text-[#173124] dark:text-[#f6f3f2]">Digital Curator</span>
+<p class="font-body text-[12px] tracking-wide text-[#173124]/70 dark:text-[#f6f3f2]/70 leading-relaxed max-w-xs">
+                    Curating the intersection of Swiss modernist precision and the profound, soulful narratives of Indian heritage. 
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-headline text-[10px] uppercase tracking-widest text-[#173124]">Navigation</h4>
+<ul class="space-y-2">
+<li><a class="font-body text-[12px] tracking-wide text-[#173124]/70 hover:text-[#944925] transition-colors" href="#">The Collection</a></li>
+<li><a class="font-body text-[12px] tracking-wide text-[#173124]/70 hover:text-[#944925] transition-colors" href="#">Sustainability Manifesto</a></li>
+<li><a class="font-body text-[12px] tracking-wide text-[#173124]/70 hover:text-[#944925] transition-colors" href="#">Our Heritage</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-[10px] uppercase tracking-widest text-[#173124]">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-body text-[12px] tracking-wide text-[#173124]/70 hover:text-[#944925] transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-body text-[12px] tracking-wide text-[#173124]/70 hover:text-[#944925] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body text-[12px] tracking-wide text-[#173124]/70 hover:text-[#944925] transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-headline text-[10px] uppercase tracking-widest text-[#173124]">The Newsletter</h4>
+<div class="relative border-b border-[#173124]/30 pb-2">
+<input class="bg-transparent border-none w-full text-[12px] focus:ring-0 placeholder-[#173124]/40" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 top-0 material-symbols-outlined text-[#173124]/60" data-icon="east">east</button>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-[#173124]/50">Join for private collection releases.</p>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-[#c2c8c2]/10 text-center">
+<p class="font-body text-[12px] tracking-wide text-[#173124]/70">© 2024 Digital Curator. Swiss Precision. Indian Soul. Sustainably Sourced.</p>
+</div>
+</footer>
+</body></html>

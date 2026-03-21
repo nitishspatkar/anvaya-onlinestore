@@ -1,17 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { ProductVariant, Category } from '@/lib/products'
+import { cn } from '@/lib/utils'
 
 interface PreOrderModalProps {
   variant: ProductVariant
   category: Category
+  triggerClassName?: string
+  triggerLabel?: ReactNode
 }
 
 const fieldClass =
   'w-full border-0 border-b border-outline-variant/40 bg-transparent px-0 py-3 font-body text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0 focus:outline-none'
 
-export function PreOrderModal({ variant, category }: PreOrderModalProps) {
+export function PreOrderModal({ variant, category, triggerClassName, triggerLabel }: PreOrderModalProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -37,9 +40,12 @@ export function PreOrderModal({ variant, category }: PreOrderModalProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="w-full bg-primary px-6 py-4 font-body text-[10px] font-bold tracking-[0.2em] text-on-primary uppercase transition-all hover:bg-primary-container active:scale-[0.99]"
+        className={cn(
+          'w-full bg-primary px-6 py-4 font-body text-[10px] font-bold tracking-[0.2em] text-on-primary uppercase transition-all hover:bg-primary-container active:scale-[0.99]',
+          triggerClassName
+        )}
       >
-        Reserve for launch
+        {triggerLabel ?? 'Reserve for launch'}
       </button>
 
       {isOpen && (
